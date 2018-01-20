@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import "../variables/variables";
+/*==============================================================================
+
+ Mixins SCSS.
+
+==============================================================================*/
+// BreakPoints
+@mixin mobile {
+  @media (min-width: #{$mobileWidth}) {
+    @content;
+  }
+}
+@mixin largeMobile {
+  @media (min-width: #{$largeMobileWidth}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tabletWidth}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktopWidth}) {
+    @content;
+  }
+}
+@mixin largeDesktop {
+  @media (min-width: #{$largeDesktopWidth}) {
+    @content;
+  }
+}
+// clearfix
+@mixin clearfix {
+  clear: both;
+
+  &:after,
+  &:before {
+    display: block;
+    clear: both;
+    content: " ";
+  }
+}

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import "../mixins/mixins";
+/*==============================================================================
+
+ Utilities SCSS.
+
+==============================================================================*/
+.u-text-indent {
+  text-indent: -10000px;
+}
+
+.u-sp {
+  display: block;
+}
+
+.u-tablet {
+  display: block;
+}
+
+.u-pc {
+  display: none;
+}
+@include largeMobile {
+  .u-sp {
+    display: none;
+  }
+
+  .u-tablet {
+    display: block;
+  }
+
+  .u-pc {
+    display: none;
+  }
+}
+@include tablet {
+  .u-sp {
+    display: none;
+  }
+
+  .u-tablet {
+    display: none;
+  }
+
+  .u-pc {
+    display: block;
+  }
+}
