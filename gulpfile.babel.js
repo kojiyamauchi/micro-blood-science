@@ -152,7 +152,7 @@ gulp.task('rename', () => {
 })
 
 // File Delete Task.
-gulp.task('delete', (cb) => {
+gulp.task('delete', cb => {
   return del(['**/.DS_Store'], cb)
 })
 
@@ -189,8 +189,8 @@ gulp.task('ftpUpLoad', () => {
       base: '.',
       buffer: false
     })
-    .pipe(ftpConnect.newer('/works/micro-blood-science/'))
-    .pipe(ftpConnect.dest('/works/micro-blood-science/'))
+    .pipe(ftpConnect.newer('/works/micro-blood-science-pre-LP/'))
+    .pipe(ftpConnect.dest('/works/micro-blood-science-pre-LP/'))
 })
 
 // gulp default task, terminal command 'gulp'.
