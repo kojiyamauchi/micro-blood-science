@@ -21,11 +21,13 @@ Core SCSS.
   max-width: 1170px;
   height: 80px;
   margin: 0 auto;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   @include tablet {
     justify-content: space-between;
+    padding: 0 20px;
   }
 }
 
@@ -90,21 +92,20 @@ Core SCSS.
   letter-spacing: 0.1em;
   text-shadow: 3.064px 2.571px 1px rgba(0, 0, 0, .4);
   background-color: rgba(0,0,0,0.25);
-  padding: 20px;
+  padding: 10px;
   border-radius: 3px;
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
   transform: translateX(-110%);
   transition: all 0.4s ease-out;
   @media (orientation: landscape) {
-    padding: 10px;
     font-size: 1rem;
     line-height: 1.2em;
     margin: 35px 0 0;
   }
   @include largeMobile {
+    padding: 20px;
     font-size: 1rem;
     @media (orientation: landscape) {
-      padding: 20px;
       line-height: 1.666666666666667em;
       margin: 0;
     }

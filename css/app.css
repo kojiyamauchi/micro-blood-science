@@ -173,18 +173,45 @@ Heading SCSS.
 
 ==============================================================================*/
 .heading01 {
-  width: 356px;
-  height: 53px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  max-width: 356px;
+  height: auto;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-image: url("../images/Logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  -webkit-box-align: center;
+}
+
+.heading01:after {
+  display: block;
+  content: " ";
+  width: 100%;
+  padding-top: 14.887640449438203%;
+}
+
+@media (min-width: 768px) {
+  .heading01 {
+    width: 356px;
+    height: 53px;
+  }
+  .heading01:after {
+    content: none;
+  }
 }
 
 .heading02 {
   text-align: center;
-  letter-spacing: .2em;
-  font-size: 2.5rem;
+  letter-spacing: .1em;
+  font-size: 2.125rem;
   line-height: 1.2em;
   color: #fff;
   text-shadow: 4.66px 5.43px 5px rgba(0, 0, 0, .4);
@@ -199,6 +226,18 @@ Heading SCSS.
 @media (min-width: 991px) {
   .heading02 {
     line-height: 1;
+  }
+}
+
+@media (min-width: 480px) {
+  .heading02 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 325px) {
+  .heading02 {
+    letter-spacing: .2em;
   }
 }
 
@@ -352,6 +391,7 @@ Core SCSS.
   max-width: 1170px;
   height: 80px;
   margin: 0 auto;
+  padding: 0;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-align-items: center;
@@ -365,6 +405,7 @@ Core SCSS.
 
 @media (min-width: 991px) {
   .header-inner {
+    padding: 0 20px;
     -webkit-justify-content: space-between;
     justify-content: space-between;
     -ms-flex-pack: justify;
@@ -459,7 +500,7 @@ Core SCSS.
 }
 
 .letters-inner {
-  padding: 20px;
+  padding: 10px;
   -webkit-transition: all .4s ease-out;
   transition: all .4s ease-out;
   -webkit-transform: translateX(-110%);
@@ -479,7 +520,6 @@ Core SCSS.
 @media (orientation: landscape) {
   .letters-inner {
     margin: 35px 0 0;
-    padding: 10px;
     font-size: 1rem;
     line-height: 1.2em;
   }
@@ -487,6 +527,7 @@ Core SCSS.
 
 @media (min-width: 768px) {
   .letters-inner {
+    padding: 20px;
     font-size: 1rem;
   }
 }
@@ -494,7 +535,6 @@ Core SCSS.
 @media (min-width: 768px) and (orientation: landscape) {
   .letters-inner {
     margin: 0;
-    padding: 20px;
     line-height: 1.666666666666667em;
   }
 }
