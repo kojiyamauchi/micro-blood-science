@@ -214,7 +214,7 @@ Heading SCSS.
   font-size: 2.125rem;
   line-height: 1.2em;
   color: #fff;
-  text-shadow: 4.66px 5.43px 5px rgba(0, 0, 0, .4);
+  text-shadow: 4.66px 5.43px 2.5px rgba(0, 0, 0, .5);
 }
 
 @media (min-width: 1170px) {
@@ -450,7 +450,7 @@ Core SCSS.
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
-  background-image: url("../images/fv.jpg");
+  background-image: url("../images/fv02.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -511,7 +511,7 @@ Core SCSS.
   line-height: 1.666666666666667em;
   color: #fff;
   border-radius: 3px;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: rgba(0, 0, 0, .35);
   -webkit-box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
   text-shadow: 3.064px 2.571px 1px rgba(0, 0, 0, .4);
@@ -584,7 +584,7 @@ Core SCSS.
   transform: scale(0);
   opacity: 1;
   border-radius: 100%;
-  background-color: rgba(255, 64, 129, .5);
+  background-color: rgba(255, 64, 129, .65);
   -webkit-box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
   box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
 

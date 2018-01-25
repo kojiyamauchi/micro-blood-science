@@ -42,7 +42,7 @@ Core SCSS.
 }
 
 .fv {
-  background-image: url("../images/fv.jpg");
+  background-image: url("../images/fv02.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -91,7 +91,7 @@ Core SCSS.
   line-height: 1.666666666666667em;
   letter-spacing: 0.1em;
   text-shadow: 3.064px 2.571px 1px rgba(0, 0, 0, .4);
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0,0,0,0.35);
   padding: 10px;
   border-radius: 3px;
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
@@ -134,7 +134,7 @@ Core SCSS.
 .button-floating {
   width: 50px;
   height: 50px;
-  background-color: rgba(255,64,129,.5);
+  background-color: rgba(255,64,129,.65);
   box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
   position: fixed;
   bottom: 15px;
