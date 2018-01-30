@@ -112,9 +112,15 @@ Core SCSS.
   overflow: hidden;
   width: 100%;
   padding: 10px;
+  @media (orientation: landscape) {
+    display: none;
+  }
   @include tablet {
     width: auto;
     padding: 10px 10px 10px 0;
+    @media (orientation: landscape) {
+      display: inline-block;
+    }
   }
 }
 
@@ -153,14 +159,16 @@ Core SCSS.
   }
 }
 
-.area-about,
-.area-member,
 .contents-in {
   width: 100vw;
 }
+.area-about,
+.area-member {
+  width: 100%;
+}
 
 .area-copy {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: url("../images/bg01.jpg");
   background-repeat: no-repeat;
@@ -170,12 +178,14 @@ Core SCSS.
     height: auto;
     padding: 20px 0;
   }
-  @include tablet {
-    padding: 0;
-    background-attachment: fixed;
+  @include largeMobile {
     @media (orientation: landscape) {
       height: 100vh;
     }
+  }
+  @include tablet {
+    padding: 0;
+    background-attachment: fixed;
   }
 }
 
@@ -183,8 +193,8 @@ Core SCSS.
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   padding: 0 10px;
   @include tablet {
     padding: 0;
