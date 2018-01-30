@@ -5,7 +5,9 @@
  Mixins SCSS.
 
 ==============================================================================*/
-// BreakPoints
+/* ------------------------
+ Break Points.
+-------------------------*/
 @mixin smallMobile {
   @media (min-width: #{$smallMobileWidth}) {
     @content;
@@ -36,7 +38,49 @@
     @content;
   }
 }
-// clearfix
+/* ------------------------
+ Label Parts.
+-------------------------*/
+@mixin primaryLabel($labelColor) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 0;
+  content: " ";
+  border-width: 75px 75px 0 0;
+  border-style: solid;
+  border-color: $labelColor;
+  @include tablet {
+    border-width: 110px 110px 0 0;
+  }
+}
+@mixin secondaryLabel($labelColor) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 0;
+  content: " ";
+  border-width: 50px 50px 0 0;
+  border-style: solid;
+  border-color: $labelColor;
+}
+@mixin labelFont {
+  position: absolute;
+  white-space: pre;
+  letter-spacing: 0;
+  color: #fff;
+  text-shadow: none;
+  font-family: "Source Sans Pro",sans-serif;
+  font-weight: bold;
+  line-height: 1em;
+}
+/* ------------------------
+ clearfix.
+-------------------------*/
 @mixin clearfix {
   clear: both;
 

@@ -4,6 +4,9 @@
 Animations SCSS.
 
 ==============================================================================*/
+/*----------------------------
+ Keyframes Animation.
+----------------------------*/
 @keyframes animation-letters {
   0% {
     transform: scale(0);
@@ -17,12 +20,120 @@ Animations SCSS.
     transform: scale(1);
   }
 }
-@keyframes animation-angle {
+@keyframes animation-angle-up-down {
   0% {
-    transform: translateY(0);
+    transform: translateY(-5%);
+  }
+
+  50% {
+    transform: translateY(5%);
   }
 
   100% {
+    transform: translateY(-5%);
+  }
+}
+@keyframes animation-angle-left {
+  0% {
+    transform: translateX(-5%);
+  }
+
+  50% {
+    transform: translateX(5%);
+  }
+
+  100% {
+    transform: translateX(-5%);
+  }
+}
+/*----------------------------
+ Scroll Animation.
+----------------------------*/
+.txt-copies {
+  &[data-emergence=hidden] {
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 0.75s linear;
+  }
+
+  &[data-emergence=visible] {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 0.75s ease-out;
+  }
+}
+
+[class*="txt-copy0"] {
+  &[data-emergence=hidden] {
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 0.75s linear;
+  }
+
+  &[data-emergence=visible] {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.txt-copy01 {
+  transition: all 0.75s 0.5s ease-out;
+}
+
+.txt-copy02 {
+  transition: all 0.75s 0.75s ease-out;
+}
+
+.txt-copy03 {
+  transition: all 0.75s 1s ease-out;
+}
+
+.txt-copy04 {
+  transition: all 0.75s 1.25s ease-out;
+}
+
+.txt-copy05 {
+  transition: all 0.75s 1.5s ease-out;
+}
+
+.movie01-wrapper {
+  &[data-emergence=hidden] {
+    opacity: 0;
     transform: translateY(10%);
+    transition: all 0.75s linear;
+  }
+
+  &[data-emergence=visible] {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 1s ease-out;
+  }
+}
+
+.wp-wrapper {
+  &[data-emergence=hidden] {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all 0.75s linear;
+  }
+
+  &[data-emergence=visible] {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 1s ease-out;
+  }
+}
+
+[class*="team-"] {
+  &[data-emergence=hidden] {
+    opacity: 0;
+    transform: translateY(15%);
+    transition: all 0.75s linear;
+  }
+
+  &[data-emergence=visible] {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 1.75s ease-out;
   }
 }
