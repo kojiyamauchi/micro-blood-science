@@ -50,7 +50,7 @@ jQuery($ => {
       const target = document.querySelector('.fn-button-floating')
       setTimeout(() => {
         target.classList.add('is-active')
-      }, 5500)
+      }, 4750)
       callBack()
     }
 
@@ -58,7 +58,7 @@ jQuery($ => {
       const target = document.querySelector('.fn-icon-angle-up-down-wrapper')
       setTimeout(() => {
         target.classList.add('is-active')
-      }, 6000)
+      }, 5650)
     }
 
     setTimeout(() => {

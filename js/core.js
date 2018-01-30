@@ -10841,7 +10841,7 @@ function _interopRequireDefault(obj) {
       var target = document.querySelector('.fn-button-floating');
       setTimeout(function () {
         target.classList.add('is-active');
-      }, 5500);
+      }, 4750);
       callBack();
     };
 
@@ -10849,7 +10849,7 @@ function _interopRequireDefault(obj) {
       var target = document.querySelector('.fn-icon-angle-up-down-wrapper');
       setTimeout(function () {
         target.classList.add('is-active');
-      }, 6000);
+      }, 5650);
     };
 
     setTimeout(function () {
