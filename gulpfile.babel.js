@@ -39,7 +39,7 @@ const autoprefixerSet = ['last 2 version', 'ie >= 10', 'iOS >= 8', 'Android >= 4
 const postCssPlugIn = [autoprefixer({ browsers: autoprefixerSet }), flexbug] // PostCSS plugin.
 const addImgDir = ('addImages/*') // added image fold,
 const dstImgDir = ('images/*') // compression image fold,
-const upLoadFileWrite = (['*.html', 'css/app.min.css', 'js/core.min.js', 'images/*']) // upload file.
+const upLoadFileWrite = (['*.html', 'css/app.min.css', 'js/core.min.js', 'images/**/*', 'mail/*']) // upload file.
 const notUpLoadFileWrite = ([]) // don't upload file.
 const upLoadFile = upLoadFileWrite.concat(notUpLoadFileWrite) // ftp upload files.
 
