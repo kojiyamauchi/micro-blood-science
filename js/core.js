@@ -10837,12 +10837,11 @@ function _interopRequireDefault(obj) {
       }, 850);
     };
 
-    var intro04 = function intro04(callBack) {
+    var intro04 = function intro04() {
       var target = document.querySelector('.fn-button-floating');
       setTimeout(function () {
         target.classList.add('is-active');
       }, 6500);
-      callBack();
     };
 
     setTimeout(function () {

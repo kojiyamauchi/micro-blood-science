@@ -46,12 +46,11 @@ jQuery($ => {
       }, 850)
     }
 
-    const intro04 = callBack => {
+    const intro04 = () => {
       const target = document.querySelector('.fn-button-floating')
       setTimeout(() => {
         target.classList.add('is-active')
       }, 6500)
-      callBack()
     }
 
     setTimeout(() => {
