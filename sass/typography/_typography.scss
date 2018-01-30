@@ -121,19 +121,9 @@ Typography SCSS.
   color: #fff;
   font-size: 1rem;
   text-shadow: 3.064px 2.571px 1px rgba(0, 0, 0, .4);
-  line-height: 1.666666666666667em;
+  line-height: 1.2em;
   @include smallMobile {
-    font-size: 1.135rem;
-  }
-  @media (orientation: landscape) {
-    font-size: 1rem;
-    line-height: 1.2em;
-  }
-  @include largeMobile {
-    font-size: 1rem;
-    @media (orientation: landscape) {
-      line-height: 1.666666666666667em;
-    }
+    line-height: 1.666666666666667em;
   }
 }
 
