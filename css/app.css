@@ -2149,17 +2149,14 @@ Core SCSS.
 
 .icon-angle-up-down-wrapper {
   margin: 2px 0 0;
+  -webkit-animation: animation-angle-up-down .75s ease-in-out infinite;
+  animation: animation-angle-up-down .75s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .icon-angle-up-down-wrapper {
     margin: 4px 0 0;
   }
-}
-
-.icon-angle-up-down-wrapper.is-active {
-  -webkit-animation: animation-angle-up-down .75s ease-in-out infinite;
-  animation: animation-angle-up-down .75s ease-in-out infinite;
 }
 
 .icon-angle-up-down {

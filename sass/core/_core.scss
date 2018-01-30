@@ -745,12 +745,9 @@ Core SCSS.
 
 .icon-angle-up-down-wrapper {
   margin: 2px 0 0;
+  animation: animation-angle-up-down 0.75s ease-in-out infinite;
   @include largeMobile {
     margin: 4px 0 0;
-  }
-
-  &.is-active {
-    animation: animation-angle-up-down 0.75s ease-in-out infinite;
   }
 }
 
