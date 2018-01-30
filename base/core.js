@@ -50,19 +50,12 @@ jQuery($ => {
       const target = document.querySelector('.fn-button-floating')
       setTimeout(() => {
         target.classList.add('is-active')
-      }, 4750)
+      }, 6500)
       callBack()
     }
 
-    const intro05 = () => {
-      const target = document.querySelector('.fn-icon-angle-up-down-wrapper')
-      setTimeout(() => {
-        target.classList.add('is-active')
-      }, 5650)
-    }
-
     setTimeout(() => {
-      intro01(intro02.bind(null, intro03.bind(null, intro04.bind(null, intro05.bind(null)))))
+      intro01(intro02.bind(null, intro03.bind(null, intro04.bind(null))))
     }, 1250)
   }
 
