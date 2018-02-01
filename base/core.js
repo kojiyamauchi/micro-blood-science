@@ -12,6 +12,24 @@ jQuery($ => {
   // Created Modal Video Instance.
   new ModalVideo('.js-modal-video')
 
+  // Add Flag on Body Functions.
+  const addFlag = () => {
+    const target = document.body
+    const BP = 768
+    const coreFunc = () => {
+      const WW = window.innerWidth
+      if (WW >= BP) {
+        target.classList.add('pc');
+        target.classList.remove('sp');
+      } else if (WW < BP) {
+        target.classList.add('sp');
+        target.classList.remove('pc');
+      }
+    }
+    window.addEventListener('load', coreFunc, false)
+    window.addEventListener('resize', coreFunc, false)
+  }
+
   // Intro Functions.
   const intro = () => {
     const intro01 = callBack => {
@@ -26,20 +44,30 @@ jQuery($ => {
     }
 
     const intro02 = callBack => {
-      const target = document.querySelector('.fn-letters-inner')
+      const target = document.querySelectorAll('.fn-letters-inner')
+      const tLen = target.length
       setTimeout(() => {
-        target.classList.add('is-active')
+        for(let i = 0; i < tLen; i++) {
+          target[i].classList.add('is-active')
+        }
         callBack()
       }, 800)
     }
 
     const intro03 = callBack => {
-      const target = document.querySelectorAll('.fn-txt-letters')
-      const tLen = target.length
+      const target01 = document.querySelectorAll('.fn-txt-letters-pc')
+      const tLen01 = target01.length
+      const target02 = document.querySelectorAll('.fn-txt-letters-sp')
+      const tLen02 = target02.length
       setTimeout(() => {
-        for(let i = 0; i < tLen; i++) {
+        for(let i = 0; i < tLen01; i++) {
           setTimeout(() => {
-            target[i].classList.add('is-active')
+            target01[i].classList.add('is-active')
+          }, i * 40)
+        }
+        for(let i = 0; i < tLen02; i++) {
+          setTimeout(() => {
+            target02[i].classList.add('is-active')
           }, i * 40)
         }
         callBack()
@@ -47,10 +75,17 @@ jQuery($ => {
     }
 
     const intro04 = () => {
+      const flag = document.body.classList.contains('sp')
       const target = document.querySelector('.fn-button-floating')
-      setTimeout(() => {
-        target.classList.add('is-active')
-      }, 6500)
+      if(flag){
+        setTimeout(() => {
+          target.classList.add('is-active')
+        }, 6500)
+      } else {
+        setTimeout(() => {
+          target.classList.add('is-active')
+        }, 10000)
+      }
     }
 
     setTimeout(() => {
@@ -184,6 +219,7 @@ jQuery($ => {
   }
 
   // Require All Functions.
+  addFlag()
   intro()
   repTxt()
   checkScroll()
