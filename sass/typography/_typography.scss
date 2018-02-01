@@ -143,7 +143,10 @@ Typography SCSS.
   color: rgba(85,85,85,.77);
   font-size: 1.375rem;
   font-weight: bold;
-  line-height: 1.772727272727273em;
+  line-height: 1.5em;
+  @include largeMobile {
+    line-height: 1.772727272727273em;
+  }
 }
 
 .lead03 {
