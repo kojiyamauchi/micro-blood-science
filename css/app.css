@@ -486,7 +486,7 @@ Typography SCSS.
     display: block;
   }
   .u-pc {
-    display: none;
+    display: block;
   }
 }
 
