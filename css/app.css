@@ -1671,7 +1671,13 @@ Core SCSS.
   background-color: #ff83ad;
 }
 
-.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label , .mdl-textfield--floating-label.is-dirty .mdl-textfield__label , .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+.txtfield.is-disabled02 .mdl-textfield__label:after {
+  left: 0;
+  visibility: visible;
+  width: 100%;
+}
+
+.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label , .mdl-textfield--floating-label.is-dirty .mdl-textfield__label , .mdl-textfield--floating-label.is-focused .mdl-textfield__label , .mdl-textfield--floating-label.is-disabled02 .mdl-textfield__label {
   color: rgba(255, 131, 173, .8);
 }
 

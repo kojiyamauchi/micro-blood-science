@@ -60,7 +60,7 @@ jQuery($ => {
 
   // Replace Text Functions.
   const repTxt = () => {
-    const target = document.querySelector('.mdl-textfield__label')
+    const target = document.querySelector('.fn-form-label')
     const inTxt = 'メールアドレスを入力してください。'
     target.innerText = inTxt
   }
@@ -83,13 +83,13 @@ jQuery($ => {
       if(t06Offset.top < WH) {
         target01.classList.add('is-scroll-top')
         target01.classList.add('is-page-top')
-        target02.innerHTML = 'Page Top'
+        target02.innerText = 'Page Top'
         target03.classList.remove('fa-angle-double-down')
         target03.classList.add('fa-angle-double-up')
       } else {
         target01.classList.remove('is-scroll-top')
         target01.classList.remove('is-page-top')
-        target02.innerHTML = 'Scroll'
+        target02.innerText = 'Scroll'
         target03.classList.remove('fa-angle-double-up')
         target03.classList.add('fa-angle-double-down')
       }
@@ -145,6 +145,31 @@ jQuery($ => {
     //target02.addEventListener('click', coreFunc, false)
   }
 
+  // Mail Validation.
+  const mailValidation = () => {
+    const button = document.querySelector('.fn-submit')
+    const holder = document.querySelector('.fn-form-label')
+    const txtfield = document.querySelector('.fn-txtfield')
+    const target = document.querySelector('.fn-mail-val')
+    const validation = /^[A-Za-z0-9]+[\w\.-]+@[\w\.-]+\.\w{2,}$/
+    const inTxt01 = 'メールアドレスを確認してください。'
+    const inTxt02 = 'メールアドレスを入力してください。'
+    const coreFunc = event => {
+      const val = target.value
+      if(!val.match(validation)){
+        holder.innerText = inTxt01
+        txtfield.classList.add('is-disabled02')
+        event.preventDefault()
+      }
+      if(val === ''){
+        holder.innerText = inTxt02
+        txtfield.classList.add('is-disabled02')
+        event.preventDefault()
+      }
+    }
+    button.addEventListener('click', coreFunc, false)
+  }
+
   // Thanks Message Functions.
   const thxMessage = () => {
     const getURL = window.location.hash
@@ -165,6 +190,7 @@ jQuery($ => {
   pageScrollTop()
   anchorLink()
   evtDefault()
+  mailValidation()
   thxMessage()
 
 })

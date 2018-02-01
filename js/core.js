@@ -10851,7 +10851,7 @@ function _interopRequireDefault(obj) {
 
   // Replace Text Functions.
   var repTxt = function repTxt() {
-    var target = document.querySelector('.mdl-textfield__label');
+    var target = document.querySelector('.fn-form-label');
     var inTxt = 'メールアドレスを入力してください。';
     target.innerText = inTxt;
   };
@@ -10874,13 +10874,13 @@ function _interopRequireDefault(obj) {
       if (t06Offset.top < WH) {
         target01.classList.add('is-scroll-top');
         target01.classList.add('is-page-top');
-        target02.innerHTML = 'Page Top';
+        target02.innerText = 'Page Top';
         target03.classList.remove('fa-angle-double-down');
         target03.classList.add('fa-angle-double-up');
       } else {
         target01.classList.remove('is-scroll-top');
         target01.classList.remove('is-page-top');
-        target02.innerHTML = 'Scroll';
+        target02.innerText = 'Scroll';
         target03.classList.remove('fa-angle-double-up');
         target03.classList.add('fa-angle-double-down');
       }
@@ -10936,6 +10936,31 @@ function _interopRequireDefault(obj) {
     //target02.addEventListener('click', coreFunc, false)
   };
 
+  // Mail Validation.
+  var mailValidation = function mailValidation() {
+    var button = document.querySelector('.fn-submit');
+    var holder = document.querySelector('.fn-form-label');
+    var txtfield = document.querySelector('.fn-txtfield');
+    var target = document.querySelector('.fn-mail-val');
+    var validation = /^[A-Za-z0-9]+[\w\.-]+@[\w\.-]+\.\w{2,}$/;
+    var inTxt01 = 'メールアドレスを確認してください。';
+    var inTxt02 = 'メールアドレスを入力してください。';
+    var coreFunc = function coreFunc(event) {
+      var val = target.value;
+      if (!val.match(validation)) {
+        holder.innerText = inTxt01;
+        txtfield.classList.add('is-disabled02');
+        event.preventDefault();
+      }
+      if (val === '') {
+        holder.innerText = inTxt02;
+        txtfield.classList.add('is-disabled02');
+        event.preventDefault();
+      }
+    };
+    button.addEventListener('click', coreFunc, false);
+  };
+
   // Thanks Message Functions.
   var thxMessage = function thxMessage() {
     var getURL = window.location.hash;
@@ -10956,6 +10981,7 @@ function _interopRequireDefault(obj) {
   pageScrollTop();
   anchorLink();
   evtDefault();
+  mailValidation();
   thxMessage();
 });
 
