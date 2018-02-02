@@ -390,7 +390,7 @@ Core SCSS.
     .title-movie02 {
       @include tablet {
         transform: translateY(0);
-        transition: transform 0.5s 0.25s;
+        transition: transform 0.5s;
       }
     }
   }

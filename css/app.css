@@ -1554,10 +1554,10 @@ Core SCSS.
 
 @media (min-width: 991px) {
   .movie02:hover .title-movie02 {
-    -webkit-transition: -webkit-transform .5s .25s;
-    transition: -webkit-transform .5s .25s;
-    transition: transform .5s .25s;
-    transition: transform .5s .25s, -webkit-transform .5s .25s;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
