@@ -10876,7 +10876,7 @@ function _interopRequireDefault(obj) {
       if (flag) {
         setTimeout(function () {
           target.classList.add('is-active');
-        }, 6500);
+        }, 6850);
       } else {
         setTimeout(function () {
           target.classList.add('is-active');

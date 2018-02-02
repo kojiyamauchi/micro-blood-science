@@ -80,7 +80,7 @@ jQuery($ => {
       if(flag){
         setTimeout(() => {
           target.classList.add('is-active')
-        }, 6500)
+        }, 6850)
       } else {
         setTimeout(() => {
           target.classList.add('is-active')
