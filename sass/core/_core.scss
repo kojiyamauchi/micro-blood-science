@@ -426,7 +426,7 @@ Core SCSS.
   width: 100%;
   padding: 0 10px 120px;
   @include tablet {
-    padding: 409px * 0.5 0;
+    padding: 0 0 409px * 0.5 0;
   }
 }
 

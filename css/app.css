@@ -1603,7 +1603,7 @@ Core SCSS.
 
 @media (min-width: 991px) {
   .area-wp {
-    padding: 204.5px 0;
+    padding: 0 0 204.5px 0;
   }
 }
 
