@@ -96,7 +96,8 @@ Animations SCSS.
   transition: all 0.75s 1.5s ease-out;
 }
 
-.movie01-wrapper {
+.movie01-wrapper,
+.movie02-wrapper {
   &[data-emergence=hidden] {
     opacity: 0;
     transform: translateY(10%);

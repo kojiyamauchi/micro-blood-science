@@ -254,26 +254,32 @@ Core SCSS.
   }
 }
 
-.area-movie01 {
+.area-movie {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 100vh;
   padding: 0 10px;
+  @include mobile {
+    height: 150vh;
+  }
   @media (orientation: landscape) {
     height: auto;
     padding: 20px 10px;
   }
   @include tablet {
+    justify-content: center;
     padding: 0;
     @media (orientation: landscape) {
-      height: 100vh;
+      height: 150vh;
     }
   }
 }
 
-.movie01-wrapper {
+.movie01-wrapper,
+.movie02-wrapper {
   position: relative;
   width: 100%;
   @include tablet {
@@ -287,7 +293,6 @@ Core SCSS.
   &:after {
     top: 10px;
     left: 8px;
-    content: "Movie\A\0030\0031";
     font-size: 1rem;
     @include labelFont;
     @include tablet {
@@ -297,19 +302,40 @@ Core SCSS.
     }
   }
 }
+.movie01-wrapper {
+  margin: 0;
+  @media (orientation: landscape) {
+    margin: 0 0 20px 0;
+  }
+  @include tablet {
+    margin: 0 0 160px 0;
+    @media (orientation: landscape) {
+      margin: 0 0 160px 0;
+    }
+  }
+  &:after {
+    content: "Movie\A\0030\0031";
+  }
+}
+.movie02-wrapper {
+  &:after {
+    content: "Movie\A\0030\0032";
+  }
+}
 
-.movie01 {
+.movie01,
+.movie02 {
   display: block;
   width: 100%;
   height: 100%;
   transition: none;
   opacity: 1;
   border-radius: $primaryBorderRadius;
-  background-image: url("../images/movie01.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   box-shadow: $primaryBoxShadow;
+  position: relative;
 
   &:hover {
     transition: none;
@@ -323,6 +349,53 @@ Core SCSS.
     content: " ";
   }
 }
+.movie01 {
+  background-image: url("../images/movie01.png");
+}
+.movie02 {
+  background-image: url("../images/movie02.jpg");
+  overflow: hidden;
+}
+.title-movie02 {
+  width: 100%;
+  background-color: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.25em;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  @include largeMobile {
+    line-height: 1.5em;
+    padding: 20px 0;
+  }
+  @include tablet {
+    transform: translateY(100%);
+    transition: transform 0.5s;
+  }
+
+  span {
+    display: block;
+    font-size: 0.875rem;
+  }
+}
+
+.movie02 {
+  &:hover {
+    .title-movie02 {
+      @include tablet {
+        transform: translateY(0);
+        transition: transform 0.5s 0.25s;
+      }
+    }
+  }
+}
+
 
 .icon-play {
   position: absolute;
@@ -336,7 +409,8 @@ Core SCSS.
   font-weight: bold;
 }
 
-.movie01 {
+.movie01,
+.movie02 {
   &:hover {
     .icon-play {
       transition: opacity 0.5s;

@@ -10968,12 +10968,12 @@ function _interopRequireDefault(obj) {
   // Moive Contents Click Event Default Functions.
   var evtDefault = function evtDefault() {
     var target01 = document.querySelector('.fn-movie01');
-    //const target02 = document.querySelector('.fn-movie02')
+    var target02 = document.querySelector('.fn-movie02');
     var coreFunc = function coreFunc(event) {
       event.preventDefault();
     };
     target01.addEventListener('click', coreFunc, false);
-    //target02.addEventListener('click', coreFunc, false)
+    target02.addEventListener('click', coreFunc, false);
   };
 
   // Mail Validation.
