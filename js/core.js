@@ -11008,6 +11008,7 @@ function _interopRequireDefault(obj) {
     var searchWord = '#completed_mail';
     if (getURL.indexOf(searchWord) > -1) {
       target.classList.add('is-active');
+      window.history.replaceState(null, null, ' ');
       setTimeout(function () {
         target.classList.remove('is-active');
       }, 5000);

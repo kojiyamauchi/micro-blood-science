@@ -212,6 +212,7 @@ jQuery($ => {
     const searchWord = '#completed_mail'
     if(getURL.indexOf(searchWord) > -1) {
       target.classList.add('is-active')
+      window.history.replaceState(null,null,' ')
       setTimeout(() => {
         target.classList.remove('is-active')
       }, 5000)
