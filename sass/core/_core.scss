@@ -356,34 +356,6 @@ Core SCSS.
   background-image: url("../images/movie02.jpg");
   overflow: hidden;
 }
-.title-movie02 {
-  width: 100%;
-  background-color: rgba(0,0,0,0.35);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 1rem;
-  color: #fff;
-  line-height: 1.25em;
-  padding: 10px 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  @include largeMobile {
-    line-height: 1.5em;
-    padding: 20px 0;
-  }
-  @include tablet {
-    transform: translateY(100%);
-    transition: transform 0.5s;
-  }
-
-  span {
-    display: block;
-    font-size: 0.875rem;
-  }
-}
 
 .movie02 {
   &:hover {
@@ -574,19 +546,6 @@ Core SCSS.
   align-items: center;
   flex-direction: column;
   justify-content: center;
-}
-
-.link-telegram {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 0 4px;
-  letter-spacing: 0.04em;
-  border-bottom: solid 2px #555;
-  font-family: "Source Sans Pro",sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .icon-telegram {
@@ -815,17 +774,6 @@ Core SCSS.
   }
 }
 
-.txt-scroll {
-  color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0 0 2px;
-  @include largeMobile {
-    margin: 0 0 4px;
-  }
-}
-
 .icon-angle-up-down-wrapper {
   margin: 2px 0 0;
   animation: animation-angle-up-down 0.75s ease-in-out infinite;
@@ -860,12 +808,4 @@ Core SCSS.
     transform: translateY(0);
     transition: transform 0.5s 1s;
   }
-}
-
-.txt-thanks {
-  font-size: 1rem;
-  font-weight: normal;
-  color: #fff;
-  letter-spacing: 0.04em;
-  text-align: center;
 }

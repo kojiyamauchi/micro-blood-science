@@ -417,10 +417,112 @@ Typography SCSS.
   }
 }
 
+.title-movie02 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  font-size: 1rem;
+  line-height: 1.25em;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .35);
+
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .title-movie02 {
+    padding: 20px 0;
+    line-height: 1.5em;
+  }
+}
+
+@media (min-width: 991px) {
+  .title-movie02 {
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+
+.title-movie02 span {
+  display: block;
+  font-size: .875rem;
+}
+
+.link-telegram {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 4px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  letter-spacing: .04em;
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: solid 2px #555;
+
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: center;
+}
+
 .link-corp {
   letter-spacing: .05em;
   font-size: 1rem;
   line-height: 1em;
+}
+
+.txt-scroll {
+  margin: 0 0 2px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .txt-scroll {
+    margin: 0 0 4px;
+  }
+}
+
+.txt-thanks {
+  text-align: center;
+  letter-spacing: .04em;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #fff;
 }
 
 /*==============================================================================
@@ -1499,59 +1601,6 @@ Core SCSS.
   background-image: url("../images/movie02.jpg");
 }
 
-.title-movie02 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 10px 0;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  font-size: 1rem;
-  line-height: 1.25em;
-  color: #fff;
-  background-color: rgba(0, 0, 0, .35);
-
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  .title-movie02 {
-    padding: 20px 0;
-    line-height: 1.5em;
-  }
-}
-
-@media (min-width: 991px) {
-  .title-movie02 {
-    -webkit-transition: -webkit-transform .5s;
-    transition: -webkit-transform .5s;
-    transition: transform .5s;
-    transition: transform .5s, -webkit-transform .5s;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-}
-
-.title-movie02 span {
-  display: block;
-  font-size: .875rem;
-}
-
 @media (min-width: 991px) {
   .movie02:hover .title-movie02 {
     -webkit-transition: -webkit-transform .5s;
@@ -1839,33 +1888,6 @@ Core SCSS.
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
-
-  -webkit-box-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: center;
-}
-
-.link-telegram {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 4px;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  letter-spacing: .04em;
-  font-family: "Source Sans Pro",sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-bottom: solid 2px #555;
 
   -webkit-box-align: center;
   -webkit-box-orient: vertical;
@@ -2271,20 +2293,6 @@ Core SCSS.
   }
 }
 
-.txt-scroll {
-  margin: 0 0 2px;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-@media (min-width: 768px) {
-  .txt-scroll {
-    margin: 0 0 4px;
-  }
-}
-
 .icon-angle-up-down-wrapper {
   margin: 2px 0 0;
   -webkit-animation: animation-angle-up-down .75s ease-in-out infinite;
@@ -2340,14 +2348,6 @@ Core SCSS.
   -webkit-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
-}
-
-.txt-thanks {
-  text-align: center;
-  letter-spacing: .04em;
-  font-size: 1rem;
-  font-weight: normal;
-  color: #fff;
 }
 
 /*# sourceMappingURL=../maps/app.css.map */
