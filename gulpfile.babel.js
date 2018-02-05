@@ -40,7 +40,7 @@ const postCssPlugIn = [autoprefixer({ browsers: autoprefixerSet }), flexbug] // 
 const addImgDir = ('addImages/*') // added image fold,
 const dstImgDir = ('images/*') // compression image fold,
 const upLoadFileWrite = (['*.html', 'css/app.min.css', 'js/core.min.js', 'images/**/*', 'mail/*']) // upload file.
-const notUpLoadFileWrite = ([]) // don't upload file.
+const notUpLoadFileWrite = (['!google6622acf79a146759.html']) // don't upload file.
 const upLoadFile = upLoadFileWrite.concat(notUpLoadFileWrite) // ftp upload files.
 
 // webpack.
