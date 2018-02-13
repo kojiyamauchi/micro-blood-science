@@ -977,7 +977,7 @@ Animations SCSS.
   opacity: 1;
 }
 
-.wp-wrapper[data-emergence=hidden] {
+.info-wrapper[data-emergence=hidden] {
   -webkit-transition: all .75s linear;
   transition: all .75s linear;
   -webkit-transform: translateY(10%);
@@ -985,7 +985,7 @@ Animations SCSS.
   opacity: 0;
 }
 
-.wp-wrapper[data-emergence=visible] {
+.info-wrapper[data-emergence=visible] {
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
   -webkit-transform: translateY(0%);
@@ -1632,7 +1632,7 @@ Core SCSS.
   opacity: .6;
 }
 
-.area-wp {
+.area-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1651,12 +1651,12 @@ Core SCSS.
 }
 
 @media (min-width: 991px) {
-  .area-wp {
+  .area-info {
     padding: 0 0 204.5px 0;
   }
 }
 
-.wp-wrapper {
+.info-wrapper {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1686,13 +1686,13 @@ Core SCSS.
 }
 
 @media (min-width: 991px) {
-  .wp-wrapper {
+  .info-wrapper {
     max-width: 653px;
     padding: 80px 42.5px;
   }
 }
 
-.wp-wrapper:before {
+.info-wrapper:before {
   position: absolute;
   z-index: 100;
   top: 0;
@@ -1707,17 +1707,17 @@ Core SCSS.
 }
 
 @media (min-width: 991px) {
-  .wp-wrapper:before {
+  .info-wrapper:before {
     border-width: 110px 110px 0 0;
   }
 }
 
-.wp-wrapper:after {
+.info-wrapper:after {
   position: absolute;
   z-index: 101;
   top: 13px;
   left: 10px;
-  content: "WP";
+  content: "Info";
   white-space: pre;
   letter-spacing: 0;
   font-family: "Source Sans Pro",sans-serif;
@@ -1729,10 +1729,10 @@ Core SCSS.
 }
 
 @media (min-width: 991px) {
-  .wp-wrapper:after {
-    top: 23px;
-    left: 20px;
-    font-size: 1.5rem;
+  .info-wrapper:after {
+    top: 20px;
+    left: 16px;
+    font-size: 1.375rem;
   }
 }
 
@@ -1787,12 +1787,12 @@ Core SCSS.
   font-size: 5.375rem;
 }
 
-.txt-wp {
+.txt-info {
   margin: 0 0 17.5px 0;
 }
 
 @media (min-width: 991px) {
-  .txt-wp {
+  .txt-info {
     margin: 0 0 28.5px 0;
   }
 }
