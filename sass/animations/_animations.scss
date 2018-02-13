@@ -35,15 +35,15 @@ Animations SCSS.
 }
 @keyframes animation-angle-left {
   0% {
-    transform: translateX(-5%);
-  }
-
-  50% {
     transform: translateX(5%);
   }
 
+  50% {
+    transform: translateX(15%);
+  }
+
   100% {
-    transform: translateX(-5%);
+    transform: translateX(5%);
   }
 }
 /*----------------------------

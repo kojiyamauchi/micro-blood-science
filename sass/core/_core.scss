@@ -458,7 +458,7 @@ Core SCSS.
 
   .icon-angle-right {
     font-size: 3.3125rem;
-    transform: translateX(-5%);
+    transform: translateX(5%);
     animation: animation-angle-left 0.75s linear infinite;
     @include tablet {
       font-size: 4.3125rem;
