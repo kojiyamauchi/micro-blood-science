@@ -10876,11 +10876,11 @@ function _interopRequireDefault(obj) {
       if (flag) {
         setTimeout(function () {
           target.classList.add('is-active');
-        }, 6850);
+        }, 5250);
       } else {
         setTimeout(function () {
           target.classList.add('is-active');
-        }, 10000);
+        }, 8100);
       }
     };
 
