@@ -2031,22 +2031,26 @@ Core SCSS.
   font-size: 5.375rem;
 }
 
-.signs .mdl-progress-wrapper {
-  width: 30%;
+.mdl-spinner {
+  width: 37.5px;
+  height: 37.5px;
 }
 
-@media (min-width: 991px) {
-  .signs .mdl-progress-wrapper {
-    width: 34%;
+@media (min-width: 768px) {
+  .mdl-spinner {
+    width: 45px;
+    height: 45px;
   }
 }
 
-.signs .mdl-progress {
-  height: 5px;
+.mdl-spinner__circle {
+  border-width: 6px;
 }
 
-.signs .mdl-progress.mdl-progress__indeterminate > .bar1 {
-  background-color: rgba(255, 131, 173, .8);
+@media (min-width: 768px) {
+  .mdl-spinner__circle {
+    border-width: 7px;
+  }
 }
 
 .member-wrapper {
