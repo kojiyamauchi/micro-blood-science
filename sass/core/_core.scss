@@ -653,8 +653,11 @@ Core SCSS.
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 75%;
+  width: 100%;
   margin: 0 0 40px * 0.5 0;
+  @include smallMobile {
+    width: 75%;
+  }
   @include tablet {
     width: 653px * 0.5;
     margin: 0 0 57px * 0.5 0;

@@ -2131,7 +2131,7 @@ Core SCSS.
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 75%;
+  width: 100%;
   margin: 0 0 20px 0;
   -webkit-justify-content: space-between;
   justify-content: space-between;
@@ -2142,6 +2142,12 @@ Core SCSS.
 
   -webkit-box-align: center;
   -webkit-box-pack: justify;
+}
+
+@media (min-width: 325px) {
+  .signs {
+    width: 75%;
+  }
 }
 
 @media (min-width: 991px) {
