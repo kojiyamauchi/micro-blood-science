@@ -255,6 +255,79 @@ Core SCSS.
   }
 }
 
+.area-news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 120px 10px 0;
+  @include tablet {
+    padding: 409px * 0.5 0 0;
+  }
+}
+
+.news-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 120px * 0.5 85px * 0.5;
+  text-align: center;
+  border-radius: $primaryBorderRadius;
+  background-color: rgba(255,255,255,.75);
+  box-shadow: $primaryBoxShadow;
+  @include tablet {
+    max-width: 653px;
+  }
+
+  &:before {
+    @include primaryLabel($primaryLabelColor);
+  }
+
+  &:after {
+    top: 10px;
+    left: 10px;
+    content: "News";
+    font-size: 1.125rem;
+    @include labelFont;
+    @include tablet {
+      top: 18px;
+      left: 16px;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 24px;
+
+  &:last-of-type {
+    margin: 0;
+  }
+  @include largeMobile {
+    width: 90%;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 0 14px;
+  }
+}
+
+.txt-date {
+  margin: 0 0 6px;
+  @include largeMobile {
+    margin: 0 2em 0 0;
+  }
+}
+
+.txt-news {}
+
 .area-movie {
   display: flex;
   flex-direction: column;
@@ -615,8 +688,8 @@ Core SCSS.
   .icon-info {
     font-size: 5.375rem;
   }
-
 }
+
 .mdl-spinner {
   width: 37.5px;
   height: 37.5px;
@@ -625,6 +698,7 @@ Core SCSS.
     height: 45px;
   }
 }
+
 .mdl-spinner__circle {
   border-width: 6px;
   @include largeMobile {

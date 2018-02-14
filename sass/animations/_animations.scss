@@ -96,23 +96,11 @@ Animations SCSS.
   transition: all 0.75s 1.5s ease-out;
 }
 
+.info-wrapper,
 .movie01-wrapper,
-.movie02-wrapper {
-  &[data-emergence=hidden] {
-    opacity: 0;
-    transform: translateY(10%);
-    transition: all 0.75s linear;
-  }
-
-  &[data-emergence=visible] {
-    opacity: 1;
-    transform: translateY(0%);
-    transition: all 1s ease-out;
-  }
-}
-
-.wp-wrapper,
-.info-wrapper {
+.movie02-wrapper,
+.news-wrapper,
+.wp-wrapper {
   &[data-emergence=hidden] {
     opacity: 0;
     transform: translateY(10%);
