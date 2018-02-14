@@ -991,7 +991,7 @@ Animations SCSS.
   opacity: 1;
 }
 
-.info-wrapper[data-emergence=hidden] {
+.wp-wrapper[data-emergence=hidden] , .info-wrapper[data-emergence=hidden] {
   -webkit-transition: all .75s linear;
   transition: all .75s linear;
   -webkit-transform: translateY(10%);
@@ -999,7 +999,7 @@ Animations SCSS.
   opacity: 0;
 }
 
-.info-wrapper[data-emergence=visible] {
+.wp-wrapper[data-emergence=visible] , .info-wrapper[data-emergence=visible] {
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
   -webkit-transform: translateY(0%);
