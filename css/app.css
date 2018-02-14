@@ -503,6 +503,20 @@ Typography SCSS.
   line-height: 1em;
 }
 
+.txt-download {
+  letter-spacing: .2em;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.txt-submit {
+  letter-spacing: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
 .txt-scroll {
   margin: 0 0 2px;
   font-family: "Source Sans Pro", sans-serif;
@@ -1539,19 +1553,19 @@ Core SCSS.
 
 @media (orientation: landscape) {
   .movie01-wrapper {
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
   }
 }
 
 @media (min-width: 991px) {
   .movie01-wrapper {
-    margin: 0 0 160px 0;
+    margin: 0 0 160px;
   }
 }
 
 @media (min-width: 991px) and (orientation: landscape) {
   .movie01-wrapper {
-    margin: 0 0 160px 0;
+    margin: 0 0 160px;
   }
 }
 
@@ -1630,6 +1644,110 @@ Core SCSS.
   -webkit-transition: opacity .5s;
   transition: opacity .5s;
   opacity: .6;
+}
+
+.area-wp {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0 10px 120px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
+@media (min-width: 991px) {
+  .area-wp {
+    padding: 0 0 204.5px 0;
+  }
+}
+
+.wp-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 60px 42.5px 80px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, .75);
+  -webkit-box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
+  box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
+
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: center;
+}
+
+@media (min-width: 991px) {
+  .wp-wrapper {
+    max-width: 653px;
+    padding: 80px 42.5px;
+  }
+}
+
+.wp-wrapper:before {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: block;
+  content: " ";
+  width: 0;
+  height: 0;
+  border-width: 75px 75px 0 0;
+  border-style: solid;
+  border-color: rgba(251, 159, 191, .8) transparent transparent transparent;
+}
+
+@media (min-width: 991px) {
+  .wp-wrapper:before {
+    border-width: 110px 110px 0 0;
+  }
+}
+
+.wp-wrapper:after {
+  position: absolute;
+  z-index: 101;
+  top: 13px;
+  left: 10px;
+  content: "WP";
+  white-space: pre;
+  letter-spacing: 0;
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1em;
+  color: #fff;
+  text-shadow: none;
+}
+
+@media (min-width: 991px) {
+  .wp-wrapper:after {
+    top: 23px;
+    left: 20px;
+    font-size: 1.5rem;
+  }
 }
 
 .area-info {
@@ -1736,55 +1854,8 @@ Core SCSS.
   }
 }
 
-.signs {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 75%;
-  margin: 0 0 20px 0;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-
-  -webkit-box-align: center;
-  -webkit-box-pack: justify;
-}
-
-@media (min-width: 991px) {
-  .signs {
-    width: 326.5px;
-    margin: 0 0 28.5px 0;
-  }
-}
-
-.signs [class*="icon-"] {
-  color: rgba(255, 131, 173, .8);
-}
-
-.signs .icon-mail {
-  font-size: 5.5rem;
-}
-
-.signs .icon-angle-right {
-  -webkit-transform: translateX(5%);
-  transform: translateX(5%);
-  -webkit-animation: animation-angle-left .75s linear infinite;
-  animation: animation-angle-left .75s linear infinite;
-  font-size: 3.3125rem;
-}
-
-@media (min-width: 991px) {
-  .signs .icon-angle-right {
-    font-size: 4.3125rem;
-  }
-}
-
-.signs .icon-info {
-  font-size: 5.375rem;
+.txt-wp {
+  margin: 0 0 38.5px 0;
 }
 
 .txt-info {
@@ -1856,17 +1927,13 @@ Core SCSS.
   width: 100%;
 }
 
-.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label , .mdl-textfield--floating-label.is-dirty .mdl-textfield__label , .mdl-textfield--floating-label.is-focused .mdl-textfield__label , .mdl-textfield--floating-label.is-disabled02 .mdl-textfield__label {
+.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label , .mdl-textfield--floating-label.is-dirty .mdl-textfield__label , .mdl-textfield--floating-label.is-disabled02 .mdl-textfield__label , .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
   color: rgba(255, 131, 173, .8);
 }
 
 .button-primary {
   width: 100%;
   height: 51px;
-  letter-spacing: 0;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
   background-color: rgba(255, 131, 173, .8) !important;
 }
 
@@ -1903,6 +1970,83 @@ Core SCSS.
   font-size: 5.5rem;
   font-weight: normal;
   color: rgba(0, 136, 204, .8);
+}
+
+.signs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  margin: 0 0 20px 0;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+}
+
+@media (min-width: 991px) {
+  .signs {
+    width: 326.5px;
+    margin: 0 0 28.5px 0;
+  }
+}
+
+.signs [class*="icon-"] {
+  color: rgba(255, 131, 173, .8);
+}
+
+.signs .icon-content {
+  font-size: 5.25rem;
+}
+
+.signs .icon-download {
+  font-size: 5.5rem;
+}
+
+.signs .icon-mail {
+  font-size: 5.5rem;
+}
+
+.signs .icon-angle-right {
+  -webkit-transform: translateX(5%);
+  transform: translateX(5%);
+  -webkit-animation: animation-angle-left .75s linear infinite;
+  animation: animation-angle-left .75s linear infinite;
+  font-size: 3.3125rem;
+}
+
+@media (min-width: 991px) {
+  .signs .icon-angle-right {
+    font-size: 4.3125rem;
+  }
+}
+
+.signs .icon-info {
+  font-size: 5.375rem;
+}
+
+.signs .mdl-progress-wrapper {
+  width: 30%;
+}
+
+@media (min-width: 991px) {
+  .signs .mdl-progress-wrapper {
+    width: 34%;
+  }
+}
+
+.signs .mdl-progress {
+  height: 5px;
+}
+
+.signs .mdl-progress.mdl-progress__indeterminate > .bar1 {
+  background-color: rgba(255, 131, 173, .8);
 }
 
 .member-wrapper {

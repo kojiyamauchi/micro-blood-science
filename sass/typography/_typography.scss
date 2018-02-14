@@ -206,6 +206,20 @@ Typography SCSS.
   line-height: 1em;
 }
 
+.txt-download {
+  letter-spacing: 0.2em;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.txt-submit {
+  letter-spacing: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 .txt-scroll {
   color: #fff;
   font-family: 'Source Sans Pro', sans-serif;

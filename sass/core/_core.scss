@@ -162,6 +162,7 @@ Core SCSS.
 .contents-in {
   width: 100vw;
 }
+
 .area-about,
 .area-member {
   width: 100%;
@@ -302,21 +303,24 @@ Core SCSS.
     }
   }
 }
+
 .movie01-wrapper {
   margin: 0;
   @media (orientation: landscape) {
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
   }
   @include tablet {
-    margin: 0 0 160px 0;
+    margin: 0 0 160px;
     @media (orientation: landscape) {
-      margin: 0 0 160px 0;
+      margin: 0 0 160px;
     }
   }
+
   &:after {
     content: "Movie\A\0030\0031";
   }
 }
+
 .movie02-wrapper {
   &:after {
     content: "Movie\A\0030\0032";
@@ -349,9 +353,11 @@ Core SCSS.
     content: " ";
   }
 }
+
 .movie01 {
   background-image: url("../images/movie01.png");
 }
+
 .movie02 {
   background-image: url("../images/movie02.jpg");
   overflow: hidden;
@@ -367,7 +373,6 @@ Core SCSS.
     }
   }
 }
-
 
 .icon-play {
   position: absolute;
@@ -387,6 +392,52 @@ Core SCSS.
     .icon-play {
       transition: opacity 0.5s;
       opacity: 0.6;
+    }
+  }
+}
+
+.area-wp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 10px 120px;
+  @include tablet {
+    padding: 0 0 409px * 0.5 0;
+  }
+}
+
+.wp-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 120px * 0.5 85px * 0.5 160px * 0.5;
+  text-align: center;
+  border-radius: $primaryBorderRadius;
+  background-color: rgba(255,255,255,.75);
+  box-shadow: $primaryBoxShadow;
+  @include tablet {
+    max-width: 653px;
+    padding: 160px * 0.5 85px * 0.5;
+  }
+
+  &:before {
+    @include primaryLabel($primaryLabelColor);
+  }
+
+  &:after {
+    top: 13px;
+    left: 10px;
+    content: "WP";
+    font-size: 1.25rem;
+    @include labelFont;
+    @include tablet {
+      top: 23px;
+      left: 20px;
+      font-size: 1.5rem;
     }
   }
 }
@@ -437,37 +488,8 @@ Core SCSS.
   }
 }
 
-.signs {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 75%;
-  margin: 0 0 40px * 0.5 0;
-  @include tablet {
-    width: 653px * 0.5;
-    margin: 0 0 57px * 0.5 0;
-  }
-
-  [class*="icon-"] {
-    color: $primaryPartscolor;
-  }
-
-  .icon-mail {
-    font-size: 5.5rem;
-  }
-
-  .icon-angle-right {
-    font-size: 3.3125rem;
-    transform: translateX(5%);
-    animation: animation-angle-left 0.75s linear infinite;
-    @include tablet {
-      font-size: 4.3125rem;
-    }
-  }
-
-  .icon-info {
-    font-size: 5.375rem;
-  }
+.txt-wp {
+  margin: 0 0 77px * 0.5 0;
 }
 
 .txt-info {
@@ -511,6 +533,7 @@ Core SCSS.
       background-color: rgba(255,131,173,1);
     }
   }
+
   &.is-disabled02 {
     .mdl-textfield__label {
       &:after {
@@ -521,21 +544,18 @@ Core SCSS.
     }
   }
 }
+
 .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label,
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
-.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
-.mdl-textfield--floating-label.is-disabled02 .mdl-textfield__label {
+.mdl-textfield--floating-label.is-disabled02 .mdl-textfield__label,
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label {
   color: $primaryPartscolor;
 }
 
 .button-primary {
   width: 100%;
   height: 102px * 0.5;
-  letter-spacing: 0;
-  color: #fff;
   background-color: $primaryPartscolor !important;
-  font-size: 1rem;
-  font-weight: bold;
   @include tablet {
     max-width: 653px * 0.5;
   }
@@ -554,6 +574,62 @@ Core SCSS.
   color: rgba(0,136,204,.8);
   font-size: 5.5rem;
   font-weight: normal;
+}
+
+.signs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 0 40px * 0.5 0;
+  @include tablet {
+    width: 653px * 0.5;
+    margin: 0 0 57px * 0.5 0;
+  }
+
+  [class*="icon-"] {
+    color: $primaryPartscolor;
+  }
+
+  .icon-content {
+    font-size: 5.25rem;
+  }
+
+  .icon-download {
+    font-size: 5.5rem;
+  }
+
+  .icon-mail {
+    font-size: 5.5rem;
+  }
+
+  .icon-angle-right {
+    font-size: 3.3125rem;
+    transform: translateX(5%);
+    animation: animation-angle-left 0.75s linear infinite;
+    @include tablet {
+      font-size: 4.3125rem;
+    }
+  }
+
+  .icon-info {
+    font-size: 5.375rem;
+  }
+
+  .mdl-progress-wrapper {
+    width: 30%;
+    @include tablet {
+      width: 34%;
+    }
+  }
+
+  .mdl-progress {
+    height: 5px;
+  }
+
+  .mdl-progress.mdl-progress__indeterminate > .bar1 {
+    background-color: $primaryPartscolor;
+  }
 }
 
 .member-wrapper {
