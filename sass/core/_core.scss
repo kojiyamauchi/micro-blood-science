@@ -262,7 +262,6 @@ Core SCSS.
   align-items: center;
   justify-content: center;
   width: 100%;
-  @include tablet {}
 }
 
 .news-wrapper {
@@ -333,14 +332,8 @@ Core SCSS.
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   width: 100%;
-  @include mobile {}
-  @media (orientation: landscape) {}
-  @include tablet {
-    justify-content: center;
-    @media (orientation: landscape) {}
-  }
 }
 
 .movie01-wrapper,
@@ -371,11 +364,6 @@ Core SCSS.
 }
 
 .movie01-wrapper {
-  @media (orientation: landscape) {}
-  @include tablet {
-    @media (orientation: landscape) {}
-  }
-
   &:after {
     content: "Movie\A\0030\0031";
   }
@@ -461,7 +449,6 @@ Core SCSS.
   align-items: center;
   justify-content: center;
   width: 100%;
-  @include tablet {}
 }
 
 .wp-wrapper {
@@ -506,7 +493,6 @@ Core SCSS.
   align-items: center;
   justify-content: center;
   width: 100%;
-  @include tablet {}
 }
 
 .info-wrapper {
