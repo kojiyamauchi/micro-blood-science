@@ -504,16 +504,24 @@ Typography SCSS.
 }
 
 .txt-date {
+  text-align: left;
   letter-spacing: .04em;
   font-size: 1rem;
   font-style: italic;
 }
 
 .txt-news {
+  text-align: center;
   text-decoration: underline;
   letter-spacing: .04em;
   font-size: 1rem;
   font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .txt-news {
+    text-align: left;
+  }
 }
 
 .txt-download {
@@ -1581,12 +1589,28 @@ Core SCSS.
 }
 
 .txt-date {
+  width: auto;
   margin: 0 0 6px;
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
   .txt-date {
-    margin: 0 2em 0 0;
+    width: 134px;
+    margin: 0 32px 0 0;
+  }
+}
+
+.txt-news {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .txt-news {
+    overflow: hidden;
+    width: calc(100% - 134px - 32px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
