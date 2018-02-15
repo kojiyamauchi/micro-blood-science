@@ -250,8 +250,10 @@ Core SCSS.
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 120px 10px;
   @include tablet {
     background-attachment: fixed;
+    padding: 300px 0;
   }
 }
 
@@ -260,10 +262,7 @@ Core SCSS.
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 120px 10px 0;
-  @include tablet {
-    padding: 409px * 0.5 0 0;
-  }
+  @include tablet {}
 }
 
 .news-wrapper {
@@ -273,6 +272,7 @@ Core SCSS.
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  margin: 0 0 80px;
   padding: 120px * 0.5 85px * 0.5;
   text-align: center;
   border-radius: $primaryBorderRadius;
@@ -280,6 +280,7 @@ Core SCSS.
   box-shadow: $primaryBoxShadow;
   @include tablet {
     max-width: 653px;
+    margin: 0 0 200px;
   }
 
   &:before {
@@ -334,21 +335,11 @@ Core SCSS.
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 100vh;
-  padding: 0 10px;
-  @include mobile {
-    height: 150vh;
-  }
-  @media (orientation: landscape) {
-    height: auto;
-    padding: 20px 10px;
-  }
+  @include mobile {}
+  @media (orientation: landscape) {}
   @include tablet {
     justify-content: center;
-    padding: 0;
-    @media (orientation: landscape) {
-      height: 150vh;
-    }
+    @media (orientation: landscape) {}
   }
 }
 
@@ -356,8 +347,10 @@ Core SCSS.
 .movie02-wrapper {
   position: relative;
   width: 100%;
+  margin: 0 0 80px;
   @include tablet {
     max-width: 653px;
+    margin: 0 0 200px;
   }
 
   &:before {
@@ -378,15 +371,9 @@ Core SCSS.
 }
 
 .movie01-wrapper {
-  margin: 0;
-  @media (orientation: landscape) {
-    margin: 0 0 20px;
-  }
+  @media (orientation: landscape) {}
   @include tablet {
-    margin: 0 0 160px;
-    @media (orientation: landscape) {
-      margin: 0 0 160px;
-    }
+    @media (orientation: landscape) {}
   }
 
   &:after {
@@ -474,10 +461,7 @@ Core SCSS.
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 10px 120px;
-  @include tablet {
-    padding: 0 0 409px * 0.5 0;
-  }
+  @include tablet {}
 }
 
 .wp-wrapper {
@@ -487,6 +471,7 @@ Core SCSS.
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  margin: 0 0 80px;
   padding: 120px * 0.5 85px * 0.5 160px * 0.5;
   text-align: center;
   border-radius: $primaryBorderRadius;
@@ -494,6 +479,7 @@ Core SCSS.
   box-shadow: $primaryBoxShadow;
   @include tablet {
     max-width: 653px;
+    margin: 0 0 200px;
     padding: 160px * 0.5 85px * 0.5;
   }
 
@@ -520,10 +506,7 @@ Core SCSS.
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 10px 120px;
-  @include tablet {
-    padding: 0 0 409px * 0.5 0;
-  }
+  @include tablet {}
 }
 
 .info-wrapper {

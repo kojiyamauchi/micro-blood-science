@@ -1424,6 +1424,7 @@ Core SCSS.
 
 .area-project {
   width: 100%;
+  padding: 120px 10px;
   background-image: url("../images/bg02.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1432,6 +1433,7 @@ Core SCSS.
 
 @media (min-width: 991px) {
   .area-project {
+    padding: 300px 0;
     background-attachment: fixed;
   }
 }
@@ -1442,7 +1444,6 @@ Core SCSS.
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 120px 10px 0;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-align-items: center;
@@ -1454,12 +1455,6 @@ Core SCSS.
   -webkit-box-pack: center;
 }
 
-@media (min-width: 991px) {
-  .area-news {
-    padding: 204.5px 0 0;
-  }
-}
-
 .news-wrapper {
   position: relative;
   display: -webkit-box;
@@ -1468,6 +1463,7 @@ Core SCSS.
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 0 0 80px;
   padding: 60px 42.5px;
   -webkit-justify-content: center;
   justify-content: center;
@@ -1492,6 +1488,7 @@ Core SCSS.
 @media (min-width: 991px) {
   .news-wrapper {
     max-width: 653px;
+    margin: 0 0 200px;
   }
 }
 
@@ -1600,8 +1597,6 @@ Core SCSS.
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
-  padding: 0 10px;
   -webkit-justify-content: space-evenly;
   justify-content: space-evenly;
   -webkit-align-items: center;
@@ -1617,22 +1612,8 @@ Core SCSS.
   -webkit-box-pack: space-evenly;
 }
 
-@media (min-width: 480px) {
-  .area-movie {
-    height: 150vh;
-  }
-}
-
-@media (orientation: landscape) {
-  .area-movie {
-    height: auto;
-    padding: 20px 10px;
-  }
-}
-
 @media (min-width: 991px) {
   .area-movie {
-    padding: 0;
     -webkit-justify-content: center;
     justify-content: center;
     -ms-flex-pack: center;
@@ -1641,20 +1622,16 @@ Core SCSS.
   }
 }
 
-@media (min-width: 991px) and (orientation: landscape) {
-  .area-movie {
-    height: 150vh;
-  }
-}
-
 .movie01-wrapper , .movie02-wrapper {
   position: relative;
   width: 100%;
+  margin: 0 0 80px;
 }
 
 @media (min-width: 991px) {
   .movie01-wrapper , .movie02-wrapper {
     max-width: 653px;
+    margin: 0 0 200px;
   }
 }
 
@@ -1698,28 +1675,6 @@ Core SCSS.
     top: 16px;
     left: 12px;
     font-size: 1.125rem;
-  }
-}
-
-.movie01-wrapper {
-  margin: 0;
-}
-
-@media (orientation: landscape) {
-  .movie01-wrapper {
-    margin: 0 0 20px;
-  }
-}
-
-@media (min-width: 991px) {
-  .movie01-wrapper {
-    margin: 0 0 160px;
-  }
-}
-
-@media (min-width: 991px) and (orientation: landscape) {
-  .movie01-wrapper {
-    margin: 0 0 160px;
   }
 }
 
@@ -1806,7 +1761,6 @@ Core SCSS.
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 0 10px 120px;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-align-items: center;
@@ -1818,12 +1772,6 @@ Core SCSS.
   -webkit-box-pack: center;
 }
 
-@media (min-width: 991px) {
-  .area-wp {
-    padding: 0 0 204.5px 0;
-  }
-}
-
 .wp-wrapper {
   position: relative;
   display: -webkit-box;
@@ -1832,6 +1780,7 @@ Core SCSS.
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 0 0 80px;
   padding: 60px 42.5px 80px;
   -webkit-justify-content: center;
   justify-content: center;
@@ -1856,6 +1805,7 @@ Core SCSS.
 @media (min-width: 991px) {
   .wp-wrapper {
     max-width: 653px;
+    margin: 0 0 200px;
     padding: 80px 42.5px;
   }
 }
@@ -1910,7 +1860,6 @@ Core SCSS.
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 0 10px 120px;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-align-items: center;
@@ -1920,12 +1869,6 @@ Core SCSS.
 
   -webkit-box-align: center;
   -webkit-box-pack: center;
-}
-
-@media (min-width: 991px) {
-  .area-info {
-    padding: 0 0 204.5px 0;
-  }
 }
 
 .info-wrapper {
