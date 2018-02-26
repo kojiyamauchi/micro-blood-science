@@ -10787,7 +10787,6 @@ function _interopRequireDefault(obj) {
 }
 
 (0, _jQuery2.default)(function ($) {
-
   // emergence.js init.
   _emergence2.default.init({ reset: false });
 
@@ -10948,7 +10947,7 @@ function _interopRequireDefault(obj) {
           scrollTop: 0
         }, 'swing');
       }
-    }, false);
+    });
   };
 
   // Anchor Link Scroll Functions.

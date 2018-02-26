@@ -39,7 +39,7 @@ const autoprefixerSet = ['last 2 version', 'ie >= 10', 'iOS >= 8', 'Android >= 4
 const postCssPlugIn = [autoprefixer({ browsers: autoprefixerSet }), flexbug] // PostCSS plugin.
 const addImgDir = ('addImages/*') // added image fold,
 const dstImgDir = ('images/*') // compression image fold,
-const upLoadFileWrite = (['*.html', 'css/app.min.css', 'js/core.min.js', 'images/**/*', 'mail/*']) // upload file.
+const upLoadFileWrite = (['*.html', 'css/app.min.css', 'js/core.min.js', 'images/**/*', 'mail/*', 'wp/*']) // upload file.
 const notUpLoadFileWrite = (['!google6622acf79a146759.html']) // don't upload file.
 const upLoadFile = upLoadFileWrite.concat(notUpLoadFileWrite) // ftp upload files.
 
@@ -189,8 +189,8 @@ gulp.task('ftpUpLoad', () => {
       base: '.',
       buffer: false
     })
-    .pipe(ftpConnect.newer('/works/micro-blood-science-pre-LP/'))
-    .pipe(ftpConnect.dest('/works/micro-blood-science-pre-LP/'))
+    .pipe(ftpConnect.newer('/works/micro-blood-science-LP/'))
+    .pipe(ftpConnect.dest('/works/micro-blood-science-LP/'))
 })
 
 // gulp default task, terminal command 'gulp'.
