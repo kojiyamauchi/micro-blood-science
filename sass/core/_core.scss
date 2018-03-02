@@ -315,6 +315,7 @@ Core SCSS.
     width: 90%;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: flex-start;
     margin: 0 0 14px;
   }
 }
@@ -333,9 +334,6 @@ Core SCSS.
   width: 100%;
   @include largeMobile {
     width: calc(100% - 134px - 32px);
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 }
 
@@ -670,22 +668,6 @@ Core SCSS.
 
   .icon-info {
     font-size: 5.375rem;
-  }
-}
-
-.mdl-spinner {
-  width: 37.5px;
-  height: 37.5px;
-  @include largeMobile {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-.mdl-spinner__circle {
-  border-width: 6px;
-  @include largeMobile {
-    border-width: 7px;
   }
 }
 

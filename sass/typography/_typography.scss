@@ -217,7 +217,7 @@ Typography SCSS.
   font-size: 1rem;
   font-style: italic;
   letter-spacing: 0.04em;
-  text-decoration: underline;
+  line-height: 1.4em;
   text-align: center;
   @include largeMobile {
     text-align: left;

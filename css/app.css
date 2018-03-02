@@ -512,10 +512,10 @@ Typography SCSS.
 
 .txt-news {
   text-align: center;
-  text-decoration: underline;
   letter-spacing: .04em;
   font-size: 1rem;
   font-style: italic;
+  line-height: 1.4em;
 }
 
 @media (min-width: 768px) {
@@ -1588,6 +1588,9 @@ Core SCSS.
     margin: 0 0 14px;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     -ms-flex-pack: start;
 
     -webkit-box-orient: horizontal;
@@ -1595,6 +1598,7 @@ Core SCSS.
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     -webkit-box-pack: start;
+    -webkit-box-align: start;
   }
 }
 
@@ -1617,10 +1621,7 @@ Core SCSS.
 
 @media (min-width: 768px) {
   .txt-news {
-    overflow: hidden;
     width: calc(100% - 134px - 32px);
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 }
 
@@ -2156,28 +2157,6 @@ Core SCSS.
 
 .signs .icon-info {
   font-size: 5.375rem;
-}
-
-.mdl-spinner {
-  width: 37.5px;
-  height: 37.5px;
-}
-
-@media (min-width: 768px) {
-  .mdl-spinner {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-.mdl-spinner__circle {
-  border-width: 6px;
-}
-
-@media (min-width: 768px) {
-  .mdl-spinner__circle {
-    border-width: 7px;
-  }
 }
 
 .member-wrapper {
