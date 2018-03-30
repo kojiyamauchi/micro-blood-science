@@ -32,6 +32,18 @@ Typography SCSS.
   }
 }
 
+.en {
+  .heading01 {
+    background-image: url("../images/logo01_en.png");
+  }
+}
+
+.cn {
+  .heading01 {
+    background-image: url("../images/logo01_cn.png");
+  }
+}
+
 .heading02-1 {
   text-align: center;
   letter-spacing: 0.1em;
@@ -39,17 +51,42 @@ Typography SCSS.
   text-shadow: 4.66px 5.43px 2.5px rgba(0,0,0,.5);
   font-size: 1.5rem;
   line-height: 1.2em;
-  @include desktop {
-    font-size: 2.875rem;
-  }
-  @include tablet {
-    line-height: 1;
+  @include smallMobile {
+    letter-spacing: 0.3em;
   }
   @include mobile {
     font-size: 2.5rem;
   }
-  @include smallMobile {
-    letter-spacing: 0.2em;
+  @include tablet {
+    line-height: 1;
+  }
+  @include desktop {
+    font-size: 2.875rem;
+  }
+}
+
+.en {
+  .heading02-1 {
+    @include smallMobile {
+      letter-spacing: 0.2em;
+    }
+    @include mobile {
+      font-size: 2.875rem;
+    }
+    @include desktop {
+      font-size: 3.25rem;
+    }
+  }
+}
+
+.cn {
+  .heading02-1 {
+    text-indent: -1em;
+    padding-left: 1em;
+    @include desktop {
+      text-indent: 0;
+      padding-left: 0;
+    }
   }
 }
 
@@ -132,6 +169,7 @@ Typography SCSS.
   text-shadow: 3.06px 2.57px 1px rgba(255,255,255,.8);
   font-size: 1.375rem;
   line-height: 1.5em;
+  white-space: nowrap;
   @include tablet {
     font-size: 1rem;
     line-height: 2.25em;
@@ -143,9 +181,10 @@ Typography SCSS.
   color: rgba(85,85,85,.77);
   font-size: 1.375rem;
   font-weight: bold;
-  line-height: 1.5em;
+  line-height: 1.375em;
+  white-space: nowrap;
   @include largeMobile {
-    line-height: 1.772727272727273em;
+    line-height: 1.5em;
   }
 }
 
@@ -232,9 +271,16 @@ Typography SCSS.
   line-height: 51px;
   opacity: 1;
   transition: none;
+
   &:hover {
     opacity: 1;
     transition: none;
+  }
+}
+
+.cn {
+  .txt-download {
+    letter-spacing: 0;
   }
 }
 
@@ -243,6 +289,11 @@ Typography SCSS.
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
+}
+.en {
+  .txt-submit {
+    letter-spacing: 0.2em;
+  }
 }
 
 .txt-scroll {
