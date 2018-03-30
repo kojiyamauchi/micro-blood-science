@@ -164,6 +164,14 @@ Typography SCSS.
   }
 }
 
+.en {
+  .lead-letters {
+    @include tablet {
+      font-size: 1.125rem;
+    }
+  }
+}
+
 .lead01 {
   letter-spacing: 0.15em;
   text-shadow: 3.06px 2.57px 1px rgba(255,255,255,.8);
@@ -290,6 +298,7 @@ Typography SCSS.
   font-size: 1rem;
   font-weight: bold;
 }
+
 .en {
   .txt-submit {
     letter-spacing: 0.2em;

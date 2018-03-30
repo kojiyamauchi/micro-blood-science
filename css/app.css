@@ -415,6 +415,12 @@ Typography SCSS.
   }
 }
 
+@media (min-width: 991px) {
+  .en .lead-letters {
+    font-size: 1.125rem;
+  }
+}
+
 .lead01 {
   white-space: nowrap;
   letter-spacing: .15em;
@@ -1172,6 +1178,10 @@ Core SCSS.
 
   -webkit-box-align: center;
   -webkit-box-pack: justify;
+}
+
+.anchor-link:hover {
+  cursor: pointer;
 }
 
 .anchor-link .icon-place {
