@@ -298,7 +298,7 @@ Typography SCSS.
 
 @media (min-width: 325px) {
   .en .heading02-1 {
-    letter-spacing: .2em;
+    letter-spacing: .125em;
   }
 }
 
@@ -425,6 +425,10 @@ Typography SCSS.
   .lead-letters {
     line-height: 1.666666666666667em;
   }
+}
+
+.en .lead-letters {
+  letter-spacing: 0;
 }
 
 @media (min-width: 991px) {
