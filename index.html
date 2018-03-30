@@ -35,16 +35,16 @@
     <!-- Core CSS -->
     <link rel="stylesheet" type="text/css" href="css/app.min.css">
   </head>
-  <body>
+  <body class="fn-scroll-top">
     <header class="header">
       <div class="header-inner">
         <h1 class="heading01 u-txt-indent">株式会社マイクロブラッドサイエンス</h1>
         <nav class="anchor-wrapper">
-          <a href="#anchor01" class="anchor-link fn-anchor-link01">
+          <a class="anchor-link fn-anchor fn-anchor-link01" data-anchor="anchor01">
             <span class="icon-place material-icons">person_pin_circle</span>
             micro Blood Scienceについて
           </a>
-          <a href="#anchor02" class="anchor-link fn-anchor-link02">
+          <a class="anchor-link fn-anchor fn-anchor-link02" data-anchor="anchor02">
             <span class="icon-place material-icons">person_pin_circle</span>
             チームについて
           </a>
@@ -71,7 +71,7 @@
       <div class="contents-in">
         <section>
           <div class="area-about fn-area-about">
-            <div class="area-copy" id="anchor01">
+            <div class="area-copy anchor01">
               <div class="copy-wrapper">
                 <p class="txt-copies lead01" data-emergence="hidden">
                   <span class="txt-copy01" data-emergence="hidden">ほんの少しの血液から<br class="u-sp">繋がる命があります。</span>
@@ -100,6 +100,17 @@
 
                   -->
 
+                  <dl class="news-list">
+                    <dt class="txt-date">2018年03月21日</dt>
+                    <dd class="txt-news">健康産業新聞第1640号P12掲載<br>
+                    ”「目薬1滴分｣微量血液検査技術活用<br>
+                    次世代プラットフォーム構築に着手”</dd>
+                  </dl>
+                  <dl class="news-list">
+                    <dt class="txt-date">2018年03月08日</dt>
+                    <dd class="txt-news">医薬経済3/1発行号P70掲載<br>
+                    ”「仮想通貨」ヘルスケア事業に挑む企業”</dd>
+                  </dl>
                   <dl class="news-list">
                     <dt class="txt-date">2018年03月03日</dt>
                     <dd class="txt-news">財界ZAIKAI2/27発行号P74掲載<br>
@@ -178,7 +189,7 @@
                     <form action="mail/mail.php" method="post">
                       <div class="txtfield fn-txtfield mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="fn-mail-val mdl-textfield__input" name="お申し込みメールアドレス" type="text" id="mail">
-                        <label class="fn-form-label mdl-textfield__label" for="mail">Text...</label>
+                        <label class="fn-form-label mdl-textfield__label" for="mail">メールアドレスを入力してください。</label>
                       </div>
                       <button type="submit" class="txt-submit fn-submit button-primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         送&nbsp;&nbsp;&nbsp;&nbsp;信
@@ -197,7 +208,7 @@
           </div>
         </section>
         <section>
-          <div class="area-member fn-area-member" id="anchor02">
+          <div class="area-member fn-area-member anchor02">
             <div class="member-wrapper">
               <h3 class="heading03 txt-heading03">
                 チームメンバー
