@@ -183,6 +183,13 @@ Typography SCSS.
     line-height: 2.25em;
   }
 }
+.en {
+  .lead01 {
+    @include tablet {
+      font-size: 1.125rem;
+    }
+  }
+}
 
 .lead02 {
   letter-spacing: 0.1em;
