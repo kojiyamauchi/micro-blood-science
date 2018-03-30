@@ -3,4 +3,8 @@ node_modules
 .htaccess
 .htpasswd
 mail/mail.php
+mail/mail_cn.php
+mail/mail_en.php
 wp/MBS-Whitepaper-Japanese-VER.01.00.pdf
+wp/MBS-Whitepaper-CN-VER.01.00.pdf
+wp/MBS-Whitepaper-EN-VER.01.00.pdf
