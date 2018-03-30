@@ -285,6 +285,9 @@ Typography SCSS.
   font-style: italic;
   letter-spacing: 0.04em;
   text-align: left;
+  @include tablet {
+    line-height: 1.4em;
+  }
 }
 
 .txt-news {
