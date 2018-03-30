@@ -254,31 +254,75 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var introductions = function introductions() {
+
+  var flagTarget = document.body;
+  var flagEN = flagTarget.classList.contains('en');
+  var flagCN = flagTarget.classList.contains('cn');
+  var flagDevice = flagTarget.classList.contains('sp');
+
   var intro01 = function intro01(callBack) {
     var target = document.querySelectorAll('.fn-txt-heading02-1');
     var tLen = target.length;
+    if (flagEN) {
+      var _loop = function _loop(i) {
+        setTimeout(function () {
+          target[i].classList.add('is-active');
+        }, i * 15);
+      };
 
-    var _loop = function _loop(i) {
-      setTimeout(function () {
-        target[i].classList.add('is-active');
-      }, i * 30);
-    };
+      for (var i = 0; i < tLen; i++) {
+        _loop(i);
+      }
+      callBack();
+    } else if (flagCN) {
+      var _loop2 = function _loop2(i) {
+        setTimeout(function () {
+          target[i].classList.add('is-active');
+        }, i * 30);
+      };
 
-    for (var i = 0; i < tLen; i++) {
-      _loop(i);
+      for (var i = 0; i < tLen; i++) {
+        _loop2(i);
+      }
+      callBack();
+    } else {
+      var _loop3 = function _loop3(i) {
+        setTimeout(function () {
+          target[i].classList.add('is-active');
+        }, i * 30);
+      };
+
+      for (var i = 0; i < tLen; i++) {
+        _loop3(i);
+      }
+      callBack();
     }
-    callBack();
   };
-
   var intro02 = function intro02(callBack) {
     var target = document.querySelectorAll('.fn-letters-inner');
     var tLen = target.length;
-    setTimeout(function () {
-      for (var i = 0; i < tLen; i++) {
-        target[i].classList.add('is-active');
-      }
-      callBack();
-    }, 800);
+    if (flagEN) {
+      setTimeout(function () {
+        for (var i = 0; i < tLen; i++) {
+          target[i].classList.add('is-active');
+        }
+        callBack();
+      }, 525);
+    } else if (flagCN) {
+      setTimeout(function () {
+        for (var i = 0; i < tLen; i++) {
+          target[i].classList.add('is-active');
+        }
+        callBack();
+      }, 700);
+    } else {
+      setTimeout(function () {
+        for (var i = 0; i < tLen; i++) {
+          target[i].classList.add('is-active');
+        }
+        callBack();
+      }, 800);
+    }
   };
 
   var intro03 = function intro03(callBack) {
@@ -286,41 +330,110 @@ var introductions = function introductions() {
     var tLen01 = target01.length;
     var target02 = document.querySelectorAll('.fn-txt-letters-sp');
     var tLen02 = target02.length;
-    setTimeout(function () {
-      var _loop2 = function _loop2(i) {
-        setTimeout(function () {
-          target01[i].classList.add('is-active');
-        }, i * 40);
-      };
+    if (flagEN) {
+      setTimeout(function () {
+        var _loop4 = function _loop4(i) {
+          setTimeout(function () {
+            target01[i].classList.add('is-active');
+          }, i * 30);
+        };
 
-      for (var i = 0; i < tLen01; i++) {
-        _loop2(i);
-      }
+        for (var i = 0; i < tLen01; i++) {
+          _loop4(i);
+        }
 
-      var _loop3 = function _loop3(i) {
-        setTimeout(function () {
-          target02[i].classList.add('is-active');
-        }, i * 40);
-      };
+        var _loop5 = function _loop5(i) {
+          setTimeout(function () {
+            target02[i].classList.add('is-active');
+          }, i * 30);
+        };
 
-      for (var i = 0; i < tLen02; i++) {
-        _loop3(i);
-      }
-      callBack();
-    }, 850);
+        for (var i = 0; i < tLen02; i++) {
+          _loop5(i);
+        }
+        callBack();
+      }, 850);
+    } else if (flagCN) {
+      setTimeout(function () {
+        var _loop6 = function _loop6(i) {
+          setTimeout(function () {
+            target01[i].classList.add('is-active');
+          }, i * 40);
+        };
+
+        for (var i = 0; i < tLen01; i++) {
+          _loop6(i);
+        }
+
+        var _loop7 = function _loop7(i) {
+          setTimeout(function () {
+            target02[i].classList.add('is-active');
+          }, i * 40);
+        };
+
+        for (var i = 0; i < tLen02; i++) {
+          _loop7(i);
+        }
+        callBack();
+      }, 850);
+    } else {
+      setTimeout(function () {
+        var _loop8 = function _loop8(i) {
+          setTimeout(function () {
+            target01[i].classList.add('is-active');
+          }, i * 40);
+        };
+
+        for (var i = 0; i < tLen01; i++) {
+          _loop8(i);
+        }
+
+        var _loop9 = function _loop9(i) {
+          setTimeout(function () {
+            target02[i].classList.add('is-active');
+          }, i * 40);
+        };
+
+        for (var i = 0; i < tLen02; i++) {
+          _loop9(i);
+        }
+        callBack();
+      }, 850);
+    }
   };
 
   var intro04 = function intro04() {
-    var flag = document.body.classList.contains('sp');
     var target = document.querySelector('.fn-button-floating');
-    if (flag) {
-      setTimeout(function () {
-        target.classList.add('is-active');
-      }, 5250);
+    if (flagEN) {
+      if (flagDevice) {
+        setTimeout(function () {
+          target.classList.add('is-active');
+        }, 5250);
+      } else {
+        setTimeout(function () {
+          target.classList.add('is-active');
+        }, 13500);
+      }
+    } else if (flagCN) {
+      if (flagDevice) {
+        setTimeout(function () {
+          target.classList.add('is-active');
+        }, 5250);
+      } else {
+        setTimeout(function () {
+          target.classList.add('is-active');
+        }, 6125);
+      }
     } else {
-      setTimeout(function () {
-        target.classList.add('is-active');
-      }, 8100);
+      if (flagDevice) {
+        setTimeout(function () {
+          target.classList.add('is-active');
+        }, 5250);
+      } else {
+        setTimeout(function () {
+          target.classList.add('is-active');
+        }, 8100);
+      }
     }
   };
 
