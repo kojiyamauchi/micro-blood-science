@@ -401,6 +401,18 @@ Typography SCSS.
   line-height: 1.75em;
 }
 
+@media (min-width: 991px) {
+  .en .heading04 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .en .heading04 span {
+    font-size: .6875rem;
+  }
+}
+
 .lead-letters {
   letter-spacing: .1em;
   font-size: 1rem;
@@ -466,6 +478,12 @@ Typography SCSS.
 @media (min-width: 991px) {
   .lead03 {
     font-size: .6875rem;
+  }
+}
+
+@media (min-width: 991px) {
+  .en .lead03 {
+    font-size: .75rem;
   }
 }
 
