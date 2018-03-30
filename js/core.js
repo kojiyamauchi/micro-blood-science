@@ -418,7 +418,7 @@ var introductions = function introductions() {
       if (flagDevice) {
         setTimeout(function () {
           target.classList.add('is-active');
-        }, 5250);
+        }, 6125);
       } else {
         setTimeout(function () {
           target.classList.add('is-active');

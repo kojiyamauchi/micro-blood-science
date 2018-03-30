@@ -127,7 +127,7 @@ const introductions = () => {
       if(flagDevice) {
         setTimeout(() => {
           target.classList.add('is-active')
-        }, 5250)
+        }, 6125)
       } else {
         setTimeout(() => {
           target.classList.add('is-active')
