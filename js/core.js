@@ -253,7 +253,7 @@ var singleton = jumper();
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var introduction = function introduction() {
+var introductions = function introductions() {
   var intro01 = function intro01(callBack) {
     var target = document.querySelectorAll('.fn-txt-heading02-1');
     var tLen = target.length;
@@ -329,37 +329,10 @@ var introduction = function introduction() {
   }, 1250);
 };
 
-exports.default = introduction;
+exports.default = introductions;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Thanks Message Functions.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var thxMessage = function thxMessage() {
-  var getURL = window.location.hash;
-  var target = document.querySelector('.fn-thanks-message');
-  var searchWord = '#completed_mail';
-  if (getURL.indexOf(searchWord) > -1) {
-    target.classList.add('is-active');
-    window.history.replaceState(null, null, ' ');
-    setTimeout(function () {
-      target.classList.remove('is-active');
-    }, 5000);
-  }
-};
-
-exports.default = thxMessage;
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -402,6 +375,33 @@ var mailValidation = function mailValidation() {
 };
 
 exports.default = mailValidation;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Thanks Message Functions.
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var message = function message() {
+  var getURL = window.location.hash;
+  var target = document.querySelector('.fn-thanks-message');
+  var searchWord = '#completed_mail';
+  if (getURL.indexOf(searchWord) > -1) {
+    target.classList.add('is-active');
+    window.history.replaceState(null, null, ' ');
+    setTimeout(function () {
+      target.classList.remove('is-active');
+    }, 5000);
+  }
+};
+
+exports.default = message;
 
 /***/ }),
 /* 4 */
@@ -951,11 +951,11 @@ var _pageScrollTop = __webpack_require__(6);
 
 var _pageScrollTop2 = _interopRequireDefault(_pageScrollTop);
 
-var _validation = __webpack_require__(3);
+var _mailValidation = __webpack_require__(2);
 
-var _validation2 = _interopRequireDefault(_validation);
+var _mailValidation2 = _interopRequireDefault(_mailValidation);
 
-var _message = __webpack_require__(2);
+var _message = __webpack_require__(3);
 
 var _message2 = _interopRequireDefault(_message);
 
@@ -979,7 +979,7 @@ new _modalVideo2.default('.js-modal-video');
 (0, _checkScroll2.default)();
 (0, _anchorLink2.default)();
 (0, _pageScrollTop2.default)();
-(0, _validation2.default)();
+(0, _mailValidation2.default)();
 (0, _message2.default)();
 
 /***/ }),

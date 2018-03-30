@@ -1,7 +1,7 @@
 'use strict'
 
 // Introduction Functions.
-const introduction = () => {
+const introductions = () => {
   const intro01 = callBack => {
     const target = document.querySelectorAll('.fn-txt-heading02-1')
     const tLen = target.length
@@ -64,4 +64,4 @@ const introduction = () => {
 
 }
 
-export default introduction
+export default introductions

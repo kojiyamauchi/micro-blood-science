@@ -5,13 +5,13 @@ import emergence from 'emergence.js'
 import ModalVideo from 'modal-video'
 
 // Import Modules.
-import addFlag from './modules/setting/addFlag'
-import eventDefault from './modules/setting/eventDefault'
+import addFlag from './modules/settings/addFlag'
+import eventDefault from './modules/settings/eventDefault'
 import introductions from './modules/introductions/introductions'
 import checkScroll from './modules/scroll/checkScroll'
 import anchorLink from './modules/scroll/anchorLink'
 import pageScrollTop from './modules/scroll/pageScrollTop'
-import validation from './modules/mail/validation'
+import mailValidation from './modules/mail/mailValidation'
 import message from './modules/mail/message'
 
   // emergence.js Init.
@@ -27,5 +27,5 @@ import message from './modules/mail/message'
   checkScroll()
   anchorLink()
   pageScrollTop()
-  validation()
+  mailValidation()
   message()

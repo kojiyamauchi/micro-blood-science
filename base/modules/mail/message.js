@@ -1,7 +1,7 @@
 'use strict'
 
 // Thanks Message Functions.
-const thxMessage = () => {
+const message = () => {
   const getURL = window.location.hash
   const target = document.querySelector('.fn-thanks-message')
   const searchWord = '#completed_mail'
@@ -14,4 +14,4 @@ const thxMessage = () => {
   }
 }
 
-export default thxMessage
+export default message
