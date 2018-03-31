@@ -82,6 +82,42 @@
   z-index: 101;
 }
 /* ------------------------
+ Floating Buttom.
+-------------------------*/
+@mixin floatingButton($addButtomSP,$addBackgroungColor,$addButtomPC) {
+  position: fixed;
+  right: 15px;
+  bottom: $addButtomSP;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 6px 0;
+  transition: all 0.5s;
+  transform: scale(0);
+  opacity: 1;
+  border-radius: 100%;
+  background-color: $addBackgroungColor;
+  box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
+
+  &.is-active {
+    transition: all 0.5s;
+    transform: scale(1);
+  }
+
+  &.is-page-top {
+    transition: all 0.5s;
+  }
+  @include largeMobile {
+    right: 30px;
+    bottom: $addButtomPC;
+    width: 75px;
+    height: 75px;
+  }
+}
+/* ------------------------
  clearfix.
 -------------------------*/
 @mixin clearfix {
