@@ -47,32 +47,63 @@ Animations SCSS.
   }
 }
 /*----------------------------
+ Intro Animation.
+----------------------------*/
+.txt-heading02-1 {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+
+  &.is-active {
+    transition: opacity 0.2s ease;
+    opacity: 1;
+  }
+}
+
+.letters-inner {
+  transition: all 0.4s ease-out;
+  transform: translateX(-110%);
+
+  &.is-active {
+    transition: all 0.4s ease-out;
+    transform: translateX(0);
+  }
+}
+
+.txt-letters {
+  transform: scale(0);
+
+  &.is-active {
+    transform: scale(1);
+    animation: animation-letters 0.5s;
+  }
+}
+/*----------------------------
  Scroll Animation.
 ----------------------------*/
 .txt-copies {
   &[data-emergence=hidden] {
-    opacity: 0;
-    transform: translateY(50%);
     transition: all 0.75s linear;
+    transform: translateY(50%);
+    opacity: 0;
   }
 
   &[data-emergence=visible] {
-    opacity: 1;
-    transform: translateY(0%);
     transition: all 0.75s ease-out;
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 
 [class*="txt-copy0"] {
   &[data-emergence=hidden] {
-    opacity: 0;
-    transform: translateY(50%);
     transition: all 0.75s linear;
+    transform: translateY(50%);
+    opacity: 0;
   }
 
   &[data-emergence=visible] {
-    opacity: 1;
     transform: translateY(0%);
+    opacity: 1;
   }
 }
 
@@ -102,28 +133,145 @@ Animations SCSS.
 .news-wrapper,
 .wp-wrapper {
   &[data-emergence=hidden] {
-    opacity: 0;
-    transform: translateY(10%);
     transition: all 0.75s linear;
+    transform: translateY(10%);
+    opacity: 0;
   }
 
   &[data-emergence=visible] {
-    opacity: 1;
-    transform: translateY(0%);
     transition: all 1s ease-out;
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 
 [class*="team-"] {
   &[data-emergence=hidden] {
-    opacity: 0;
-    transform: translateY(15%);
     transition: all 0.75s linear;
+    transform: translateY(15%);
+    opacity: 0;
   }
 
   &[data-emergence=visible] {
-    opacity: 1;
-    transform: translateY(0%);
     transition: all 1.75s ease-out;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+/*----------------------------
+ Contents Animation.
+----------------------------*/
+.anchor-link {
+  transition: all 0.5s ease-out;
+  color: inherit;
+  font-weight: normal;
+
+  .icon-place {
+    display: none;
+    color: rgba(85,85,85,.75);
+    font-size: 2.5rem;
+  }
+
+  &.is-current {
+    transition: all 0.5s ease-out;
+    color: #000;
+    font-weight: bold;
+
+    .icon-place {
+      display: inline-block;
+    }
+  }
+}
+
+.movie02 {
+  .title-movie02 {
+    @include tablet {
+      transition: transform 0.5s;
+      transform: translateY(100%);
+    }
+
+    &:hover {
+      .title-movie02 {
+        @include tablet {
+          transition: transform 0.5s;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+.movie01,
+.movie02 {
+  .icon-play {
+    transition: opacity 0.5s;
+    opacity: 1;
+  }
+
+  &:hover {
+    .icon-play {
+      transition: opacity 0.5s;
+      opacity: 0.6;
+    }
+  }
+}
+
+.icon-angle-right {
+  animation: animation-angle-left 0.75s linear infinite;
+}
+
+.link-translate-wrapper {
+  visibility: hidden;
+  transition: all 0.25s linear;
+  transform: translate(-50%,-50%) scale(0);
+  opacity: 0;
+
+  &.is-active {
+    visibility: visible;
+    transition: all 0.35s ease-out;
+    transform: translate(-50%,-135%) scale(1);
+    opacity: 1;
+  }
+}
+
+.link-translate {
+  transition: transform 0.25s;
+  transform: scale(1);
+  opacity: 1;
+
+  &:hover {
+    transition: transform 0.25s;
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.icon-angle-up-down-wrapper {
+  animation: animation-angle-up-down 0.75s ease-in-out infinite;
+}
+
+.link-corp {
+  .icon-link {
+    transition: transform 0.25s;
+    transform: scale(1) rotate(0deg);
+  }
+
+  &:hover {
+    .icon-link {
+      transition: transform 0.25s;
+      transform: scale(1.25) rotate(90deg);
+    }
+  }
+}
+
+.thanks-message {
+  transition: all 0.5s;
+  transform: translateY(100%);
+  opacity: 0;
+
+  &.is-active {
+    transition: transform 0.5s 1s;
+    transform: translateY(0);
+    opacity: 1;
   }
 }

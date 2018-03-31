@@ -185,6 +185,379 @@ textarea {
 
 /*==============================================================================
 
+Animations SCSS.
+
+==============================================================================*/
+/*----------------------------
+ Keyframes Animation.
+----------------------------*/
+@-webkit-keyframes animation-letters {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes animation-letters {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes animation-angle-up-down {
+  0% {
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
+  }
+  50% {
+    -webkit-transform: translateY(5%);
+    transform: translateY(5%);
+  }
+  100% {
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
+  }
+}
+
+@keyframes animation-angle-up-down {
+  0% {
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
+  }
+  50% {
+    -webkit-transform: translateY(5%);
+    transform: translateY(5%);
+  }
+  100% {
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%);
+  }
+}
+
+@-webkit-keyframes animation-angle-left {
+  0% {
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+  }
+  50% {
+    -webkit-transform: translateX(15%);
+    transform: translateX(15%);
+  }
+  100% {
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+  }
+}
+
+@keyframes animation-angle-left {
+  0% {
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+  }
+  50% {
+    -webkit-transform: translateX(15%);
+    transform: translateX(15%);
+  }
+  100% {
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+  }
+}
+
+/*----------------------------
+ Intro Animation.
+----------------------------*/
+.txt-heading02-1 {
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+  opacity: 0;
+}
+
+.txt-heading02-1.is-active {
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+  opacity: 1;
+}
+
+.letters-inner {
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  -webkit-transform: translateX(-110%);
+  transform: translateX(-110%);
+}
+
+.letters-inner.is-active {
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.txt-letters {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.txt-letters.is-active {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-animation: animation-letters .5s;
+  animation: animation-letters .5s;
+}
+
+/*----------------------------
+ Scroll Animation.
+----------------------------*/
+.txt-copies[data-emergence=hidden] {
+  -webkit-transition: all .75s linear;
+  transition: all .75s linear;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+.txt-copies[data-emergence=visible] {
+  -webkit-transition: all .75s ease-out;
+  transition: all .75s ease-out;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+[class*="txt-copy0"][data-emergence=hidden] {
+  -webkit-transition: all .75s linear;
+  transition: all .75s linear;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+[class*="txt-copy0"][data-emergence=visible] {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.txt-copy01 {
+  -webkit-transition: all .75s .5s ease-out;
+  transition: all .75s .5s ease-out;
+}
+
+.txt-copy02 {
+  -webkit-transition: all .75s .75s ease-out;
+  transition: all .75s .75s ease-out;
+}
+
+.txt-copy03 {
+  -webkit-transition: all .75s 1s ease-out;
+  transition: all .75s 1s ease-out;
+}
+
+.txt-copy04 {
+  -webkit-transition: all .75s 1.25s ease-out;
+  transition: all .75s 1.25s ease-out;
+}
+
+.txt-copy05 {
+  -webkit-transition: all .75s 1.5s ease-out;
+  transition: all .75s 1.5s ease-out;
+}
+
+.info-wrapper[data-emergence=hidden] , .movie01-wrapper[data-emergence=hidden] , .movie02-wrapper[data-emergence=hidden] , .news-wrapper[data-emergence=hidden] , .wp-wrapper[data-emergence=hidden] {
+  -webkit-transition: all .75s linear;
+  transition: all .75s linear;
+  -webkit-transform: translateY(10%);
+  transform: translateY(10%);
+  opacity: 0;
+}
+
+.info-wrapper[data-emergence=visible] , .movie01-wrapper[data-emergence=visible] , .movie02-wrapper[data-emergence=visible] , .news-wrapper[data-emergence=visible] , .wp-wrapper[data-emergence=visible] {
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+[class*="team-"][data-emergence=hidden] {
+  -webkit-transition: all .75s linear;
+  transition: all .75s linear;
+  -webkit-transform: translateY(15%);
+  transform: translateY(15%);
+  opacity: 0;
+}
+
+[class*="team-"][data-emergence=visible] {
+  -webkit-transition: all 1.75s ease-out;
+  transition: all 1.75s ease-out;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/*----------------------------
+ Contents Animation.
+----------------------------*/
+.anchor-link {
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  font-weight: normal;
+  color: inherit;
+}
+
+.anchor-link .icon-place {
+  display: none;
+  font-size: 2.5rem;
+  color: rgba(85, 85, 85, .75);
+}
+
+.anchor-link.is-current {
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  font-weight: bold;
+  color: #000;
+}
+
+.anchor-link.is-current .icon-place {
+  display: inline-block;
+}
+
+@media (min-width: 991px) {
+  .movie02 .title-movie02 {
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+
+@media (min-width: 991px) {
+  .movie02 .title-movie02:hover .title-movie02 {
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.movie01 .icon-play , .movie02 .icon-play {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  opacity: 1;
+}
+
+.movie01:hover .icon-play , .movie02:hover .icon-play {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  opacity: .6;
+}
+
+.icon-angle-right {
+  -webkit-animation: animation-angle-left .75s linear infinite;
+  animation: animation-angle-left .75s linear infinite;
+}
+
+.link-translate-wrapper {
+  visibility: hidden;
+  -webkit-transition: all .25s linear;
+  transition: all .25s linear;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.link-translate-wrapper.is-active {
+  visibility: visible;
+  -webkit-transition: all .35s ease-out;
+  transition: all .35s ease-out;
+  -webkit-transform: translate(-50%, -135%) scale(1);
+  transform: translate(-50%, -135%) scale(1);
+  opacity: 1;
+}
+
+.link-translate {
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.link-translate:hover {
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.icon-angle-up-down-wrapper {
+  -webkit-animation: animation-angle-up-down .75s ease-in-out infinite;
+  animation: animation-angle-up-down .75s ease-in-out infinite;
+}
+
+.link-corp .icon-link {
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+  -webkit-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+}
+
+.link-corp:hover .icon-link {
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+  -webkit-transform: scale(1.25) rotate(90deg);
+  transform: scale(1.25) rotate(90deg);
+}
+
+.thanks-message {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.thanks-message.is-active {
+  -webkit-transition: -webkit-transform .5s 1s;
+  transition: -webkit-transform .5s 1s;
+  transition: transform .5s 1s;
+  transition: transform .5s 1s, -webkit-transform .5s 1s;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/*==============================================================================
+
  Variables SCSS.
 
 ==============================================================================*/
@@ -290,21 +663,26 @@ Typography SCSS.
   }
 }
 
-@media (min-width: 991px) {
+@media screen and (min-width: 1050px) {
   .heading02-1 {
     line-height: 1;
   }
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 1392px) {
   .heading02-1 {
     font-size: 2.875rem;
   }
 }
 
+.heading02-1 > * {
+  font-weight: bold;
+}
+
 @media (min-width: 325px) {
   .en .heading02-1 {
     letter-spacing: .125em;
+    font-size: 1.875rem;
   }
 }
 
@@ -314,7 +692,7 @@ Typography SCSS.
   }
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 1392px) {
   .en .heading02-1 {
     font-size: 3.25rem;
   }
@@ -519,29 +897,18 @@ Typography SCSS.
   color: #fff;
   background-color: rgba(0, 0, 0, .35);
 
-  -webkit-box-pack: center;
   -webkit-box-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
+  -webkit-box-pack: center;
 }
 
 @media (min-width: 768px) {
   .title-movie02 {
     padding: 20px 0;
     line-height: 1.5em;
-  }
-}
-
-@media (min-width: 991px) {
-  .title-movie02 {
-    -webkit-transition: -webkit-transform .5s;
-    transition: -webkit-transform .5s;
-    transition: transform .5s;
-    transition: transform .5s, -webkit-transform .5s;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
   }
 }
 
@@ -624,6 +991,7 @@ Typography SCSS.
 
 .txt-date {
   text-align: left;
+  white-space: nowrap;
   letter-spacing: .04em;
   font-size: 1rem;
   font-style: italic;
@@ -725,6 +1093,148 @@ Typography SCSS.
 -------------------------*/
 /*==============================================================================
 
+ Variables SCSS.
+
+==============================================================================*/
+/* ------------------------
+ Break Points.
+-------------------------*/
+/* ------------------------
+ Box Shadow.
+-------------------------*/
+/* ------------------------
+ Border Radius.
+-------------------------*/
+/* ------------------------
+ Label Color
+-------------------------*/
+/* ------------------------
+ Parts Color.
+-------------------------*/
+/*==============================================================================
+
+ Mixins SCSS.
+
+==============================================================================*/
+/* ------------------------
+ Break Points.
+-------------------------*/
+/* ------------------------
+ Label Parts.
+-------------------------*/
+/* ------------------------
+ Floating Buttom.
+-------------------------*/
+/* ------------------------
+ clearfix.
+-------------------------*/
+/*==============================================================================
+
+Icons SCSS.
+
+==============================================================================*/
+.icon-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 6.5625rem;
+  font-weight: bold;
+  color: rgba(255, 131, 173, .8);
+}
+
+.icon-telegram {
+  margin: 0 0 20px 0;
+  letter-spacing: 0;
+  font-size: 5.5rem;
+  font-weight: normal;
+  color: rgba(0, 136, 204, .8);
+}
+
+.signs [class*="icon-"] {
+  color: rgba(255, 131, 173, .8);
+}
+
+.signs .icon-content {
+  font-size: 5.25rem;
+}
+
+.signs .icon-download {
+  font-size: 5.5rem;
+}
+
+.signs .icon-mail {
+  font-size: 5.5rem;
+}
+
+.signs .icon-angle-right {
+  -webkit-transform: translateX(5%);
+  transform: translateX(5%);
+  font-size: 3.3125rem;
+}
+
+@media (min-width: 991px) {
+  .signs .icon-angle-right {
+    font-size: 4.3125rem;
+  }
+}
+
+.signs .icon-info {
+  font-size: 5.375rem;
+}
+
+.icon-link {
+  margin: 0 4px 0 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.icon-translate {
+  font-size: 2.75rem;
+  color: #fff;
+}
+
+.icon-angle-up-down-wrapper {
+  margin: 2px 0 0;
+}
+
+@media (min-width: 768px) {
+  .icon-angle-up-down-wrapper {
+    margin: 4px 0 0;
+  }
+}
+
+.icon-angle-up-down {
+  display: inline-block;
+  -webkit-transform: translateY(-5%);
+  transform: translateY(-5%);
+  font-size: 2rem;
+  color: #fff;
+}
+
+/*==============================================================================
+
+ Variables SCSS.
+
+==============================================================================*/
+/* ------------------------
+ Break Points.
+-------------------------*/
+/* ------------------------
+ Box Shadow.
+-------------------------*/
+/* ------------------------
+ Border Radius.
+-------------------------*/
+/* ------------------------
+ Label Color
+-------------------------*/
+/* ------------------------
+ Parts Color.
+-------------------------*/
+/*==============================================================================
+
  Mixins SCSS.
 
 ==============================================================================*/
@@ -761,6 +1271,10 @@ Typography SCSS.
   display: none;
 }
 
+.u-custom-order {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .u-sp {
     display: none;
@@ -769,6 +1283,9 @@ Typography SCSS.
     display: block;
   }
   .u-pc {
+    display: block;
+  }
+  .u-custom-order {
     display: block;
   }
 }
@@ -782,6 +1299,15 @@ Typography SCSS.
   }
   .u-pc {
     display: block;
+  }
+  .u-custom-order {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .u-custom-order {
+    display: none;
   }
 }
 
@@ -992,193 +1518,6 @@ Typography SCSS.
 -------------------------*/
 /*==============================================================================
 
-Animations SCSS.
-
-==============================================================================*/
-/*----------------------------
- Keyframes Animation.
-----------------------------*/
-@-webkit-keyframes animation-letters {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1.25);
-    transform: scale(1.25);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-@keyframes animation-letters {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1.25);
-    transform: scale(1.25);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@-webkit-keyframes animation-angle-up-down {
-  0% {
-    -webkit-transform: translateY(-5%);
-    transform: translateY(-5%);
-  }
-  50% {
-    -webkit-transform: translateY(5%);
-    transform: translateY(5%);
-  }
-  100% {
-    -webkit-transform: translateY(-5%);
-    transform: translateY(-5%);
-  }
-}
-
-@keyframes animation-angle-up-down {
-  0% {
-    -webkit-transform: translateY(-5%);
-    transform: translateY(-5%);
-  }
-  50% {
-    -webkit-transform: translateY(5%);
-    transform: translateY(5%);
-  }
-  100% {
-    -webkit-transform: translateY(-5%);
-    transform: translateY(-5%);
-  }
-}
-
-@-webkit-keyframes animation-angle-left {
-  0% {
-    -webkit-transform: translateX(5%);
-    transform: translateX(5%);
-  }
-  50% {
-    -webkit-transform: translateX(15%);
-    transform: translateX(15%);
-  }
-  100% {
-    -webkit-transform: translateX(5%);
-    transform: translateX(5%);
-  }
-}
-
-@keyframes animation-angle-left {
-  0% {
-    -webkit-transform: translateX(5%);
-    transform: translateX(5%);
-  }
-  50% {
-    -webkit-transform: translateX(15%);
-    transform: translateX(15%);
-  }
-  100% {
-    -webkit-transform: translateX(5%);
-    transform: translateX(5%);
-  }
-}
-
-/*----------------------------
- Scroll Animation.
-----------------------------*/
-.txt-copies[data-emergence=hidden] {
-  -webkit-transition: all .75s linear;
-  transition: all .75s linear;
-  -webkit-transform: translateY(50%);
-  transform: translateY(50%);
-  opacity: 0;
-}
-
-.txt-copies[data-emergence=visible] {
-  -webkit-transition: all .75s ease-out;
-  transition: all .75s ease-out;
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  opacity: 1;
-}
-
-[class*="txt-copy0"][data-emergence=hidden] {
-  -webkit-transition: all .75s linear;
-  transition: all .75s linear;
-  -webkit-transform: translateY(50%);
-  transform: translateY(50%);
-  opacity: 0;
-}
-
-[class*="txt-copy0"][data-emergence=visible] {
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  opacity: 1;
-}
-
-.txt-copy01 {
-  -webkit-transition: all .75s .5s ease-out;
-  transition: all .75s .5s ease-out;
-}
-
-.txt-copy02 {
-  -webkit-transition: all .75s .75s ease-out;
-  transition: all .75s .75s ease-out;
-}
-
-.txt-copy03 {
-  -webkit-transition: all .75s 1s ease-out;
-  transition: all .75s 1s ease-out;
-}
-
-.txt-copy04 {
-  -webkit-transition: all .75s 1.25s ease-out;
-  transition: all .75s 1.25s ease-out;
-}
-
-.txt-copy05 {
-  -webkit-transition: all .75s 1.5s ease-out;
-  transition: all .75s 1.5s ease-out;
-}
-
-.info-wrapper[data-emergence=hidden] , .movie01-wrapper[data-emergence=hidden] , .movie02-wrapper[data-emergence=hidden] , .news-wrapper[data-emergence=hidden] , .wp-wrapper[data-emergence=hidden] {
-  -webkit-transition: all .75s linear;
-  transition: all .75s linear;
-  -webkit-transform: translateY(10%);
-  transform: translateY(10%);
-  opacity: 0;
-}
-
-.info-wrapper[data-emergence=visible] , .movie01-wrapper[data-emergence=visible] , .movie02-wrapper[data-emergence=visible] , .news-wrapper[data-emergence=visible] , .wp-wrapper[data-emergence=visible] {
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  opacity: 1;
-}
-
-[class*="team-"][data-emergence=hidden] {
-  -webkit-transition: all .75s linear;
-  transition: all .75s linear;
-  -webkit-transform: translateY(15%);
-  transform: translateY(15%);
-  opacity: 0;
-}
-
-[class*="team-"][data-emergence=visible] {
-  -webkit-transition: all 1.75s ease-out;
-  transition: all 1.75s ease-out;
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  opacity: 1;
-}
-
-/*==============================================================================
-
 Core SCSS.
 
 ==============================================================================*/
@@ -1257,9 +1596,6 @@ Core SCSS.
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: justify;
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
-  color: inherit;
 
   -webkit-box-align: center;
   -webkit-box-pack: justify;
@@ -1267,23 +1603,6 @@ Core SCSS.
 
 .anchor-link:hover {
   cursor: pointer;
-}
-
-.anchor-link .icon-place {
-  display: none;
-  font-size: 2.5rem;
-  color: rgba(85, 85, 85, .75);
-}
-
-.anchor-link.is-current {
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
-  font-weight: bold;
-  color: #000;
-}
-
-.anchor-link.is-current .icon-place {
-  display: inline-block;
 }
 
 .fv {
@@ -1320,19 +1639,6 @@ Core SCSS.
   .fv {
     background-position: center;
   }
-}
-
-.txt-heading02-1 {
-  -webkit-transition: opacity .2s ease-in-out;
-  transition: opacity .2s ease-in-out;
-  font-weight: bold;
-  opacity: 0;
-}
-
-.txt-heading02-1.is-active {
-  -webkit-transition: opacity .2s ease;
-  transition: opacity .2s ease;
-  opacity: 1;
 }
 
 .letters-wrapper {
@@ -1385,22 +1691,11 @@ Core SCSS.
 .letters-inner {
   width: 100%;
   padding: 10px;
-  -webkit-transition: all .4s ease-out;
-  transition: all .4s ease-out;
-  -webkit-transform: translateX(-110%);
-  transform: translateX(-110%);
   text-align: center;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, .35);
   -webkit-box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
-}
-
-.letters-inner.is-active {
-  -webkit-transition: all .4s ease-out;
-  transition: all .4s ease-out;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
 }
 
 @media (orientation: landscape) {
@@ -1423,15 +1718,6 @@ Core SCSS.
 
 .txt-letters {
   display: inline-block;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-}
-
-.txt-letters.is-active {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-animation: animation-letters .5s;
-  animation: animation-letters .5s;
 }
 
 .contents-in {
@@ -1712,16 +1998,12 @@ Core SCSS.
   align-items: center;
   -ms-flex-pack: center;
 
+  -webkit-box-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   -webkit-box-pack: center;
-  -webkit-box-align: center;
-}
-
-.news-list:last-of-type {
-  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -1736,19 +2018,22 @@ Core SCSS.
     align-items: flex-start;
     -ms-flex-pack: start;
 
+    -webkit-box-align: start;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     -webkit-box-pack: start;
-    -webkit-box-align: start;
   }
+}
+
+.news-list:last-of-type {
+  margin: 0;
 }
 
 .txt-date {
   width: auto;
   margin: 0 0 6px;
-  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
@@ -1782,11 +2067,11 @@ Core SCSS.
   align-items: center;
   -ms-flex-pack: start;
 
+  -webkit-box-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-align: center;
   -webkit-box-pack: start;
 }
 
@@ -1890,37 +2175,6 @@ Core SCSS.
 .movie02 {
   overflow: hidden;
   background-image: url("../images/movie02.jpg");
-}
-
-@media (min-width: 991px) {
-  .movie02:hover .title-movie02 {
-    -webkit-transition: -webkit-transform .5s;
-    transition: -webkit-transform .5s;
-    transition: transform .5s;
-    transition: transform .5s, -webkit-transform .5s;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-.icon-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 6.5625rem;
-  font-weight: bold;
-  opacity: 1;
-  color: rgba(255, 131, 173, .8);
-}
-
-.movie01:hover .icon-play , .movie02:hover .icon-play {
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
-  opacity: .6;
 }
 
 .area-wp {
@@ -2229,14 +2483,6 @@ Core SCSS.
   -webkit-box-pack: center;
 }
 
-.icon-telegram {
-  margin: 0 0 20px 0;
-  letter-spacing: 0;
-  font-size: 5.5rem;
-  font-weight: normal;
-  color: rgba(0, 136, 204, .8);
-}
-
 .signs {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2266,40 +2512,6 @@ Core SCSS.
     width: 326.5px;
     margin: 0 0 28.5px 0;
   }
-}
-
-.signs [class*="icon-"] {
-  color: rgba(255, 131, 173, .8);
-}
-
-.signs .icon-content {
-  font-size: 5.25rem;
-}
-
-.signs .icon-download {
-  font-size: 5.5rem;
-}
-
-.signs .icon-mail {
-  font-size: 5.5rem;
-}
-
-.signs .icon-angle-right {
-  -webkit-transform: translateX(5%);
-  transform: translateX(5%);
-  -webkit-animation: animation-angle-left .75s linear infinite;
-  animation: animation-angle-left .75s linear infinite;
-  font-size: 3.3125rem;
-}
-
-@media (min-width: 991px) {
-  .signs .icon-angle-right {
-    font-size: 4.3125rem;
-  }
-}
-
-.signs .icon-info {
-  font-size: 5.375rem;
 }
 
 .member-wrapper {
@@ -2594,27 +2806,6 @@ Core SCSS.
   }
 }
 
-.link-corp .icon-link {
-  margin: 0 4px 0 0;
-  -webkit-transition: -webkit-transform .25s;
-  transition: -webkit-transform .25s;
-  transition: transform .25s;
-  transition: transform .25s, -webkit-transform .25s;
-  -webkit-transform: scale(1) rotate(0deg);
-  transform: scale(1) rotate(0deg);
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.link-corp:hover .icon-link {
-  -webkit-transition: -webkit-transform .25s;
-  transition: -webkit-transform .25s;
-  transition: transform .25s;
-  transition: transform .25s, -webkit-transform .25s;
-  -webkit-transform: scale(1.25) rotate(90deg);
-  transform: scale(1.25) rotate(90deg);
-}
-
 .button-floating-translate {
   position: fixed;
   z-index: 1;
@@ -2653,6 +2844,15 @@ Core SCSS.
   -webkit-box-pack: center;
 }
 
+@media (min-width: 768px) {
+  .button-floating-translate {
+    right: 30px;
+    bottom: 135px;
+    width: 75px;
+    height: 75px;
+  }
+}
+
 .button-floating-translate.is-active {
   -webkit-transition: all .5s;
   transition: all .5s;
@@ -2663,15 +2863,6 @@ Core SCSS.
 .button-floating-translate.is-page-top {
   -webkit-transition: all .5s;
   transition: all .5s;
-}
-
-@media (min-width: 768px) {
-  .button-floating-translate {
-    right: 30px;
-    bottom: 135px;
-    width: 75px;
-    height: 75px;
-  }
 }
 
 .button-floating-translate.is-page-top {
@@ -2689,22 +2880,7 @@ Core SCSS.
   z-index: 2;
   top: 50%;
   left: 50%;
-  visibility: hidden;
   width: 100%;
-  -webkit-transition: all .25s linear;
-  transition: all .25s linear;
-  -webkit-transform: translate(-50%, -50%) scale(0);
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-}
-
-.link-translate-wrapper.is-active {
-  visibility: visible;
-  -webkit-transition: all .35s ease-out;
-  transition: all .35s ease-out;
-  -webkit-transform: translate(-50%, -135%) scale(1);
-  transform: translate(-50%, -135%) scale(1);
-  opacity: 1;
 }
 
 .link-translate-list {
@@ -2714,31 +2890,6 @@ Core SCSS.
 .link-translate-list:last-of-type {
   margin: 0;
   padding: 0 0 10px;
-}
-
-.link-translate {
-  -webkit-transition: -webkit-transform .25s;
-  transition: -webkit-transform .25s;
-  transition: transform .25s;
-  transition: transform .25s, -webkit-transform .25s;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
-}
-
-.link-translate:hover {
-  -webkit-transition: -webkit-transform .25s;
-  transition: -webkit-transform .25s;
-  transition: transform .25s;
-  transition: transform .25s, -webkit-transform .25s;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-.icon-translate {
-  font-size: 2.75rem;
-  color: #fff;
 }
 
 .button-floating-page-top {
@@ -2777,6 +2928,15 @@ Core SCSS.
   -webkit-box-pack: center;
 }
 
+@media (min-width: 768px) {
+  .button-floating-page-top {
+    right: 30px;
+    bottom: 30px;
+    width: 75px;
+    height: 75px;
+  }
+}
+
 .button-floating-page-top.is-active {
   -webkit-transition: all .5s;
   transition: all .5s;
@@ -2787,15 +2947,6 @@ Core SCSS.
 .button-floating-page-top.is-page-top {
   -webkit-transition: all .5s;
   transition: all .5s;
-}
-
-@media (min-width: 768px) {
-  .button-floating-page-top {
-    right: 30px;
-    bottom: 30px;
-    width: 75px;
-    height: 75px;
-  }
 }
 
 .button-floating-page-top.is-page-top {
@@ -2817,26 +2968,6 @@ Core SCSS.
   }
 }
 
-.icon-angle-up-down-wrapper {
-  margin: 2px 0 0;
-  -webkit-animation: animation-angle-up-down .75s ease-in-out infinite;
-  animation: animation-angle-up-down .75s ease-in-out infinite;
-}
-
-@media (min-width: 768px) {
-  .icon-angle-up-down-wrapper {
-    margin: 4px 0 0;
-  }
-}
-
-.icon-angle-up-down {
-  display: inline-block;
-  -webkit-transform: translateY(-5%);
-  transform: translateY(-5%);
-  font-size: 2rem;
-  color: #fff;
-}
-
 .thanks-message {
   position: fixed;
   bottom: 0;
@@ -2853,25 +2984,10 @@ Core SCSS.
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  opacity: 0;
   background-color: rgba(0, 0, 0, .65);
 
-  -webkit-box-pack: center;
   -webkit-box-align: center;
-}
-
-.thanks-message.is-active {
-  -webkit-transition: -webkit-transform .5s 1s;
-  transition: -webkit-transform .5s 1s;
-  transition: transform .5s 1s;
-  transition: transform .5s 1s, -webkit-transform .5s 1s;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  opacity: 1;
+  -webkit-box-pack: center;
 }
 
 /*# sourceMappingURL=../maps/app.css.map */
