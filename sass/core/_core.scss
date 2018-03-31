@@ -47,6 +47,7 @@ Core SCSS.
   align-items: center;
   justify-content: space-between;
   transition: all 0.5s ease-out;
+
   &:hover {
     cursor: pointer;
   }
@@ -843,39 +844,72 @@ Core SCSS.
   }
 }
 
-.button-floating {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  padding: 6px 0;
-  transition: all 0.5s;
-  transform: scale(0);
-  opacity: 1;
-  border-radius: 100%;
-  background-color: rgba(255,64,129,.65);
-  box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
-  @include largeMobile {
-    right: 30px;
-    bottom: 30px;
-    width: 75px;
-    height: 75px;
+.button-floating-translate {
+  @include floatingButton(90px,rgba(70, 187, 0, 0.65),135px);
+  cursor: pointer;
+  z-index: 1;
+
+  &.is-page-top {
+    bottom: 105px;
   }
+  @include largeMobile {
+    &.is-page-top {
+      bottom: 150px;
+    }
+  }
+}
+
+.link-translate-wrapper {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s linear;
 
   &.is-active {
-    transition: all 0.5s;
-    transform: scale(1);
+    transform: translate(-50%,-135%) scale(1);
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.35s ease-out;
   }
+}
+
+.link-translate-list {
+  margin: 0 0 38px;
+
+  &:last-of-type {
+    margin: 0;
+    padding: 0 0 10px;
+  }
+}
+
+.link-translate {
+  transform: scale(1);
+  transition: transform 0.25s;
+  opacity: 1;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 0.25s;
+    opacity: 1;
+  }
+}
+
+.icon-translate {
+  color: #fff;
+  font-size: 2.75rem;
+}
+
+.button-floating-page-top {
+  @include floatingButton(15px,rgba(255,64,129,.65),30px);
 
   &.is-page-top {
     width: 75px;
     height: 75px;
-    transition: all 0.5s;
     cursor: pointer;
 
     &:hover {
@@ -887,7 +921,6 @@ Core SCSS.
     &.is-page-top {
       width: 90px;
       height: 90px;
-      transition: all 0.5s;
     }
   }
 }
