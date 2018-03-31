@@ -38,11 +38,17 @@
     @content;
   }
 }
+@mixin customOrderMin($orderW) {
+  @media screen and (min-width: $orderW) {
+    @content;
+  }
+}
 /* ------------------------
  Label Parts.
 -------------------------*/
 @mixin primaryLabel($labelColor) {
   position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
   display: block;
@@ -52,13 +58,13 @@
   border-width: 75px 75px 0 0;
   border-style: solid;
   border-color: $labelColor;
-  z-index: 100;
   @include tablet {
     border-width: 110px 110px 0 0;
   }
 }
 @mixin secondaryLabel($labelColor) {
   position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
   display: block;
@@ -68,10 +74,10 @@
   border-width: 50px 50px 0 0;
   border-style: solid;
   border-color: $labelColor;
-  z-index: 100;
 }
 @mixin labelFont {
   position: absolute;
+  z-index: 101;
   white-space: pre;
   letter-spacing: 0;
   color: #fff;
@@ -79,7 +85,6 @@
   font-family: "Source Sans Pro",sans-serif;
   font-weight: bold;
   line-height: 1em;
-  z-index: 101;
 }
 /* ------------------------
  Floating Buttom.
@@ -101,6 +106,12 @@
   border-radius: 100%;
   background-color: $addBackgroungColor;
   box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
+  @include largeMobile {
+    right: 30px;
+    bottom: $addButtomPC;
+    width: 75px;
+    height: 75px;
+  }
 
   &.is-active {
     transition: all 0.5s;
@@ -109,12 +120,6 @@
 
   &.is-page-top {
     transition: all 0.5s;
-  }
-  @include largeMobile {
-    right: 30px;
-    bottom: $addButtomPC;
-    width: 75px;
-    height: 75px;
   }
 }
 /* ------------------------

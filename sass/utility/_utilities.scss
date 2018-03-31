@@ -20,6 +20,10 @@
 .u-pc {
   display: none;
 }
+
+.u-custom-order {
+  display: block;
+}
 @include largeMobile {
   .u-sp {
     display: none;
@@ -30,6 +34,10 @@
   }
 
   .u-pc {
+    display: block;
+  }
+
+  .u-custom-order {
     display: block;
   }
 }
@@ -44,5 +52,14 @@
 
   .u-pc {
     display: block;
+  }
+
+  .u-custom-order {
+    display: block;
+  }
+}
+@include customOrderMin(1050px) {
+  .u-custom-order {
+    display: none;
   }
 }
