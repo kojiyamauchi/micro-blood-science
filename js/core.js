@@ -248,6 +248,57 @@ var singleton = jumper();
 "use strict";
 
 
+// Import Jump.js.
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _jump = __webpack_require__(0);
+
+var _jump2 = _interopRequireDefault(_jump);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+// Clicked Floating Button Functions.
+var floatings = function floatings() {
+  var flagTarget = document.body;
+  var floatingTranslate = document.querySelector('.fn-button-floating-translate');
+  var targetTranslate = document.querySelector('.link-translate-wrapper');
+  var floatingPageTop = document.querySelector('.fn-button-floating-page-top');
+  floatingTranslate.addEventListener('click', function (event) {
+    event.stopPropagation();
+    targetTranslate.classList.toggle('is-active');
+  });
+  floatingTranslate.addEventListener('mouseover', function () {
+    var flagDevice = flagTarget.classList.contains('sp');
+    if (!flagDevice) {
+      targetTranslate.classList.add('is-active');
+    }
+  });
+  floatingTranslate.addEventListener('mouseout', function () {
+    var flagDevice = flagTarget.classList.contains('sp');
+    if (!flagDevice) {
+      targetTranslate.classList.remove('is-active');
+    }
+  });
+  floatingPageTop.addEventListener('click', function () {
+    var clsCheck = floatingPageTop.classList.contains('is-scroll-top');
+    if (clsCheck) {
+      (0, _jump2.default)('.fn-scroll-top');
+    }
+  });
+};exports.default = floatings;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 // Introduction Functions.
 
 Object.defineProperty(exports, "__esModule", {
@@ -260,6 +311,7 @@ var introductions = function introductions() {
   var flagCN = flagTarget.classList.contains('cn');
   var flagDevice = flagTarget.classList.contains('sp');
 
+  // Displayed Heading Functions.
   var intro01 = function intro01(callBack) {
     var target = document.querySelectorAll('.fn-txt-heading02-1');
     var tLen = target.length;
@@ -298,6 +350,8 @@ var introductions = function introductions() {
       callBack();
     }
   };
+
+  // Displayed Letters Background Functions.
   var intro02 = function intro02(callBack) {
     var target = document.querySelectorAll('.fn-letters-inner');
     var tLen = target.length;
@@ -325,6 +379,7 @@ var introductions = function introductions() {
     }
   };
 
+  // Displayed Letters Functions.
   var intro03 = function intro03(callBack) {
     var target01 = document.querySelectorAll('.fn-txt-letters-pc');
     var tLen01 = target01.length;
@@ -402,41 +457,56 @@ var introductions = function introductions() {
     }
   };
 
+  // Displayed Floating Button Functions.
   var intro04 = function intro04() {
-    var target = document.querySelector('.fn-button-floating');
+    var target = document.querySelectorAll('.fn-button-floating');
+    var targetLen = target.length;
     if (flagEN) {
       if (flagDevice) {
         setTimeout(function () {
-          target.classList.add('is-active');
+          for (var i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active');
+          }
         }, 5250);
       } else {
         setTimeout(function () {
-          target.classList.add('is-active');
+          for (var i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active');
+          }
         }, 13500);
       }
     } else if (flagCN) {
       if (flagDevice) {
         setTimeout(function () {
-          target.classList.add('is-active');
+          for (var i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active');
+          }
         }, 6125);
       } else {
         setTimeout(function () {
-          target.classList.add('is-active');
+          for (var i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active');
+          }
         }, 6125);
       }
     } else {
       if (flagDevice) {
         setTimeout(function () {
-          target.classList.add('is-active');
+          for (var i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active');
+          }
         }, 5250);
       } else {
         setTimeout(function () {
-          target.classList.add('is-active');
+          for (var i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active');
+          }
         }, 8100);
       }
     }
   };
 
+  // Concatenate All Functions.
   setTimeout(function () {
     intro01(intro02.bind(null, intro03.bind(null, intro04.bind(null))));
   }, 1250);
@@ -445,7 +515,7 @@ var introductions = function introductions() {
 exports.default = introductions;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -490,7 +560,7 @@ var mailValidation = function mailValidation() {
 exports.default = mailValidation;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -517,7 +587,7 @@ var message = function message() {
 exports.default = message;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -556,7 +626,7 @@ var anchorLink = function anchorLink() {
 };exports.default = anchorLink;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -569,78 +639,49 @@ Object.defineProperty(exports, "__esModule", {
 });
 var checkScroll = function checkScroll() {
   var coreFunc = function coreFunc() {
-    var target01 = document.querySelector('.fn-button-floating');
-    var target02 = document.querySelector('.fn-txt-scoll');
-    var target03 = document.querySelector('.fn-angle-down');
-    var target04 = document.querySelector('.fn-area-about');
-    var target05 = document.querySelector('.fn-area-member');
-    var target06 = document.querySelector('.fn-footer');
-    var target07 = document.querySelector('.fn-anchor-link01');
-    var target08 = document.querySelector('.fn-anchor-link02');
-    var t04Offset = target04.getBoundingClientRect();
+    var target01 = document.querySelector('.fn-button-floating-translate');
+    var target02 = document.querySelector('.fn-button-floating-page-top');
+    var target03 = document.querySelector('.fn-txt-scoll');
+    var target04 = document.querySelector('.fn-angle-down');
+    var target05 = document.querySelector('.fn-area-about');
+    var target06 = document.querySelector('.fn-area-member');
+    var target07 = document.querySelector('.fn-footer');
+    var target08 = document.querySelector('.fn-anchor-link01');
+    var target09 = document.querySelector('.fn-anchor-link02');
     var t05Offset = target05.getBoundingClientRect();
     var t06Offset = target06.getBoundingClientRect();
+    var t07Offset = target07.getBoundingClientRect();
     var WH = window.innerHeight;
-    if (t06Offset.top < WH) {
-      target01.classList.add('is-scroll-top');
+    if (t07Offset.top < WH) {
       target01.classList.add('is-page-top');
-      target02.innerText = 'Page Top';
-      target03.classList.remove('fa-angle-double-down');
-      target03.classList.add('fa-angle-double-up');
+      target02.classList.add('is-scroll-top');
+      target02.classList.add('is-page-top');
+      target03.innerText = 'Page Top';
+      target04.classList.remove('fa-angle-double-down');
+      target04.classList.add('fa-angle-double-up');
     } else {
-      target01.classList.remove('is-scroll-top');
       target01.classList.remove('is-page-top');
-      target02.innerText = 'Scroll';
-      target03.classList.remove('fa-angle-double-up');
-      target03.classList.add('fa-angle-double-down');
+      target02.classList.remove('is-scroll-top');
+      target02.classList.remove('is-page-top');
+      target03.innerText = 'Scroll';
+      target04.classList.remove('fa-angle-double-up');
+      target04.classList.add('fa-angle-double-down');
     }
-    if (t04Offset.top <= 0 && t05Offset.top > 0) {
-      target07.classList.add('is-current');
-    } else {
-      target07.classList.remove('is-current');
-    }
-    if (t05Offset.top <= 0) {
+    if (t05Offset.top <= 0 && t06Offset.top > 0) {
       target08.classList.add('is-current');
     } else {
       target08.classList.remove('is-current');
+    }
+    if (t06Offset.top <= 0) {
+      target09.classList.add('is-current');
+    } else {
+      target09.classList.remove('is-current');
     }
   };
   window.addEventListener('scroll', coreFunc, false);
 };
 
 exports.default = checkScroll;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Import Jump.js.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _jump = __webpack_require__(0);
-
-var _jump2 = _interopRequireDefault(_jump);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-// Page Top Scroll Functions.
-var pageScrollTop = function pageScrollTop() {
-  var target = document.querySelector('.fn-button-floating');
-  target.addEventListener('click', function () {
-    var clsCheck = target.classList.contains('is-scroll-top');
-    if (clsCheck) {
-      (0, _jump2.default)('.fn-scroll-top');
-    }
-  });
-};exports.default = pageScrollTop;
 
 /***/ }),
 /* 7 */
@@ -1048,27 +1089,27 @@ var _eventDefault = __webpack_require__(8);
 
 var _eventDefault2 = _interopRequireDefault(_eventDefault);
 
-var _introductions = __webpack_require__(1);
+var _introductions = __webpack_require__(2);
 
 var _introductions2 = _interopRequireDefault(_introductions);
 
-var _checkScroll = __webpack_require__(5);
+var _checkScroll = __webpack_require__(6);
 
 var _checkScroll2 = _interopRequireDefault(_checkScroll);
 
-var _anchorLink = __webpack_require__(4);
+var _anchorLink = __webpack_require__(5);
 
 var _anchorLink2 = _interopRequireDefault(_anchorLink);
 
-var _pageScrollTop = __webpack_require__(6);
+var _floatings = __webpack_require__(1);
 
-var _pageScrollTop2 = _interopRequireDefault(_pageScrollTop);
+var _floatings2 = _interopRequireDefault(_floatings);
 
-var _mailValidation = __webpack_require__(2);
+var _mailValidation = __webpack_require__(3);
 
 var _mailValidation2 = _interopRequireDefault(_mailValidation);
 
-var _message = __webpack_require__(3);
+var _message = __webpack_require__(4);
 
 var _message2 = _interopRequireDefault(_message);
 
@@ -1080,7 +1121,9 @@ function _interopRequireDefault(obj) {
 
 
 // Import Modules.
-_emergence2.default.init({ reset: false });
+_emergence2.default.init({
+  reset: false
+});
 
 // Created Modal Video Instance.
 new _modalVideo2.default('.js-modal-video');
@@ -1091,7 +1134,7 @@ new _modalVideo2.default('.js-modal-video');
 (0, _introductions2.default)();
 (0, _checkScroll2.default)();
 (0, _anchorLink2.default)();
-(0, _pageScrollTop2.default)();
+(0, _floatings2.default)();
 (0, _mailValidation2.default)();
 (0, _message2.default)();
 

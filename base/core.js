@@ -10,22 +10,24 @@ import eventDefault from './modules/settings/eventDefault'
 import introductions from './modules/introductions/introductions'
 import checkScroll from './modules/scroll/checkScroll'
 import anchorLink from './modules/scroll/anchorLink'
-import pageScrollTop from './modules/scroll/pageScrollTop'
+import floatings from './modules/floatings/floatings'
 import mailValidation from './modules/mail/mailValidation'
 import message from './modules/mail/message'
 
-  // emergence.js Init.
-  emergence.init({ reset: false })
+// emergence.js Init.
+emergence.init({
+  reset: false
+})
 
-  // Created Modal Video Instance.
-  new ModalVideo('.js-modal-video')
+// Created Modal Video Instance.
+new ModalVideo('.js-modal-video')
 
-  // Require All Functions.
-  addFlag()
-  eventDefault()
-  introductions()
-  checkScroll()
-  anchorLink()
-  pageScrollTop()
-  mailValidation()
-  message()
+// Require All Functions.
+addFlag()
+eventDefault()
+introductions()
+checkScroll()
+anchorLink()
+floatings()
+mailValidation()
+message()

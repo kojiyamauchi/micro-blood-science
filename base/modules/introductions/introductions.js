@@ -8,6 +8,7 @@ const introductions = () => {
   const flagCN = flagTarget.classList.contains('cn')
   const flagDevice = flagTarget.classList.contains('sp')
 
+  // Displayed Heading Functions.
   const intro01 = callBack => {
     const target = document.querySelectorAll('.fn-txt-heading02-1')
     const tLen = target.length
@@ -34,6 +35,8 @@ const introductions = () => {
       callBack()
     }
   }
+
+  // Displayed Letters Background Functions.
   const intro02 = callBack => {
     const target = document.querySelectorAll('.fn-letters-inner')
     const tLen = target.length
@@ -61,6 +64,7 @@ const introductions = () => {
     }
   }
 
+  // Displayed Letters Functions.
   const intro03 = callBack => {
     const target01 = document.querySelectorAll('.fn-txt-letters-pc')
     const tLen01 = target01.length
@@ -111,41 +115,56 @@ const introductions = () => {
     }
   }
 
+  // Displayed Floating Button Functions.
   const intro04 = () => {
-    const target = document.querySelector('.fn-button-floating')
+    const target = document.querySelectorAll('.fn-button-floating')
+    const targetLen = target.length
     if(flagEN) {
       if(flagDevice) {
         setTimeout(() => {
-          target.classList.add('is-active')
+          for(let i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active')
+          }
         }, 5250)
       } else {
         setTimeout(() => {
-          target.classList.add('is-active')
+          for(let i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active')
+          }
         }, 13500)
       }
     } else if(flagCN) {
       if(flagDevice) {
         setTimeout(() => {
-          target.classList.add('is-active')
+          for(let i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active')
+          }
         }, 6125)
       } else {
         setTimeout(() => {
-          target.classList.add('is-active')
+          for(let i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active')
+          }
         }, 6125)
       }
     } else {
       if(flagDevice) {
         setTimeout(() => {
-          target.classList.add('is-active')
+          for(let i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active')
+          }
         }, 5250)
       } else {
         setTimeout(() => {
-          target.classList.add('is-active')
+          for(let i = 0; i < targetLen; i++) {
+            target[i].classList.add('is-active')
+          }
         }, 8100)
       }
     }
   }
 
+  // Concatenate All Functions.
   setTimeout(() => {
     intro01(intro02.bind(null, intro03.bind(null, intro04.bind(null))))
   }, 1250)
