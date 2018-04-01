@@ -6,7 +6,6 @@ const introductions = () => {
   const flagTarget = document.body
   const flagEN = flagTarget.classList.contains('en')
   const flagCN = flagTarget.classList.contains('cn')
-  const flagDevice = flagTarget.classList.contains('sp')
 
   // Displayed Heading Functions.
   const intro01 = callBack => {
@@ -119,13 +118,14 @@ const introductions = () => {
   const intro04 = () => {
     const target = document.querySelectorAll('.fn-button-floating')
     const targetLen = target.length
+    const flagDevice = flagTarget.classList.contains('sp')
     if(flagEN) {
       if(flagDevice) {
         setTimeout(() => {
           for(let i = 0; i < targetLen; i++) {
             target[i].classList.add('is-active')
           }
-        }, 5250)
+        }, 8500)
       } else {
         setTimeout(() => {
           for(let i = 0; i < targetLen; i++) {

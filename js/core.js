@@ -309,7 +309,6 @@ var introductions = function introductions() {
   var flagTarget = document.body;
   var flagEN = flagTarget.classList.contains('en');
   var flagCN = flagTarget.classList.contains('cn');
-  var flagDevice = flagTarget.classList.contains('sp');
 
   // Displayed Heading Functions.
   var intro01 = function intro01(callBack) {
@@ -461,13 +460,14 @@ var introductions = function introductions() {
   var intro04 = function intro04() {
     var target = document.querySelectorAll('.fn-button-floating');
     var targetLen = target.length;
+    var flagDevice = flagTarget.classList.contains('sp');
     if (flagEN) {
       if (flagDevice) {
         setTimeout(function () {
           for (var i = 0; i < targetLen; i++) {
             target[i].classList.add('is-active');
           }
-        }, 5250);
+        }, 8500);
       } else {
         setTimeout(function () {
           for (var i = 0; i < targetLen; i++) {
