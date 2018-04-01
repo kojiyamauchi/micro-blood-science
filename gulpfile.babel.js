@@ -36,10 +36,12 @@ import sftp from 'gulp-sftp' // sftp plugin.
 import browserSync from 'browser-sync' // browserSync.
 // Setting.
 const autoprefixerSet = ['last 2 version', 'ie >= 10', 'iOS >= 8', 'Android >= 4.4'] // setting of autoprefixer.
-const postCssPlugIn = [autoprefixer({ browsers: autoprefixerSet }), flexbug] // PostCSS plugin.
+const postCssPlugIn = [autoprefixer({
+  browsers: autoprefixerSet
+}), flexbug] // PostCSS plugin.
 const addImgDir = ('addImages/*') // added image fold,
 const dstImgDir = ('images/*') // compression image fold,
-const upLoadFileWrite = (['*.html', 'css/app.min.css', 'js/core.min.js', 'images/**/*', 'mail/*', 'wp/*']) // upload file.
+const upLoadFileWrite = (['index.html', 'en/index.html', 'cn/index.html', 'css/app.min.css', 'js/core.min.js', 'images/**/*', 'mail/*', 'wp/*']) // upload file.
 const notUpLoadFileWrite = (['!google6622acf79a146759.html']) // don't upload file.
 const upLoadFile = upLoadFileWrite.concat(notUpLoadFileWrite) // ftp upload files.
 
@@ -195,7 +197,7 @@ gulp.task('ftpUpLoad', () => {
 
 // gulp default task, terminal command 'gulp'.
 gulp.task('default', ['browserSync'], () => { // first task, local server connect & local browser sync.
-  gulp.watch(['base/*', 'tags/*', 'three/*'], ['webpack']) // JS File webpack.
+  gulp.watch(['base/**/*', 'tags/*', 'three/*'], ['webpack']) // JS File webpack.
   gulp.watch('js/core.js', ['jsmin']) // watching change's JS flie, File Compression.
   gulp.watch('sass/**/*.scss', ['sass']) // watching sass file save's auto compile & add vendor prefix automatically.
   gulp.watch('css/app.css', ['cssmin']) // watching change's CSS flie, File Compression.
