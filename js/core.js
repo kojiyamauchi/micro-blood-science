@@ -1121,9 +1121,7 @@ function _interopRequireDefault(obj) {
 
 
 // Import Modules.
-_emergence2.default.init({
-  reset: false
-});
+_emergence2.default.init({ reset: false });
 
 // Created Modal Video Instance.
 new _modalVideo2.default('.js-modal-video');
