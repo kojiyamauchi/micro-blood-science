@@ -423,8 +423,6 @@ Animations SCSS.
 
 .anchor-link .icon-place {
   display: none;
-  font-size: 2.5rem;
-  color: rgba(85, 85, 85, .75);
 }
 
 .anchor-link.is-current {
@@ -450,7 +448,7 @@ Animations SCSS.
 }
 
 @media (min-width: 991px) {
-  .movie02 .title-movie02:hover .title-movie02 {
+  .movie02:hover .title-movie02 {
     -webkit-transition: -webkit-transform .5s;
     transition: -webkit-transform .5s;
     transition: transform .5s;
@@ -1133,6 +1131,11 @@ Typography SCSS.
 Icons SCSS.
 
 ==============================================================================*/
+.icon-place {
+  font-size: 2.5rem;
+  color: rgba(85, 85, 85, .75);
+}
+
 .icon-play {
   position: absolute;
   top: 50%;

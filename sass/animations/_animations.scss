@@ -187,13 +187,13 @@ Animations SCSS.
       transition: transform 0.5s;
       transform: translateY(100%);
     }
+  }
 
-    &:hover {
-      .title-movie02 {
-        @include tablet {
-          transition: transform 0.5s;
-          transform: translateY(0);
-        }
+  &:hover {
+    .title-movie02 {
+      @include tablet {
+        transition: transform 0.5s;
+        transform: translateY(0);
       }
     }
   }
