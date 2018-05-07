@@ -55,7 +55,7 @@ Reset & Default Setting SCSS.
  Reset & Default Setting CSS.
 ------------------------------------------------------------------------------*/
 /* Reset CSS. */
-a , address , article , aside , audio , blockquote , body , canvas , caption , code , dd , div , dl , dt , footer , form , h1 , h2 , h3 , h4 , h5 , h6 , header , hgroup , html , iframe , img , input , label , li , mark , menu , nav , ol , output , p , pre , ruby , section , span , summary , table , tbody , td , textarea , th , time , tr , ul , video {
+a, address, article, aside, audio, blockquote, body, canvas, caption, code, dd, div, dl, dt, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, input, label, li, mark, menu, nav, ol, output, p, pre, ruby, section, span, summary, table, tbody, td, textarea, th, time, tr, ul, video {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
@@ -93,7 +93,7 @@ body {
   -ms-text-size-adjust: 100%;
 }
 
-article , aside , details , figcaption , figure , footer , header , hgroup , menu , nav , section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -117,7 +117,7 @@ a:hover {
   color: inherit;
 }
 
-a:active , a:hover , a:link , a:visited {
+a:active, a:hover, a:link, a:visited {
   text-decoration: none;
   color: inherit;
   outline: none;
@@ -127,7 +127,7 @@ img {
   vertical-align: middle;
 }
 
-li , ol , ul {
+li, ol, ul {
   list-style-type: none;
 }
 
@@ -137,7 +137,7 @@ table {
   border-collapse: collapse;
 }
 
-input[type="button"] , input[type="submit"] , input[type="text"] {
+input[type="button"], input[type="submit"], input[type="text"] {
   border-radius: 0;
   -webkit-appearance: none;
 }
@@ -379,7 +379,7 @@ Animations SCSS.
   transition: all .75s 1.5s ease-out;
 }
 
-.info-wrapper[data-emergence=hidden] , .movie01-wrapper[data-emergence=hidden] , .movie02-wrapper[data-emergence=hidden] , .news-wrapper[data-emergence=hidden] , .wp-wrapper[data-emergence=hidden] {
+.info-wrapper[data-emergence=hidden], .movie01-wrapper[data-emergence=hidden], .movie02-wrapper[data-emergence=hidden], .news-wrapper[data-emergence=hidden], .wp-wrapper[data-emergence=hidden] {
   -webkit-transition: all .75s linear;
   transition: all .75s linear;
   -webkit-transform: translateY(10%);
@@ -387,7 +387,7 @@ Animations SCSS.
   opacity: 0;
 }
 
-.info-wrapper[data-emergence=visible] , .movie01-wrapper[data-emergence=visible] , .movie02-wrapper[data-emergence=visible] , .news-wrapper[data-emergence=visible] , .wp-wrapper[data-emergence=visible] {
+.info-wrapper[data-emergence=visible], .movie01-wrapper[data-emergence=visible], .movie02-wrapper[data-emergence=visible], .news-wrapper[data-emergence=visible], .wp-wrapper[data-emergence=visible] {
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
   -webkit-transform: translateY(0%);
@@ -458,13 +458,13 @@ Animations SCSS.
   }
 }
 
-.movie01 .icon-play , .movie02 .icon-play {
+.movie01 .icon-play, .movie02 .icon-play {
   -webkit-transition: opacity .5s;
   transition: opacity .5s;
   opacity: 1;
 }
 
-.movie01:hover .icon-play , .movie02:hover .icon-play {
+.movie01:hover .icon-play, .movie02:hover .icon-play {
   -webkit-transition: opacity .5s;
   transition: opacity .5s;
   opacity: .6;
@@ -896,11 +896,11 @@ Typography SCSS.
   background-color: rgba(0, 0, 0, .35);
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 768px) {
@@ -935,11 +935,11 @@ Typography SCSS.
   border-bottom: solid 2px #555;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 .link-translate {
@@ -1449,7 +1449,7 @@ Icons SCSS.
   transform: rotate(-45deg);
 }
 
-.modal-video-close-btn:before , .modal-video-close-btn:after {
+.modal-video-close-btn:before, .modal-video-close-btn:after {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1727,7 +1727,7 @@ Core SCSS.
   width: 100vw;
 }
 
-.area-about , .area-member {
+.area-about, .area-member {
   width: 100%;
 }
 
@@ -1802,11 +1802,11 @@ Core SCSS.
   -webkit-box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
 
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -1928,11 +1928,11 @@ Core SCSS.
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -2002,11 +2002,11 @@ Core SCSS.
   -ms-flex-pack: center;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 768px) {
@@ -2022,11 +2022,11 @@ Core SCSS.
     -ms-flex-pack: start;
 
     -webkit-box-align: start;
-    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: start;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
-    -webkit-box-pack: start;
   }
 }
 
@@ -2071,27 +2071,27 @@ Core SCSS.
   -ms-flex-pack: start;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: start;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: start;
 }
 
-.movie01-wrapper , .movie02-wrapper {
+.movie01-wrapper, .movie02-wrapper {
   position: relative;
   width: 100%;
   margin: 0 0 80px;
 }
 
 @media (min-width: 991px) {
-  .movie01-wrapper , .movie02-wrapper {
+  .movie01-wrapper, .movie02-wrapper {
     max-width: 653px;
     margin: 0 0 200px;
   }
 }
 
-.movie01-wrapper:before , .movie02-wrapper:before {
+.movie01-wrapper:before, .movie02-wrapper:before {
   position: absolute;
   z-index: 100;
   top: 0;
@@ -2106,12 +2106,12 @@ Core SCSS.
 }
 
 @media (min-width: 991px) {
-  .movie01-wrapper:before , .movie02-wrapper:before {
+  .movie01-wrapper:before, .movie02-wrapper:before {
     border-width: 110px 110px 0 0;
   }
 }
 
-.movie01-wrapper:after , .movie02-wrapper:after {
+.movie01-wrapper:after, .movie02-wrapper:after {
   position: absolute;
   z-index: 101;
   top: 10px;
@@ -2127,7 +2127,7 @@ Core SCSS.
 }
 
 @media (min-width: 991px) {
-  .movie01-wrapper:after , .movie02-wrapper:after {
+  .movie01-wrapper:after, .movie02-wrapper:after {
     top: 16px;
     left: 12px;
     font-size: 1.125rem;
@@ -2142,7 +2142,7 @@ Core SCSS.
   content: "Movie\A\0030\0032";
 }
 
-.movie01 , .movie02 {
+.movie01, .movie02 {
   position: relative;
   display: block;
   width: 100%;
@@ -2158,13 +2158,13 @@ Core SCSS.
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
 }
 
-.movie01:hover , .movie02:hover {
+.movie01:hover, .movie02:hover {
   -webkit-transition: none;
   transition: none;
   opacity: 1;
 }
 
-.movie01:after , .movie02:after {
+.movie01:after, .movie02:after {
   display: block;
   content: " ";
   width: 100%;
@@ -2220,11 +2220,11 @@ Core SCSS.
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -2318,11 +2318,11 @@ Core SCSS.
   box-shadow: 2.66px 3.43px 5px 0 rgba(0, 0, 0, .4);
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -2409,11 +2409,11 @@ Core SCSS.
   -ms-flex-pack: center;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 .txtfield {
@@ -2449,7 +2449,7 @@ Core SCSS.
   width: 100%;
 }
 
-.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label , .mdl-textfield--floating-label.is-dirty .mdl-textfield__label , .mdl-textfield--floating-label.is-disabled02 .mdl-textfield__label , .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-disabled02 .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
   color: rgba(255, 131, 173, .8);
 }
 
@@ -2479,11 +2479,11 @@ Core SCSS.
   -ms-flex-pack: center;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 .signs {
@@ -2537,11 +2537,11 @@ Core SCSS.
   background-size: cover;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -2616,11 +2616,11 @@ Core SCSS.
   -ms-flex-pack: center;
 
   -webkit-box-align: start;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -2630,11 +2630,11 @@ Core SCSS.
     justify-content: flex-start;
     -ms-flex-pack: start;
 
-    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: start;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
-    -webkit-box-pack: start;
   }
 }
 
@@ -2725,11 +2725,11 @@ Core SCSS.
   -ms-flex-pack: center;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -2739,8 +2739,8 @@ Core SCSS.
     justify-content: space-around;
     -ms-flex-pack: distribute;
 
-    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
   }
@@ -2764,11 +2764,11 @@ Core SCSS.
   text-align: center;
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 991px) {
@@ -2778,8 +2778,8 @@ Core SCSS.
     margin: 0;
     text-align: left;
 
-    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
   }
@@ -2840,11 +2840,11 @@ Core SCSS.
   box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 768px) {
@@ -2924,11 +2924,11 @@ Core SCSS.
   box-shadow: 11.491px 9.642px 16px 4px rgba(0, 0, 0, .4);
 
   -webkit-box-align: center;
-  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: center;
 }
 
 @media (min-width: 768px) {
