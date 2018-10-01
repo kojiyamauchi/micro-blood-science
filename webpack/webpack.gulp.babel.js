@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.(js|ts)$/,
         exclude: /node_modules/,
-        loader: ['babel-loader' /* , 'awesome-typescript-loader' */]
+        loader: ['babel-loader', 'awesome-typescript-loader']
       },
       // ES6 &  TypeScript End.
       // Import Json File.
@@ -59,7 +59,7 @@ module.exports = {
   // Setting for Import JS Modules.
   resolve: {
     // Setting for Cut the File Extension When Import JS Module.
-    extensions: ['.js', '.ts', '.tag', '.json'],
+    extensions: ['.js', '.ts', '.json'],
 
     // Setting for Project Root Dir, When Import JS Modules.
     alias: {
