@@ -1,5 +1,3 @@
-'use strict'
-
 // Import Package Modules.
 import emergence from 'emergence.js'
 import ModalVideo from 'modal-video'

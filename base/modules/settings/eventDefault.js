@@ -1,5 +1,3 @@
-'use strict'
-
 // Moive Contents Click Event Default Functions.
 const eventDefault = () => {
   const target01 = document.querySelector('.fn-movie01')

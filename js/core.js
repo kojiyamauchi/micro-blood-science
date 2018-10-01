@@ -1,1430 +1,455 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-// Robert Penner's easeInOutQuad
-
-// find the rest of his easing functions here: http://robertpenner.com/easing/
-// find them exported for ES6 consumption here: https://github.com/jaxgeller/ez.js
-
-var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
-  t /= d / 2;
-  if (t < 1) return c / 2 * t * t + b;
-  t--;
-  return -c / 2 * (t * (t - 2) - 1) + b;
-};
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
-  return typeof obj;
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-};
-
-var jumper = function jumper() {
-  // private variable cache
-  // no variables are created during a jump, preventing memory leaks
-
-  var element = void 0; // element to scroll to                   (node)
-
-  var start = void 0; // where scroll starts                    (px)
-  var stop = void 0; // where scroll stops                     (px)
-
-  var offset = void 0; // adjustment from the stop position      (px)
-  var easing = void 0; // easing function                        (function)
-  var a11y = void 0; // accessibility support flag             (boolean)
-
-  var distance = void 0; // distance of scroll                     (px)
-  var duration = void 0; // scroll duration                        (ms)
-
-  var timeStart = void 0; // time scroll started                    (ms)
-  var timeElapsed = void 0; // time spent scrolling thus far          (ms)
-
-  var next = void 0; // next scroll position                   (px)
-
-  var callback = void 0; // to call when done scrolling            (function)
-
-  // scroll position helper
-
-  function location() {
-    return window.scrollY || window.pageYOffset;
-  }
-
-  // element offset helper
-
-  function top(element) {
-    return element.getBoundingClientRect().top + start;
-  }
-
-  // rAF loop helper
-
-  function loop(timeCurrent) {
-    // store time scroll started, if not started already
-    if (!timeStart) {
-      timeStart = timeCurrent;
+/******/ ;(function(modules) {
+  // webpackBootstrap
+  /******/ // The module cache
+  /******/ var installedModules = {} // The require function
+  /******/
+  /******/ /******/ function __webpack_require__(moduleId) {
+    /******/
+    /******/ // Check if module is in cache
+    /******/ if (installedModules[moduleId]) {
+      /******/ return installedModules[moduleId].exports
+      /******/
+    } // Create a new module (and put it into the cache)
+    /******/ /******/ var module = (installedModules[moduleId] = {
+      /******/ i: moduleId,
+      /******/ l: false,
+      /******/ exports: {}
+      /******/
+    }) // Execute the module function
+    /******/
+    /******/ /******/ modules[moduleId].call(
+      module.exports,
+      module,
+      module.exports,
+      __webpack_require__
+    ) // Flag the module as loaded
+    /******/
+    /******/ /******/ module.l = true // Return the exports of the module
+    /******/
+    /******/ /******/ return module.exports
+    /******/
+  } // expose the modules object (__webpack_modules__)
+  /******/
+  /******/
+  /******/ /******/ __webpack_require__.m = modules // expose the module cache
+  /******/
+  /******/ /******/ __webpack_require__.c = installedModules // define getter function for harmony exports
+  /******/
+  /******/ /******/ __webpack_require__.d = function(exports, name, getter) {
+    /******/ if (!__webpack_require__.o(exports, name)) {
+      /******/ Object.defineProperty(exports, name, {
+        enumerable: true,
+        get: getter
+      })
+      /******/
     }
-
-    // determine time spent scrolling so far
-    timeElapsed = timeCurrent - timeStart;
-
-    // calculate next scroll position
-    next = easing(timeElapsed, start, distance, duration);
-
-    // scroll to it
-    window.scrollTo(0, next);
-
-    // check progress
-    timeElapsed < duration ? window.requestAnimationFrame(loop) // continue scroll loop
-    : done(); // scrolling is done
-  }
-
-  // scroll finished helper
-
-  function done() {
-    // account for rAF time rounding inaccuracies
-    window.scrollTo(0, start + distance);
-
-    // if scrolling to an element, and accessibility is enabled
-    if (element && a11y) {
-      // add tabindex indicating programmatic focus
-      element.setAttribute('tabindex', '-1');
-
-      // focus the element
-      element.focus();
+    /******/
+  } // define __esModule on exports
+  /******/
+  /******/ /******/ __webpack_require__.r = function(exports) {
+    /******/ if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+      /******/ Object.defineProperty(exports, Symbol.toStringTag, {
+        value: 'Module'
+      })
+      /******/
     }
-
-    // if it exists, fire the callback
-    if (typeof callback === 'function') {
-      callback();
-    }
-
-    // reset time for next jump
-    timeStart = false;
-  }
-
-  // API
-
-  function jump(target) {
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    // resolve options, or use defaults
-    duration = options.duration || 1000;
-    offset = options.offset || 0;
-    callback = options.callback; // "undefined" is a suitable default, and won't be called
-    easing = options.easing || easeInOutQuad;
-    a11y = options.a11y || false;
-
-    // cache starting position
-    start = location();
-
-    // resolve target
-    switch (typeof target === 'undefined' ? 'undefined' : _typeof(target)) {
-      // scroll from current position
-      case 'number':
-        element = undefined; // no element to scroll to
-        a11y = false; // make sure accessibility is off
-        stop = start + target;
-        break;
-
-      // scroll to element (node)
-      // bounding rect is relative to the viewport
-      case 'object':
-        element = target;
-        stop = top(element);
-        break;
-
-      // scroll to element (selector)
-      // bounding rect is relative to the viewport
-      case 'string':
-        element = document.querySelector(target);
-        stop = top(element);
-        break;
-    }
-
-    // resolve scroll distance, accounting for offset
-    distance = stop - start + offset;
-
-    // resolve duration
-    switch (_typeof(options.duration)) {
-      // number in ms
-      case 'number':
-        duration = options.duration;
-        break;
-
-      // function passed the distance of the scroll
-      case 'function':
-        duration = options.duration(distance);
-        break;
-    }
-
-    // start the loop
-    window.requestAnimationFrame(loop);
-  }
-
-  // expose only the jump method
-  return jump;
-};
-
-// export singleton
-
-var singleton = jumper();
-
-/* harmony default export */ __webpack_exports__["default"] = (singleton);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Import Jump.js.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _jump = __webpack_require__(0);
-
-var _jump2 = _interopRequireDefault(_jump);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-// Clicked Floating Button Functions.
-var floatings = function floatings() {
-  var flagTarget = document.body;
-  var floatingTranslate = document.querySelector('.fn-button-floating-translate');
-  var targetTranslate = document.querySelector('.link-translate-wrapper');
-  var floatingPageTop = document.querySelector('.fn-button-floating-page-top');
-  floatingTranslate.addEventListener('click', function (event) {
-    event.stopPropagation();
-    targetTranslate.classList.toggle('is-active');
-  });
-  floatingTranslate.addEventListener('mouseover', function () {
-    var flagDevice = flagTarget.classList.contains('sp');
-    if (!flagDevice) {
-      targetTranslate.classList.add('is-active');
-    }
-  });
-  floatingTranslate.addEventListener('mouseout', function () {
-    var flagDevice = flagTarget.classList.contains('sp');
-    if (!flagDevice) {
-      targetTranslate.classList.remove('is-active');
-    }
-  });
-  floatingPageTop.addEventListener('click', function () {
-    var clsCheck = floatingPageTop.classList.contains('is-scroll-top');
-    if (clsCheck) {
-      (0, _jump2.default)('.fn-scroll-top');
-    }
-  });
-};exports.default = floatings;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Introduction Functions.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var introductions = function introductions() {
-
-  var flagTarget = document.body;
-  var flagEN = flagTarget.classList.contains('en');
-  var flagCN = flagTarget.classList.contains('cn');
-
-  // Displayed Heading Functions.
-  var intro01 = function intro01(callBack) {
-    var target = document.querySelectorAll('.fn-txt-heading02-1');
-    var tLen = target.length;
-    if (flagEN) {
-      var _loop = function _loop(i) {
-        setTimeout(function () {
-          target[i].classList.add('is-active');
-        }, i * 15);
-      };
-
-      for (var i = 0; i < tLen; i++) {
-        _loop(i);
-      }
-      callBack();
-    } else if (flagCN) {
-      var _loop2 = function _loop2(i) {
-        setTimeout(function () {
-          target[i].classList.add('is-active');
-        }, i * 30);
-      };
-
-      for (var i = 0; i < tLen; i++) {
-        _loop2(i);
-      }
-      callBack();
-    } else {
-      var _loop3 = function _loop3(i) {
-        setTimeout(function () {
-          target[i].classList.add('is-active');
-        }, i * 30);
-      };
-
-      for (var i = 0; i < tLen; i++) {
-        _loop3(i);
-      }
-      callBack();
-    }
-  };
-
-  // Displayed Letters Background Functions.
-  var intro02 = function intro02(callBack) {
-    var target = document.querySelectorAll('.fn-letters-inner');
-    var tLen = target.length;
-    if (flagEN) {
-      setTimeout(function () {
-        for (var i = 0; i < tLen; i++) {
-          target[i].classList.add('is-active');
-        }
-        callBack();
-      }, 525);
-    } else if (flagCN) {
-      setTimeout(function () {
-        for (var i = 0; i < tLen; i++) {
-          target[i].classList.add('is-active');
-        }
-        callBack();
-      }, 700);
-    } else {
-      setTimeout(function () {
-        for (var i = 0; i < tLen; i++) {
-          target[i].classList.add('is-active');
-        }
-        callBack();
-      }, 800);
-    }
-  };
-
-  // Displayed Letters Functions.
-  var intro03 = function intro03(callBack) {
-    var target01 = document.querySelectorAll('.fn-txt-letters-pc');
-    var tLen01 = target01.length;
-    var target02 = document.querySelectorAll('.fn-txt-letters-sp');
-    var tLen02 = target02.length;
-    if (flagEN) {
-      setTimeout(function () {
-        var _loop4 = function _loop4(i) {
-          setTimeout(function () {
-            target01[i].classList.add('is-active');
-          }, i * 30);
-        };
-
-        for (var i = 0; i < tLen01; i++) {
-          _loop4(i);
-        }
-
-        var _loop5 = function _loop5(i) {
-          setTimeout(function () {
-            target02[i].classList.add('is-active');
-          }, i * 30);
-        };
-
-        for (var i = 0; i < tLen02; i++) {
-          _loop5(i);
-        }
-        callBack();
-      }, 850);
-    } else if (flagCN) {
-      setTimeout(function () {
-        var _loop6 = function _loop6(i) {
-          setTimeout(function () {
-            target01[i].classList.add('is-active');
-          }, i * 40);
-        };
-
-        for (var i = 0; i < tLen01; i++) {
-          _loop6(i);
-        }
-
-        var _loop7 = function _loop7(i) {
-          setTimeout(function () {
-            target02[i].classList.add('is-active');
-          }, i * 40);
-        };
-
-        for (var i = 0; i < tLen02; i++) {
-          _loop7(i);
-        }
-        callBack();
-      }, 850);
-    } else {
-      setTimeout(function () {
-        var _loop8 = function _loop8(i) {
-          setTimeout(function () {
-            target01[i].classList.add('is-active');
-          }, i * 40);
-        };
-
-        for (var i = 0; i < tLen01; i++) {
-          _loop8(i);
-        }
-
-        var _loop9 = function _loop9(i) {
-          setTimeout(function () {
-            target02[i].classList.add('is-active');
-          }, i * 40);
-        };
-
-        for (var i = 0; i < tLen02; i++) {
-          _loop9(i);
-        }
-        callBack();
-      }, 850);
-    }
-  };
-
-  // Displayed Floating Button Functions.
-  var intro04 = function intro04() {
-    var target = document.querySelectorAll('.fn-button-floating');
-    var targetLen = target.length;
-    var flagDevice = flagTarget.classList.contains('sp');
-    if (flagEN) {
-      if (flagDevice) {
-        setTimeout(function () {
-          for (var i = 0; i < targetLen; i++) {
-            target[i].classList.add('is-active');
+    /******/ Object.defineProperty(exports, '__esModule', { value: true })
+    /******/
+  } // create a fake namespace object // mode & 1: value is a module id, require it // mode & 2: merge all properties of value into the ns // mode & 4: return value when already ns object // mode & 8|1: behave like require
+  /******/
+  /******/ /******/ /******/ /******/ /******/ /******/ __webpack_require__.t = function(
+    value,
+    mode
+  ) {
+    /******/ if (mode & 1) value = __webpack_require__(value)
+    /******/ if (mode & 8) return value
+    /******/ if (
+      mode & 4 &&
+      typeof value === 'object' &&
+      value &&
+      value.__esModule
+    )
+      return value
+    /******/ var ns = Object.create(null)
+    /******/ __webpack_require__.r(ns)
+    /******/ Object.defineProperty(ns, 'default', {
+      enumerable: true,
+      value: value
+    })
+    /******/ if (mode & 2 && typeof value != 'string')
+      for (var key in value)
+        __webpack_require__.d(
+          ns,
+          key,
+          function(key) {
+            return value[key]
+          }.bind(null, key)
+        )
+    /******/ return ns
+    /******/
+  } // getDefaultExport function for compatibility with non-harmony modules
+  /******/
+  /******/ /******/ __webpack_require__.n = function(module) {
+    /******/ var getter =
+      module && module.__esModule
+        ? /******/ function getDefault() {
+            return module['default']
           }
-        }, 8500);
-      } else {
-        setTimeout(function () {
-          for (var i = 0; i < targetLen; i++) {
-            target[i].classList.add('is-active');
+        : /******/ function getModuleExports() {
+            return module
           }
-        }, 13500);
-      }
-    } else if (flagCN) {
-      if (flagDevice) {
-        setTimeout(function () {
-          for (var i = 0; i < targetLen; i++) {
-            target[i].classList.add('is-active');
-          }
-        }, 6125);
-      } else {
-        setTimeout(function () {
-          for (var i = 0; i < targetLen; i++) {
-            target[i].classList.add('is-active');
-          }
-        }, 6125);
-      }
-    } else {
-      if (flagDevice) {
-        setTimeout(function () {
-          for (var i = 0; i < targetLen; i++) {
-            target[i].classList.add('is-active');
-          }
-        }, 5250);
-      } else {
-        setTimeout(function () {
-          for (var i = 0; i < targetLen; i++) {
-            target[i].classList.add('is-active');
-          }
-        }, 8100);
-      }
-    }
-  };
-
-  // Concatenate All Functions.
-  setTimeout(function () {
-    intro01(intro02.bind(null, intro03.bind(null, intro04.bind(null))));
-  }, 1250);
-};
-
-exports.default = introductions;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Mail Validation.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var mailValidation = function mailValidation() {
-  var button = document.querySelector('.fn-submit');
-  var holder = document.querySelector('.fn-form-label');
-  var txtfield = document.querySelector('.fn-txtfield');
-  var target = document.querySelector('.fn-mail-val');
-  var validation = /^[A-Za-z0-9]+[\w\.-]+@[\w\.-]+\.\w{2,}$/;
-  var inTxt01 = '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9\u3092\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002';
-  var inTxt02 = '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\u3002';
-  var inTxtEN01 = 'Please comfirm in your email address';
-  var inTxtEN02 = 'Please fill in your email address';
-  var inTxtCN01 = '\u8BF7\u68C0\u67E5\u60A8\u7684\u90AE\u7BB1\u5730\u5740\u3002';
-  var inTxtCN02 = '\u8BF7\u8F93\u5165\u60A8\u7684\u90AE\u7BB1\u5730\u5740\u3002';
-  var flagTarget = document.body;
-  var flagEN = flagTarget.classList.contains('en');
-  var flagCN = flagTarget.classList.contains('cn');
-  var coreFunc = function coreFunc(event) {
-    var val = target.value;
-    if (!val.match(validation)) {
-      holder.innerText = flagEN ? inTxtEN01 : flagCN ? inTxtCN01 : inTxt01;
-      txtfield.classList.add('is-disabled02');
-      event.preventDefault();
-    }
-    if (val === '') {
-      holder.innerText = flagEN ? inTxtEN02 : flagCN ? inTxtCN02 : inTxt02;
-      txtfield.classList.add('is-disabled02');
-      event.preventDefault();
-    }
-  };
-  button.addEventListener('click', coreFunc, false);
-};
-
-exports.default = mailValidation;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Thanks Message Functions.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var message = function message() {
-  var getURL = window.location.hash;
-  var target = document.querySelector('.fn-thanks-message');
-  var searchWord = '#completed_mail';
-  if (getURL.indexOf(searchWord) > -1) {
-    target.classList.add('is-active');
-    window.history.replaceState(null, null, ' ');
-    setTimeout(function () {
-      target.classList.remove('is-active');
-    }, 5000);
-  }
-};
-
-exports.default = message;
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Import Jump.js.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _jump = __webpack_require__(0);
-
-var _jump2 = _interopRequireDefault(_jump);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-// Anchor Link Scroll Functions.
-var anchorLink = function anchorLink() {
-  var target = document.querySelectorAll('.fn-anchor');
-  var targetLen = target.length;
-
-  var _loop = function _loop(i) {
-    target[i].onclick = function (event) {
-      var getAnchor = target[i].dataset.anchor;
-      (0, _jump2.default)('.' + getAnchor);
-      event.preventDefault();
-    };
-  };
-
-  for (var i = 0; i < targetLen; i++) {
-    _loop(i);
-  }
-};exports.default = anchorLink;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Around Scroll Functions.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var checkScroll = function checkScroll() {
-  var coreFunc = function coreFunc() {
-    var target01 = document.querySelector('.fn-button-floating-translate');
-    var target02 = document.querySelector('.fn-button-floating-page-top');
-    var target03 = document.querySelector('.fn-txt-scoll');
-    var target04 = document.querySelector('.fn-angle-down');
-    var target05 = document.querySelector('.fn-area-about');
-    var target06 = document.querySelector('.fn-area-member');
-    var target07 = document.querySelector('.fn-footer');
-    var target08 = document.querySelector('.fn-anchor-link01');
-    var target09 = document.querySelector('.fn-anchor-link02');
-    var t05Offset = target05.getBoundingClientRect();
-    var t06Offset = target06.getBoundingClientRect();
-    var t07Offset = target07.getBoundingClientRect();
-    var WH = window.innerHeight;
-    if (t07Offset.top < WH) {
-      target01.classList.add('is-page-top');
-      target02.classList.add('is-scroll-top');
-      target02.classList.add('is-page-top');
-      target03.innerText = 'Page Top';
-      target04.classList.remove('fa-angle-double-down');
-      target04.classList.add('fa-angle-double-up');
-    } else {
-      target01.classList.remove('is-page-top');
-      target02.classList.remove('is-scroll-top');
-      target02.classList.remove('is-page-top');
-      target03.innerText = 'Scroll';
-      target04.classList.remove('fa-angle-double-up');
-      target04.classList.add('fa-angle-double-down');
-    }
-    if (t05Offset.top <= 0 && t06Offset.top > 0) {
-      target08.classList.add('is-current');
-    } else {
-      target08.classList.remove('is-current');
-    }
-    if (t06Offset.top <= 0) {
-      target09.classList.add('is-current');
-    } else {
-      target09.classList.remove('is-current');
-    }
-  };
-  window.addEventListener('scroll', coreFunc, false);
-};
-
-exports.default = checkScroll;
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Add Flag on Body Functions.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var addFlag = function addFlag() {
-  var target = document.body;
-  var BP = 768;
-  var coreFunc = function coreFunc() {
-    var WW = window.innerWidth;
-    if (WW >= BP) {
-      target.classList.add('pc');
-      target.classList.remove('sp');
-    } else if (WW < BP) {
-      target.classList.add('sp');
-      target.classList.remove('pc');
-    }
-  };
-  window.addEventListener('load', coreFunc, false);
-  window.addEventListener('resize', coreFunc, false);
-};
-
-exports.default = addFlag;
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Moive Contents Click Event Default Functions.
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var eventDefault = function eventDefault() {
-  var target01 = document.querySelector('.fn-movie01');
-  var target02 = document.querySelector('.fn-movie02');
-  var coreFunc = function coreFunc(event) {
-    event.preventDefault();
-  };
-  target01.addEventListener('click', coreFunc, false);
-  target02.addEventListener('click', coreFunc, false);
-};
-
-exports.default = eventDefault;
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {
-  // AMD
-  if (true) {
-    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
-      return factory(root);
-    }.call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else if (typeof exports === 'object') {
-    // Node.js or CommonJS
-    module.exports = factory;
-  } else {
-    // Browser globals
-    root.emergence = factory(root);
-  }
-})(this, function(root) {
-
-  'use strict';
-
-  var emergence = {};
-  var poll, container, throttle, reset, handheld, elemCushion, offsetTop, offsetRight, offsetBottom, offsetLeft;
-  var callback = function() {};
-
-  // Browser feature test to include any browser APIs required for >= IE8
-  // @return {bool} true if supported, otherwise false
-  var cutsTheMustard = function() {
-    return 'querySelectorAll' in document ? true : false;
-  };
-
-  // Checks if user is on a handheld
-  // @return {bool} true if it's a handheld, otherwise false
-  var isHandheld = function() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|playbook|silk/i.test(
-      navigator.userAgent
-    );
-  };
-
-  // Get the offset of a DOM Element
-  // @param {DOMElement} elem the container or element
-  // @return {int} the top, left, width and height values in pixels
-  var getElemOffset = function(elem) {
-
-    // Width and height of container or element
-    var w = elem.offsetWidth;
-    var h = elem.offsetHeight;
-
-    // Default top and left position of container or element
-    var topPos = 0;
-    var leftPos = 0;
-
-    // Get total distance of container or element to document's top and left origin
-    do {
-      if (!isNaN(elem.offsetTop)) {
-        topPos += elem.offsetTop;
-      }
-      if (!isNaN(elem.offsetLeft)) {
-        leftPos += elem.offsetLeft;
-      }
-    } while ((elem = elem.offsetParent) !== null);
-
-    // Return dimensions and position
-    return {
-      width: w,
-      height: h,
-      top: topPos,
-      left: leftPos
-    };
-  };
-
-  // Get the custom container size if provided, otherwise the documents
-  // @return {int} the width and height in pixels
-  var getContainerSize = function(container) {
-    var w, h;
-
-    // If custom container is provided in options
-    // Else use window or document
-    if (container !== window) {
-      w = container.clientWidth;
-      h = container.clientHeight;
-    } else {
-      w = window.innerWidth || document.documentElement.clientWidth;
-      h = window.innerHeight || document.documentElement.clientHeight;
-    }
-
-    return {
-      width: w,
-      height: h
-    };
-  };
-
-  // Get the X and Y scroll positions
-  // @return {int} the X and Y values in pixels
-  var getContainerScroll = function(container) {
-
-    // If custom container is provided in options
-    // Else use window or document
-    if (container !== window) {
-      return {
-        x: container.scrollLeft + getElemOffset(container).left,
-        y: container.scrollTop + getElemOffset(container).top
-      };
-    } else {
-      return {
-        x: window.pageXOffset || document.documentElement.scrollLeft,
-        y: window.pageYOffset || document.documentElement.scrollTop
-      };
-    }
-  };
-
-  // Check if element's closest parent is hidden (display: none)
-  // @param {DOMElement} elem the element
-  // @return {bool} true if hidden, false otherwise
-  var isHidden = function(elem) {
-    return elem.offsetParent === null;
-  };
-
-  // Check if element is visible
-  // @param {DOMElement} elem the element
-  var isVisible = function(elem) {
-
-    // Discontinue if element's closest parent is hidden
-    if (isHidden(elem)) {
-      return false;
-    }
-
-    // Get information from element and container
-    var elemOffset = getElemOffset(elem);
-    var containerSize = getContainerSize(container);
-    var containerScroll = getContainerScroll(container);
-
-    // Determine element size
-    var elemWidth = elemOffset.width;
-    var elemHeight = elemOffset.height;
-
-    // Determine element position from rect points
-    var elemTop = elemOffset.top;
-    var elemLeft = elemOffset.left;
-    var elemBottom = elemTop + elemHeight;
-    var elemRight = elemLeft + elemWidth;
-
-    // Determine boundaries of container and element
-    // @return {bool} true if element is found within boundaries, otherwise false
-    var checkBoundaries = function() {
-
-      // Determine element boundaries including custom cushion
-      var eTop = elemTop + elemHeight * elemCushion;
-      var eRight = elemRight - elemWidth * elemCushion;
-      var eBottom = elemBottom - elemHeight * elemCushion;
-      var eLeft = elemLeft + elemWidth * elemCushion;
-
-      // Determine container boundaries including custom offset
-      var cTop = containerScroll.y + offsetTop;
-      var cRight = containerScroll.x - offsetRight + containerSize.width;
-      var cBottom = containerScroll.y - offsetBottom + containerSize.height;
-      var cLeft = containerScroll.x + offsetLeft;
-
-      return (eTop < cBottom && eBottom > cTop && eLeft < cRight && eRight > cLeft);
-    };
-
-    return checkBoundaries();
-  };
-
-  // Engage emergence through a throttling method for performance
-  var emergenceThrottle = function() {
-    if (!!poll) {
-      return;
-    }
-    clearTimeout(poll);
-    poll = setTimeout(function() {
-      emergence.engage();
-      poll = null;
-    }, throttle);
-  };
-
-  // Initialize emergence with options, do feature test and create event listeners
-  // @param {Object} options Custom settings
-  emergence.init = function(options) {
-    options = options || {};
-
-    // Function to return an integer
-    var optionInt = function(option, fallback) {
-      return parseInt(option || fallback, 10);
-    };
-
-    // Function to return a floating point number
-    var optionFloat = function(option, fallback) {
-      return parseFloat(option || fallback);
-    };
-
-    // Default options
-    container = options.container || window; // window or document by default
-    reset = typeof options.reset !== 'undefined' ? options.reset : true; // true by default
-    handheld = typeof options.handheld !== 'undefined' ? options.handheld : true; // true by default
-    throttle = optionInt(options.throttle, 250); // 250 by default
-    elemCushion = optionFloat(options.elemCushion, 0.15); // 0.15 by default
-    offsetTop = optionInt(options.offsetTop, 0); // 0 by default
-    offsetRight = optionInt(options.offsetRight, 0); // 0 by default
-    offsetBottom = optionInt(options.offsetBottom, 0); // 0 by default
-    offsetLeft = optionInt(options.offsetLeft, 0); // 0 by default
-    callback = options.callback || callback;
-
-    // If browser doesn't pass feature test
-    if (!cutsTheMustard()) {
-
-      // Provide message in console.log
-      console.log('Emergence.js is not supported in this browser.');
-
-    }
-    // If this is handheld device AND handheld option is true
-    // OR not a handheld device
-    else if ((isHandheld() && handheld) || !isHandheld()) {
-
-      // Add '.emergence' class to document for conditional CSS
-      document.documentElement.className += ' emergence';
-
-      // If browser supports addEventListener
-      // Else use attachEvent
-      if (window.addEventListener) {
-
-        // Add event listeners for load, scroll and resize events
-        window.addEventListener('load', emergenceThrottle, false);
-        container.addEventListener('scroll', emergenceThrottle, false);
-        container.addEventListener('resize', emergenceThrottle, false);
-
-      } else {
-
-        // Attach events for legacy load method, scroll and resize events
-        document.attachEvent('onreadystatechange', function() {
-          if (document.readyState === 'complete') { emergenceThrottle(); }
-        });
-        container.attachEvent('onscroll', emergenceThrottle);
-        container.attachEvent('onresize', emergenceThrottle);
-
-      }
-    }
-  };
-
-  // Engage emergence
-  emergence.engage = function() {
-    var nodes = document.querySelectorAll('[data-emergence]');
-    var length = nodes.length;
-    var elem;
-
-    // Loop through objects with data-emergence attribute
-    for (var i = 0; i < length; i++) {
-      elem = nodes[i];
-
-      // If element is visible
-      if (isVisible(elem)) {
-
-        // Change the state of the attribute to 'visible'
-        elem.setAttribute('data-emergence', 'visible');
-
-        // Hack to repaint attribute in IE8
-        elem.className = elem.className;
-
-        // Callback for when element is visible
-        callback(elem, 'visible');
-
-      } else if (reset === true) {
-
-        // Else if element is hidden and reset
-        // Change the state of the attribute to 'hidden'
-        elem.setAttribute('data-emergence', 'hidden');
-
-        // Hack to repaint attribute in IE8
-        elem.className = elem.className;
-
-        // Create callback
-        callback(elem, 'reset');
-
-      } else if (reset === false) {
-
-        // Else if element is hidden and NOT reset
-        // Create callback
-        callback(elem, 'noreset');
-
-      }
-    }
-    
-    // If no data-emergence attributes are found
-    // Disengage emergence
-    if (!length) {
-      emergence.disengage();
-    }
-  };
-
-  // Disengage emergence
-  emergence.disengage = function() {
-
-    // If browser supports removeEventListener
-    // Else use detachEvent
-    if (window.removeEventListener) {
-
-      // Remove event listeners scroll and resize events
-      container.removeEventListener('scroll', emergenceThrottle, false);
-      container.removeEventListener('resize', emergenceThrottle, false);
-
-    } else {
-
-      // Detach scroll and resize events
-      container.detachEvent('onscroll', emergenceThrottle);
-      container.detachEvent('onresize', emergenceThrottle);
-
-    }
-
-    // Clear timeout from throttle
-    clearTimeout(poll);
-  };
-
-  return emergence;
-});
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(13);
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Import Package Modules.
-
-var _emergence = __webpack_require__(9);
-
-var _emergence2 = _interopRequireDefault(_emergence);
-
-var _modalVideo = __webpack_require__(10);
-
-var _modalVideo2 = _interopRequireDefault(_modalVideo);
-
-var _addFlag = __webpack_require__(7);
-
-var _addFlag2 = _interopRequireDefault(_addFlag);
-
-var _eventDefault = __webpack_require__(8);
-
-var _eventDefault2 = _interopRequireDefault(_eventDefault);
-
-var _introductions = __webpack_require__(2);
-
-var _introductions2 = _interopRequireDefault(_introductions);
-
-var _checkScroll = __webpack_require__(6);
-
-var _checkScroll2 = _interopRequireDefault(_checkScroll);
-
-var _anchorLink = __webpack_require__(5);
-
-var _anchorLink2 = _interopRequireDefault(_anchorLink);
-
-var _floatings = __webpack_require__(1);
-
-var _floatings2 = _interopRequireDefault(_floatings);
-
-var _mailValidation = __webpack_require__(3);
-
-var _mailValidation2 = _interopRequireDefault(_mailValidation);
-
-var _message = __webpack_require__(4);
-
-var _message2 = _interopRequireDefault(_message);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-// emergence.js Init.
-
-
-// Import Modules.
-_emergence2.default.init({ reset: false });
-
-// Created Modal Video Instance.
-new _modalVideo2.default('.js-modal-video');
-
-// Require All Functions.
-(0, _addFlag2.default)();
-(0, _eventDefault2.default)();
-(0, _introductions2.default)();
-(0, _checkScroll2.default)();
-(0, _anchorLink2.default)();
-(0, _floatings2.default)();
-(0, _mailValidation2.default)();
-(0, _message2.default)();
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Code refactored from Mozilla Developer Network:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
- */
-
-
-
-function assign(target, firstSource) {
-  if (target === undefined || target === null) {
-    throw new TypeError('Cannot convert first argument to object');
-  }
-
-  var to = Object(target);
-  for (var i = 1; i < arguments.length; i++) {
-    var nextSource = arguments[i];
-    if (nextSource === undefined || nextSource === null) {
-      continue;
-    }
-
-    var keysArray = Object.keys(Object(nextSource));
-    for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
-      var nextKey = keysArray[nextIndex];
-      var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
-      if (desc !== undefined && desc.enumerable) {
-        to[nextKey] = nextSource[nextKey];
-      }
-    }
-  }
-  return to;
-}
-
-function polyfill() {
-  if (!Object.assign) {
-    Object.defineProperty(Object, 'assign', {
-      enumerable: false,
-      configurable: true,
-      writable: true,
-      value: assign
-    });
-  }
-}
-
-module.exports = {
-  assign: assign,
-  polyfill: polyfill
-};
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _util = __webpack_require__(14);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var assign = __webpack_require__(12).assign;
-
-var defaults = {
-  channel: 'youtube',
-  youtube: {
-    autoplay: 1,
-    cc_load_policy: 1,
-    color: null,
-    controls: 1,
-    disablekb: 0,
-    enablejsapi: 0,
-    end: null,
-    fs: 1,
-    h1: null,
-    iv_load_policy: 1,
-    list: null,
-    listType: null,
-    loop: 0,
-    modestbranding: null,
-    origin: null,
-    playlist: null,
-    playsinline: null,
-    rel: 0,
-    showinfo: 1,
-    start: 0,
-    wmode: 'transparent',
-    theme: 'dark',
-    nocookie: false
-  },
-  ratio: '16:9',
-  vimeo: {
-    api: false,
-    autopause: true,
-    autoplay: true,
-    byline: true,
-    callback: null,
-    color: null,
-    height: null,
-    loop: false,
-    maxheight: null,
-    maxwidth: null,
-    player_id: null,
-    portrait: true,
-    title: true,
-    width: null,
-    xhtml: false
-  },
-  allowFullScreen: true,
-  animationSpeed: 300,
-  classNames: {
-    modalVideo: 'modal-video',
-    modalVideoClose: 'modal-video-close',
-    modalVideoBody: 'modal-video-body',
-    modalVideoInner: 'modal-video-inner',
-    modalVideoIframeWrap: 'modal-video-movie-wrap',
-    modalVideoCloseBtn: 'modal-video-close-btn'
-  },
-  aria: {
-    openMessage: 'You just openned the modal video',
-    dismissBtnMessage: 'Close the modal by clicking here'
-  }
-};
-
-var ModalVideo = function () {
-  function ModalVideo(ele, option) {
-    var _this = this;
-
-    _classCallCheck(this, ModalVideo);
-
-    var opt = assign({}, defaults, option);
-    var selectors = typeof ele === 'string' ? document.querySelectorAll(ele) : ele;
-    var body = document.querySelector('body');
-    var classNames = opt.classNames;
-    var speed = opt.animationSpeed;
-    [].forEach.call(selectors, function (selector) {
-      selector.addEventListener('click', function () {
-        var videoId = selector.dataset.videoId;
-        var channel = selector.dataset.channel || opt.channel;
-        var id = (0, _util.getUniqId)();
-        var videoUrl = _this.getVideoUrl(opt, channel, videoId);
-        var html = _this.getHtml(opt, videoUrl, id);
-        (0, _util.append)(body, html);
-        var modal = document.querySelector('#' + id);
-        var btn = modal.querySelector('.js-modal-video-dismiss-btn');
-        modal.focus();
-        modal.addEventListener('click', function () {
-          (0, _util.addClass)(modal, classNames.modalVideoClose);
-          setTimeout(function () {
-            (0, _util.remove)(modal);
-            selector.focus();
-          }, speed);
-        });
-        modal.addEventListener('keydown', function (e) {
-          if (e.which === 9) {
-            e.preventDefault();
-            if (document.activeElement === modal) {
-              btn.focus();
-            } else {
-              modal.setAttribute('aria-label', '');
-              modal.focus();
-            }
-          }
-        });
-        btn.addEventListener('click', function () {
-          (0, _util.triggerEvent)(modal, 'click');
-        });
-      });
-    });
-  }
-
-  _createClass(ModalVideo, [{
-    key: 'getPadding',
-    value: function getPadding(ratio) {
-      var arr = ratio.split(':');
-      var width = Number(arr[0]);
-      var height = Number(arr[1]);
-      var padding = height * 100 / width;
-      return padding + '%';
-    }
-  }, {
-    key: 'getQueryString',
-    value: function getQueryString(obj) {
-      var url = '';
-      Object.keys(obj).forEach(function (key) {
-        url += key + '=' + obj[key] + '&';
-      });
-      return url.substr(0, url.length - 1);
-    }
-  }, {
-    key: 'getVideoUrl',
-    value: function getVideoUrl(opt, channel, videoId) {
-      if (channel === 'youtube') {
-        return this.getYoutubeUrl(opt.youtube, videoId);
-      } else if (channel === 'vimeo') {
-        return this.getVimeoUrl(opt.vimeo, videoId);
-      }
-      return '';
-    }
-  }, {
-    key: 'getVimeoUrl',
-    value: function getVimeoUrl(vimeo, videoId) {
-      var query = this.getQueryString(vimeo);
-      return '//player.vimeo.com/video/' + videoId + '?' + query;
-    }
-  }, {
-    key: 'getYoutubeUrl',
-    value: function getYoutubeUrl(youtube, videoId) {
-      var query = this.getQueryString(youtube);
-      if (youtube.nocookie === true) {
-        return '//www.youtube-nocookie.com/embed/' + videoId + '?' + query;
+    /******/ __webpack_require__.d(getter, 'a', getter)
+    /******/ return getter
+    /******/
+  } // Object.prototype.hasOwnProperty.call
+  /******/
+  /******/ /******/ __webpack_require__.o = function(object, property) {
+    return Object.prototype.hasOwnProperty.call(object, property)
+  } // __webpack_public_path__
+  /******/
+  /******/ /******/ __webpack_require__.p = '' // Load entry module and return exports
+  /******/
+  /******/
+  /******/ /******/ return __webpack_require__(
+    (__webpack_require__.s = './base/core.js')
+  )
+  /******/
+})(
+  /************************************************************************/
+  /******/ {
+    /***/ './base/core.js':
+      /*!**********************!*\
+  !*** ./base/core.js ***!
+  \**********************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          '\n\nvar _emergence = __webpack_require__(/*! emergence.js */ "./node_modules/emergence.js/src/emergence.js");\n\nvar _emergence2 = _interopRequireDefault(_emergence);\n\nvar _modalVideo = __webpack_require__(/*! modal-video */ "./node_modules/modal-video/lib/index.js");\n\nvar _modalVideo2 = _interopRequireDefault(_modalVideo);\n\nvar _addFlag = __webpack_require__(/*! ./modules/settings/addFlag */ "./base/modules/settings/addFlag.js");\n\nvar _addFlag2 = _interopRequireDefault(_addFlag);\n\nvar _eventDefault = __webpack_require__(/*! ./modules/settings/eventDefault */ "./base/modules/settings/eventDefault.js");\n\nvar _eventDefault2 = _interopRequireDefault(_eventDefault);\n\nvar _introductions = __webpack_require__(/*! ./modules/introductions/introductions */ "./base/modules/introductions/introductions.js");\n\nvar _introductions2 = _interopRequireDefault(_introductions);\n\nvar _checkScroll = __webpack_require__(/*! ./modules/scroll/checkScroll */ "./base/modules/scroll/checkScroll.js");\n\nvar _checkScroll2 = _interopRequireDefault(_checkScroll);\n\nvar _anchorLink = __webpack_require__(/*! ./modules/scroll/anchorLink */ "./base/modules/scroll/anchorLink.js");\n\nvar _anchorLink2 = _interopRequireDefault(_anchorLink);\n\nvar _floatings = __webpack_require__(/*! ./modules/floatings/floatings */ "./base/modules/floatings/floatings.js");\n\nvar _floatings2 = _interopRequireDefault(_floatings);\n\nvar _mailValidation = __webpack_require__(/*! ./modules/mail/mailValidation */ "./base/modules/mail/mailValidation.js");\n\nvar _mailValidation2 = _interopRequireDefault(_mailValidation);\n\nvar _message = __webpack_require__(/*! ./modules/mail/message */ "./base/modules/mail/message.js");\n\nvar _message2 = _interopRequireDefault(_message);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// emergence.js Init.\n\n\n// Import Modules.\n// Import Package Modules.\n_emergence2.default.init({ reset: false });\n\n// Created Modal Video Instance.\nnew _modalVideo2.default(\'.js-modal-video\');\n\n// Require All Functions.\n(0, _addFlag2.default)();\n(0, _eventDefault2.default)();\n(0, _introductions2.default)();\n(0, _checkScroll2.default)();\n(0, _anchorLink2.default)();\n(0, _floatings2.default)();\n(0, _mailValidation2.default)();\n(0, _message2.default)();\n\n//# sourceURL=webpack:///./base/core.js?'
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/floatings/floatings.js':
+      /*!*********************************************!*\
+  !*** ./base/modules/floatings/floatings.js ***!
+  \*********************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/* WEBPACK VAR INJECTION */(function(module) {\n\n// Import Jump.js.\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _jump = __webpack_require__(/*! jump.js */ \"./node_modules/jump.js/dist/jump.module.js\");\n\nvar _jump2 = _interopRequireDefault(_jump);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\n// Clicked Floating Button Functions.\nvar floatings = function floatings() {\n  var flagTarget = document.body;\n  var floatingTranslate = document.querySelector('.fn-button-floating-translate');\n  var targetTranslate = document.querySelector('.link-translate-wrapper');\n  var floatingPageTop = document.querySelector('.fn-button-floating-page-top');\n  floatingTranslate.addEventListener('click', function (event) {\n    event.stopPropagation();\n    targetTranslate.classList.toggle('is-active');\n  });\n  floatingTranslate.addEventListener('mouseover', function () {\n    var flagDevice = flagTarget.classList.contains('sp');\n    if (!flagDevice) {\n      targetTranslate.classList.add('is-active');\n    }\n  });\n  floatingTranslate.addEventListener('mouseout', function () {\n    var flagDevice = flagTarget.classList.contains('sp');\n    if (!flagDevice) {\n      targetTranslate.classList.remove('is-active');\n    }\n  });\n  floatingPageTop.addEventListener('click', function () {\n    var clsCheck = floatingPageTop.classList.contains('is-scroll-top');\n    if (clsCheck) {\n      (0, _jump2.default)('.fn-scroll-top');\n    }\n  });\n};\n\nvar _default = floatings;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(floatings, 'floatings', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/floatings/floatings.js');\n  reactHotLoader.register(_default, 'default', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/floatings/floatings.js');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./base/modules/floatings/floatings.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/introductions/introductions.js':
+      /*!*****************************************************!*\
+  !*** ./base/modules/introductions/introductions.js ***!
+  \*****************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/* WEBPACK VAR INJECTION */(function(module) {\n\n// Introduction Functions.\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nvar introductions = function introductions() {\n\n  var flagTarget = document.body;\n  var flagEN = flagTarget.classList.contains('en');\n  var flagCN = flagTarget.classList.contains('cn');\n\n  // Displayed Heading Functions.\n  var intro01 = function intro01(callBack) {\n    var target = document.querySelectorAll('.fn-txt-heading02-1');\n    var tLen = target.length;\n    if (flagEN) {\n      var _loop = function _loop(i) {\n        setTimeout(function () {\n          target[i].classList.add('is-active');\n        }, i * 15);\n      };\n\n      for (var i = 0; i < tLen; i++) {\n        _loop(i);\n      }\n      callBack();\n    } else if (flagCN) {\n      var _loop2 = function _loop2(i) {\n        setTimeout(function () {\n          target[i].classList.add('is-active');\n        }, i * 30);\n      };\n\n      for (var i = 0; i < tLen; i++) {\n        _loop2(i);\n      }\n      callBack();\n    } else {\n      var _loop3 = function _loop3(i) {\n        setTimeout(function () {\n          target[i].classList.add('is-active');\n        }, i * 30);\n      };\n\n      for (var i = 0; i < tLen; i++) {\n        _loop3(i);\n      }\n      callBack();\n    }\n  };\n\n  // Displayed Letters Background Functions.\n  var intro02 = function intro02(callBack) {\n    var target = document.querySelectorAll('.fn-letters-inner');\n    var tLen = target.length;\n    if (flagEN) {\n      setTimeout(function () {\n        for (var i = 0; i < tLen; i++) {\n          target[i].classList.add('is-active');\n        }\n        callBack();\n      }, 525);\n    } else if (flagCN) {\n      setTimeout(function () {\n        for (var i = 0; i < tLen; i++) {\n          target[i].classList.add('is-active');\n        }\n        callBack();\n      }, 700);\n    } else {\n      setTimeout(function () {\n        for (var i = 0; i < tLen; i++) {\n          target[i].classList.add('is-active');\n        }\n        callBack();\n      }, 800);\n    }\n  };\n\n  // Displayed Letters Functions.\n  var intro03 = function intro03(callBack) {\n    var target01 = document.querySelectorAll('.fn-txt-letters-pc');\n    var tLen01 = target01.length;\n    var target02 = document.querySelectorAll('.fn-txt-letters-sp');\n    var tLen02 = target02.length;\n    if (flagEN) {\n      setTimeout(function () {\n        var _loop4 = function _loop4(i) {\n          setTimeout(function () {\n            target01[i].classList.add('is-active');\n          }, i * 30);\n        };\n\n        for (var i = 0; i < tLen01; i++) {\n          _loop4(i);\n        }\n\n        var _loop5 = function _loop5(i) {\n          setTimeout(function () {\n            target02[i].classList.add('is-active');\n          }, i * 30);\n        };\n\n        for (var i = 0; i < tLen02; i++) {\n          _loop5(i);\n        }\n        callBack();\n      }, 850);\n    } else if (flagCN) {\n      setTimeout(function () {\n        var _loop6 = function _loop6(i) {\n          setTimeout(function () {\n            target01[i].classList.add('is-active');\n          }, i * 40);\n        };\n\n        for (var i = 0; i < tLen01; i++) {\n          _loop6(i);\n        }\n\n        var _loop7 = function _loop7(i) {\n          setTimeout(function () {\n            target02[i].classList.add('is-active');\n          }, i * 40);\n        };\n\n        for (var i = 0; i < tLen02; i++) {\n          _loop7(i);\n        }\n        callBack();\n      }, 850);\n    } else {\n      setTimeout(function () {\n        var _loop8 = function _loop8(i) {\n          setTimeout(function () {\n            target01[i].classList.add('is-active');\n          }, i * 40);\n        };\n\n        for (var i = 0; i < tLen01; i++) {\n          _loop8(i);\n        }\n\n        var _loop9 = function _loop9(i) {\n          setTimeout(function () {\n            target02[i].classList.add('is-active');\n          }, i * 40);\n        };\n\n        for (var i = 0; i < tLen02; i++) {\n          _loop9(i);\n        }\n        callBack();\n      }, 850);\n    }\n  };\n\n  // Displayed Floating Button Functions.\n  var intro04 = function intro04() {\n    var target = document.querySelectorAll('.fn-button-floating');\n    var targetLen = target.length;\n    var flagDevice = flagTarget.classList.contains('sp');\n    if (flagEN) {\n      if (flagDevice) {\n        setTimeout(function () {\n          for (var i = 0; i < targetLen; i++) {\n            target[i].classList.add('is-active');\n          }\n        }, 8500);\n      } else {\n        setTimeout(function () {\n          for (var i = 0; i < targetLen; i++) {\n            target[i].classList.add('is-active');\n          }\n        }, 13500);\n      }\n    } else if (flagCN) {\n      if (flagDevice) {\n        setTimeout(function () {\n          for (var i = 0; i < targetLen; i++) {\n            target[i].classList.add('is-active');\n          }\n        }, 6125);\n      } else {\n        setTimeout(function () {\n          for (var i = 0; i < targetLen; i++) {\n            target[i].classList.add('is-active');\n          }\n        }, 6125);\n      }\n    } else {\n      if (flagDevice) {\n        setTimeout(function () {\n          for (var i = 0; i < targetLen; i++) {\n            target[i].classList.add('is-active');\n          }\n        }, 5250);\n      } else {\n        setTimeout(function () {\n          for (var i = 0; i < targetLen; i++) {\n            target[i].classList.add('is-active');\n          }\n        }, 8100);\n      }\n    }\n  };\n\n  // Concatenate All Functions.\n  setTimeout(function () {\n    intro01(intro02.bind(null, intro03.bind(null, intro04.bind(null))));\n  }, 1250);\n};\n\nvar _default = introductions;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(introductions, 'introductions', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/introductions/introductions.js');\n  reactHotLoader.register(_default, 'default', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/introductions/introductions.js');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./base/modules/introductions/introductions.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/mail/mailValidation.js':
+      /*!*********************************************!*\
+  !*** ./base/modules/mail/mailValidation.js ***!
+  \*********************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/* WEBPACK VAR INJECTION */(function(module) {\n\n// Mail Validation.\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nvar mailValidation = function mailValidation() {\n  var button = document.querySelector('.fn-submit');\n  var holder = document.querySelector('.fn-form-label');\n  var txtfield = document.querySelector('.fn-txtfield');\n  var target = document.querySelector('.fn-mail-val');\n  var validation = /^[A-Za-z0-9]+[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,}$/;\n  var inTxt01 = '\\u30E1\\u30FC\\u30EB\\u30A2\\u30C9\\u30EC\\u30B9\\u3092\\u78BA\\u8A8D\\u3057\\u3066\\u304F\\u3060\\u3055\\u3044\\u3002';\n  var inTxt02 = '\\u30E1\\u30FC\\u30EB\\u30A2\\u30C9\\u30EC\\u30B9\\u3092\\u5165\\u529B\\u3057\\u3066\\u304F\\u3060\\u3055\\u3044\\u3002';\n  var inTxtEN01 = 'Please comfirm in your email address';\n  var inTxtEN02 = 'Please fill in your email address';\n  var inTxtCN01 = '\\u8BF7\\u68C0\\u67E5\\u60A8\\u7684\\u90AE\\u7BB1\\u5730\\u5740\\u3002';\n  var inTxtCN02 = '\\u8BF7\\u8F93\\u5165\\u60A8\\u7684\\u90AE\\u7BB1\\u5730\\u5740\\u3002';\n  var flagTarget = document.body;\n  var flagEN = flagTarget.classList.contains('en');\n  var flagCN = flagTarget.classList.contains('cn');\n  var coreFunc = function coreFunc(event) {\n    var val = target.value;\n    if (!val.match(validation)) {\n      holder.innerText = flagEN ? inTxtEN01 : flagCN ? inTxtCN01 : inTxt01;\n      txtfield.classList.add('is-disabled02');\n      event.preventDefault();\n    }\n    if (val === '') {\n      holder.innerText = flagEN ? inTxtEN02 : flagCN ? inTxtCN02 : inTxt02;\n      txtfield.classList.add('is-disabled02');\n      event.preventDefault();\n    }\n  };\n  button.addEventListener('click', coreFunc, false);\n};\n\nvar _default = mailValidation;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(mailValidation, 'mailValidation', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/mail/mailValidation.js');\n  reactHotLoader.register(_default, 'default', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/mail/mailValidation.js');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./base/modules/mail/mailValidation.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/mail/message.js':
+      /*!**************************************!*\
+  !*** ./base/modules/mail/message.js ***!
+  \**************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/* WEBPACK VAR INJECTION */(function(module) {\n\n// Thanks Message Functions.\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nvar message = function message() {\n  var getURL = window.location.hash;\n  var target = document.querySelector('.fn-thanks-message');\n  var searchWord = '#completed_mail';\n  if (getURL.indexOf(searchWord) > -1) {\n    target.classList.add('is-active');\n    window.history.replaceState(null, null, ' ');\n    setTimeout(function () {\n      target.classList.remove('is-active');\n    }, 5000);\n  }\n};\n\nvar _default = message;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(message, 'message', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/mail/message.js');\n  reactHotLoader.register(_default, 'default', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/mail/message.js');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./base/modules/mail/message.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/scroll/anchorLink.js':
+      /*!*******************************************!*\
+  !*** ./base/modules/scroll/anchorLink.js ***!
+  \*******************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          '/* WEBPACK VAR INJECTION */(function(module) {\n\n// Import Jump.js.\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _jump = __webpack_require__(/*! jump.js */ "./node_modules/jump.js/dist/jump.module.js");\n\nvar _jump2 = _interopRequireDefault(_jump);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\n// Anchor Link Scroll Functions.\nvar anchorLink = function anchorLink() {\n  var target = document.querySelectorAll(\'.fn-anchor\');\n  var targetLen = target.length;\n\n  var _loop = function _loop(i) {\n    target[i].onclick = function (event) {\n      var getAnchor = target[i].dataset.anchor;\n      (0, _jump2.default)(\'.\' + getAnchor);\n      event.preventDefault();\n    };\n  };\n\n  for (var i = 0; i < targetLen; i++) {\n    _loop(i);\n  }\n};\n\nvar _default = anchorLink;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(anchorLink, \'anchorLink\', \'/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/scroll/anchorLink.js\');\n  reactHotLoader.register(_default, \'default\', \'/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/scroll/anchorLink.js\');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))\n\n//# sourceURL=webpack:///./base/modules/scroll/anchorLink.js?'
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/scroll/checkScroll.js':
+      /*!********************************************!*\
+  !*** ./base/modules/scroll/checkScroll.js ***!
+  \********************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/* WEBPACK VAR INJECTION */(function(module) {\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\n// Around Scroll Functions.\nvar checkScroll = function checkScroll() {\n  var coreFunc = function coreFunc() {\n    var target01 = document.querySelector('.fn-button-floating-translate');\n    var target02 = document.querySelector('.fn-button-floating-page-top');\n    var target03 = document.querySelector('.fn-txt-scoll');\n    var target04 = document.querySelector('.fn-angle-down');\n    var target05 = document.querySelector('.fn-area-about');\n    var target06 = document.querySelector('.fn-area-member');\n    var target07 = document.querySelector('.fn-footer');\n    var target08 = document.querySelector('.fn-anchor-link01');\n    var target09 = document.querySelector('.fn-anchor-link02');\n    var t05Offset = target05.getBoundingClientRect();\n    var t06Offset = target06.getBoundingClientRect();\n    var t07Offset = target07.getBoundingClientRect();\n    var WH = window.innerHeight;\n    if (t07Offset.top < WH) {\n      target01.classList.add('is-page-top');\n      target02.classList.add('is-scroll-top');\n      target02.classList.add('is-page-top');\n      target03.innerText = 'Page Top';\n      target04.classList.remove('fa-angle-double-down');\n      target04.classList.add('fa-angle-double-up');\n    } else {\n      target01.classList.remove('is-page-top');\n      target02.classList.remove('is-scroll-top');\n      target02.classList.remove('is-page-top');\n      target03.innerText = 'Scroll';\n      target04.classList.remove('fa-angle-double-up');\n      target04.classList.add('fa-angle-double-down');\n    }\n    if (t05Offset.top <= 0 && t06Offset.top > 0) {\n      target08.classList.add('is-current');\n    } else {\n      target08.classList.remove('is-current');\n    }\n    if (t06Offset.top <= 0) {\n      target09.classList.add('is-current');\n    } else {\n      target09.classList.remove('is-current');\n    }\n  };\n  window.addEventListener('scroll', coreFunc, false);\n};\n\nvar _default = checkScroll;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(checkScroll, 'checkScroll', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/scroll/checkScroll.js');\n  reactHotLoader.register(_default, 'default', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/scroll/checkScroll.js');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./base/modules/scroll/checkScroll.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/settings/addFlag.js':
+      /*!******************************************!*\
+  !*** ./base/modules/settings/addFlag.js ***!
+  \******************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/* WEBPACK VAR INJECTION */(function(module) {\n\n// Add Flag on Body Functions.\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nvar addFlag = function addFlag() {\n  var target = document.body;\n  var BP = 768;\n  var coreFunc = function coreFunc() {\n    var WW = window.innerWidth;\n    if (WW >= BP) {\n      target.classList.add('pc');\n      target.classList.remove('sp');\n    } else if (WW < BP) {\n      target.classList.add('sp');\n      target.classList.remove('pc');\n    }\n  };\n  window.addEventListener('load', coreFunc, false);\n  window.addEventListener('resize', coreFunc, false);\n};\n\nvar _default = addFlag;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(addFlag, 'addFlag', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/settings/addFlag.js');\n  reactHotLoader.register(_default, 'default', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/settings/addFlag.js');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./base/modules/settings/addFlag.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './base/modules/settings/eventDefault.js':
+      /*!***********************************************!*\
+  !*** ./base/modules/settings/eventDefault.js ***!
+  \***********************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/* WEBPACK VAR INJECTION */(function(module) {\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n(function () {\n  var enterModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").enterModule;\n\n  enterModule && enterModule(module);\n})();\n\n// Moive Contents Click Event Default Functions.\nvar eventDefault = function eventDefault() {\n  var target01 = document.querySelector('.fn-movie01');\n  var target02 = document.querySelector('.fn-movie02');\n  var coreFunc = function coreFunc(event) {\n    event.preventDefault();\n  };\n  target01.addEventListener('click', coreFunc, false);\n  target02.addEventListener('click', coreFunc, false);\n};\n\nvar _default = eventDefault;\nexports.default = _default;\n;\n\n(function () {\n  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").default;\n\n  var leaveModule = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\").leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(eventDefault, 'eventDefault', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/settings/eventDefault.js');\n  reactHotLoader.register(_default, 'default', '/Applications/MAMP/htdocs/works/micro-blood-science-LP/base/modules/settings/eventDefault.js');\n  leaveModule(module);\n})();\n\n;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./base/modules/settings/eventDefault.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/custom-event-polyfill/custom-event-polyfill.js':
+      /*!*********************************************************************!*\
+  !*** ./node_modules/custom-event-polyfill/custom-event-polyfill.js ***!
+  \*********************************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports) {
+        eval(
+          "// Polyfill for creating CustomEvents on IE9/10/11\n\n// code pulled from:\n// https://github.com/d4tocchini/customevent-polyfill\n// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent#Polyfill\n\ntry {\n    var ce = new window.CustomEvent('test');\n    ce.preventDefault();\n    if (ce.defaultPrevented !== true) {\n        // IE has problems with .preventDefault() on custom events\n        // http://stackoverflow.com/questions/23349191\n        throw new Error('Could not prevent default');\n    }\n} catch(e) {\n  var CustomEvent = function(event, params) {\n    var evt, origPrevent;\n    params = params || {\n      bubbles: false,\n      cancelable: false,\n      detail: undefined\n    };\n\n    evt = document.createEvent(\"CustomEvent\");\n    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);\n    origPrevent = evt.preventDefault;\n    evt.preventDefault = function () {\n      origPrevent.call(this);\n      try {\n        Object.defineProperty(this, 'defaultPrevented', {\n          get: function () {\n            return true;\n          }\n        });\n      } catch(e) {\n        this.defaultPrevented = true;\n      }\n    };\n    return evt;\n  };\n\n  CustomEvent.prototype = window.Event.prototype;\n  window.CustomEvent = CustomEvent; // expose definition to window\n}\n\n\n//# sourceURL=webpack:///./node_modules/custom-event-polyfill/custom-event-polyfill.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/emergence.js/src/emergence.js':
+      /*!****************************************************!*\
+  !*** ./node_modules/emergence.js/src/emergence.js ***!
+  \****************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        eval(
+          "var __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {\n  // AMD\n  if (true) {\n    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {\n      return factory(root);\n    }).call(exports, __webpack_require__, exports, module),\n\t\t\t\t__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));\n  } else {}\n})(this, function(root) {\n\n  'use strict';\n\n  var emergence = {};\n  var poll, container, throttle, reset, handheld, elemCushion, offsetTop, offsetRight, offsetBottom, offsetLeft;\n  var callback = function() {};\n\n  // Browser feature test to include any browser APIs required for >= IE8\n  // @return {bool} true if supported, otherwise false\n  var cutsTheMustard = function() {\n    return 'querySelectorAll' in document ? true : false;\n  };\n\n  // Checks if user is on a handheld\n  // @return {bool} true if it's a handheld, otherwise false\n  var isHandheld = function() {\n    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|playbook|silk/i.test(\n      navigator.userAgent\n    );\n  };\n\n  // Get the offset of a DOM Element\n  // @param {DOMElement} elem the container or element\n  // @return {int} the top, left, width and height values in pixels\n  var getElemOffset = function(elem) {\n\n    // Width and height of container or element\n    var w = elem.offsetWidth;\n    var h = elem.offsetHeight;\n\n    // Default top and left position of container or element\n    var topPos = 0;\n    var leftPos = 0;\n\n    // Get total distance of container or element to document's top and left origin\n    do {\n      if (!isNaN(elem.offsetTop)) {\n        topPos += elem.offsetTop;\n      }\n      if (!isNaN(elem.offsetLeft)) {\n        leftPos += elem.offsetLeft;\n      }\n    } while ((elem = elem.offsetParent) !== null);\n\n    // Return dimensions and position\n    return {\n      width: w,\n      height: h,\n      top: topPos,\n      left: leftPos\n    };\n  };\n\n  // Get the custom container size if provided, otherwise the documents\n  // @return {int} the width and height in pixels\n  var getContainerSize = function(container) {\n    var w, h;\n\n    // If custom container is provided in options\n    // Else use window or document\n    if (container !== window) {\n      w = container.clientWidth;\n      h = container.clientHeight;\n    } else {\n      w = window.innerWidth || document.documentElement.clientWidth;\n      h = window.innerHeight || document.documentElement.clientHeight;\n    }\n\n    return {\n      width: w,\n      height: h\n    };\n  };\n\n  // Get the X and Y scroll positions\n  // @return {int} the X and Y values in pixels\n  var getContainerScroll = function(container) {\n\n    // If custom container is provided in options\n    // Else use window or document\n    if (container !== window) {\n      return {\n        x: container.scrollLeft + getElemOffset(container).left,\n        y: container.scrollTop + getElemOffset(container).top\n      };\n    } else {\n      return {\n        x: window.pageXOffset || document.documentElement.scrollLeft,\n        y: window.pageYOffset || document.documentElement.scrollTop\n      };\n    }\n  };\n\n  // Check if element's closest parent is hidden (display: none)\n  // @param {DOMElement} elem the element\n  // @return {bool} true if hidden, false otherwise\n  var isHidden = function(elem) {\n    return elem.offsetParent === null;\n  };\n\n  // Check if element is visible\n  // @param {DOMElement} elem the element\n  var isVisible = function(elem) {\n\n    // Discontinue if element's closest parent is hidden\n    if (isHidden(elem)) {\n      return false;\n    }\n\n    // Get information from element and container\n    var elemOffset = getElemOffset(elem);\n    var containerSize = getContainerSize(container);\n    var containerScroll = getContainerScroll(container);\n\n    // Determine element size\n    var elemWidth = elemOffset.width;\n    var elemHeight = elemOffset.height;\n\n    // Determine element position from rect points\n    var elemTop = elemOffset.top;\n    var elemLeft = elemOffset.left;\n    var elemBottom = elemTop + elemHeight;\n    var elemRight = elemLeft + elemWidth;\n\n    // Determine boundaries of container and element\n    // @return {bool} true if element is found within boundaries, otherwise false\n    var checkBoundaries = function() {\n\n      // Determine element boundaries including custom cushion\n      var eTop = elemTop + elemHeight * elemCushion;\n      var eRight = elemRight - elemWidth * elemCushion;\n      var eBottom = elemBottom - elemHeight * elemCushion;\n      var eLeft = elemLeft + elemWidth * elemCushion;\n\n      // Determine container boundaries including custom offset\n      var cTop = containerScroll.y + offsetTop;\n      var cRight = containerScroll.x - offsetRight + containerSize.width;\n      var cBottom = containerScroll.y - offsetBottom + containerSize.height;\n      var cLeft = containerScroll.x + offsetLeft;\n\n      return (eTop < cBottom && eBottom > cTop && eLeft < cRight && eRight > cLeft);\n    };\n\n    return checkBoundaries();\n  };\n\n  // Engage emergence through a throttling method for performance\n  var emergenceThrottle = function() {\n    if (!!poll) {\n      return;\n    }\n    clearTimeout(poll);\n    poll = setTimeout(function() {\n      emergence.engage();\n      poll = null;\n    }, throttle);\n  };\n\n  // Initialize emergence with options, do feature test and create event listeners\n  // @param {Object} options Custom settings\n  emergence.init = function(options) {\n    options = options || {};\n\n    // Function to return an integer\n    var optionInt = function(option, fallback) {\n      return parseInt(option || fallback, 10);\n    };\n\n    // Function to return a floating point number\n    var optionFloat = function(option, fallback) {\n      return parseFloat(option || fallback);\n    };\n\n    // Default options\n    container = options.container || window; // window or document by default\n    reset = typeof options.reset !== 'undefined' ? options.reset : true; // true by default\n    handheld = typeof options.handheld !== 'undefined' ? options.handheld : true; // true by default\n    throttle = optionInt(options.throttle, 250); // 250 by default\n    elemCushion = optionFloat(options.elemCushion, 0.15); // 0.15 by default\n    offsetTop = optionInt(options.offsetTop, 0); // 0 by default\n    offsetRight = optionInt(options.offsetRight, 0); // 0 by default\n    offsetBottom = optionInt(options.offsetBottom, 0); // 0 by default\n    offsetLeft = optionInt(options.offsetLeft, 0); // 0 by default\n    callback = options.callback || callback;\n\n    // If browser doesn't pass feature test\n    if (!cutsTheMustard()) {\n\n      // Provide message in console.log\n      console.log('Emergence.js is not supported in this browser.');\n\n    }\n    // If this is handheld device AND handheld option is true\n    // OR not a handheld device\n    else if ((isHandheld() && handheld) || !isHandheld()) {\n\n      // Add '.emergence' class to document for conditional CSS\n      document.documentElement.className += ' emergence';\n\n      // If browser supports addEventListener\n      // Else use attachEvent\n      if (window.addEventListener) {\n\n        // Add event listeners for load, scroll and resize events\n        window.addEventListener('load', emergenceThrottle, false);\n        container.addEventListener('scroll', emergenceThrottle, false);\n        container.addEventListener('resize', emergenceThrottle, false);\n\n      } else {\n\n        // Attach events for legacy load method, scroll and resize events\n        document.attachEvent('onreadystatechange', function() {\n          if (document.readyState === 'complete') { emergenceThrottle(); }\n        });\n        container.attachEvent('onscroll', emergenceThrottle);\n        container.attachEvent('onresize', emergenceThrottle);\n\n      }\n    }\n  };\n\n  // Engage emergence\n  emergence.engage = function() {\n    var nodes = document.querySelectorAll('[data-emergence]');\n    var length = nodes.length;\n    var elem;\n\n    // Loop through objects with data-emergence attribute\n    for (var i = 0; i < length; i++) {\n      elem = nodes[i];\n\n      // If element is visible\n      if (isVisible(elem)) {\n\n        // Change the state of the attribute to 'visible'\n        elem.setAttribute('data-emergence', 'visible');\n\n        // Hack to repaint attribute in IE8\n        elem.className = elem.className;\n\n        // Callback for when element is visible\n        callback(elem, 'visible');\n\n      } else if (reset === true) {\n\n        // Else if element is hidden and reset\n        // Change the state of the attribute to 'hidden'\n        elem.setAttribute('data-emergence', 'hidden');\n\n        // Hack to repaint attribute in IE8\n        elem.className = elem.className;\n\n        // Create callback\n        callback(elem, 'reset');\n\n      } else if (reset === false) {\n\n        // Else if element is hidden and NOT reset\n        // Create callback\n        callback(elem, 'noreset');\n\n      }\n    }\n    \n    // If no data-emergence attributes are found\n    // Disengage emergence\n    if (!length) {\n      emergence.disengage();\n    }\n  };\n\n  // Disengage emergence\n  emergence.disengage = function() {\n\n    // If browser supports removeEventListener\n    // Else use detachEvent\n    if (window.removeEventListener) {\n\n      // Remove event listeners scroll and resize events\n      container.removeEventListener('scroll', emergenceThrottle, false);\n      container.removeEventListener('resize', emergenceThrottle, false);\n\n    } else {\n\n      // Detach scroll and resize events\n      container.detachEvent('onscroll', emergenceThrottle);\n      container.detachEvent('onresize', emergenceThrottle);\n\n    }\n\n    // Clear timeout from throttle\n    clearTimeout(poll);\n  };\n\n  return emergence;\n});\n\n\n//# sourceURL=webpack:///./node_modules/emergence.js/src/emergence.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/es6-object-assign/index.js':
+      /*!*************************************************!*\
+  !*** ./node_modules/es6-object-assign/index.js ***!
+  \*************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/**\n * Code refactored from Mozilla Developer Network:\n * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign\n */\n\n\n\nfunction assign(target, firstSource) {\n  if (target === undefined || target === null) {\n    throw new TypeError('Cannot convert first argument to object');\n  }\n\n  var to = Object(target);\n  for (var i = 1; i < arguments.length; i++) {\n    var nextSource = arguments[i];\n    if (nextSource === undefined || nextSource === null) {\n      continue;\n    }\n\n    var keysArray = Object.keys(Object(nextSource));\n    for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {\n      var nextKey = keysArray[nextIndex];\n      var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);\n      if (desc !== undefined && desc.enumerable) {\n        to[nextKey] = nextSource[nextKey];\n      }\n    }\n  }\n  return to;\n}\n\nfunction polyfill() {\n  if (!Object.assign) {\n    Object.defineProperty(Object, 'assign', {\n      enumerable: false,\n      configurable: true,\n      writable: true,\n      value: assign\n    });\n  }\n}\n\nmodule.exports = {\n  assign: assign,\n  polyfill: polyfill\n};\n\n\n//# sourceURL=webpack:///./node_modules/es6-object-assign/index.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/jump.js/dist/jump.module.js':
+      /*!**************************************************!*\
+  !*** ./node_modules/jump.js/dist/jump.module.js ***!
+  \**************************************************/
+      /*! exports provided: default */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict'
+        eval(
+          "__webpack_require__.r(__webpack_exports__);\n// Robert Penner's easeInOutQuad\n\n// find the rest of his easing functions here: http://robertpenner.com/easing/\n// find them exported for ES6 consumption here: https://github.com/jaxgeller/ez.js\n\nvar easeInOutQuad = function easeInOutQuad(t, b, c, d) {\n  t /= d / 2;\n  if (t < 1) return c / 2 * t * t + b;\n  t--;\n  return -c / 2 * (t * (t - 2) - 1) + b;\n};\n\nvar _typeof = typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\" ? function (obj) {\n  return typeof obj;\n} : function (obj) {\n  return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj;\n};\n\nvar jumper = function jumper() {\n  // private variable cache\n  // no variables are created during a jump, preventing memory leaks\n\n  var element = void 0; // element to scroll to                   (node)\n\n  var start = void 0; // where scroll starts                    (px)\n  var stop = void 0; // where scroll stops                     (px)\n\n  var offset = void 0; // adjustment from the stop position      (px)\n  var easing = void 0; // easing function                        (function)\n  var a11y = void 0; // accessibility support flag             (boolean)\n\n  var distance = void 0; // distance of scroll                     (px)\n  var duration = void 0; // scroll duration                        (ms)\n\n  var timeStart = void 0; // time scroll started                    (ms)\n  var timeElapsed = void 0; // time spent scrolling thus far          (ms)\n\n  var next = void 0; // next scroll position                   (px)\n\n  var callback = void 0; // to call when done scrolling            (function)\n\n  // scroll position helper\n\n  function location() {\n    return window.scrollY || window.pageYOffset;\n  }\n\n  // element offset helper\n\n  function top(element) {\n    return element.getBoundingClientRect().top + start;\n  }\n\n  // rAF loop helper\n\n  function loop(timeCurrent) {\n    // store time scroll started, if not started already\n    if (!timeStart) {\n      timeStart = timeCurrent;\n    }\n\n    // determine time spent scrolling so far\n    timeElapsed = timeCurrent - timeStart;\n\n    // calculate next scroll position\n    next = easing(timeElapsed, start, distance, duration);\n\n    // scroll to it\n    window.scrollTo(0, next);\n\n    // check progress\n    timeElapsed < duration ? window.requestAnimationFrame(loop) // continue scroll loop\n    : done(); // scrolling is done\n  }\n\n  // scroll finished helper\n\n  function done() {\n    // account for rAF time rounding inaccuracies\n    window.scrollTo(0, start + distance);\n\n    // if scrolling to an element, and accessibility is enabled\n    if (element && a11y) {\n      // add tabindex indicating programmatic focus\n      element.setAttribute('tabindex', '-1');\n\n      // focus the element\n      element.focus();\n    }\n\n    // if it exists, fire the callback\n    if (typeof callback === 'function') {\n      callback();\n    }\n\n    // reset time for next jump\n    timeStart = false;\n  }\n\n  // API\n\n  function jump(target) {\n    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n\n    // resolve options, or use defaults\n    duration = options.duration || 1000;\n    offset = options.offset || 0;\n    callback = options.callback; // \"undefined\" is a suitable default, and won't be called\n    easing = options.easing || easeInOutQuad;\n    a11y = options.a11y || false;\n\n    // cache starting position\n    start = location();\n\n    // resolve target\n    switch (typeof target === 'undefined' ? 'undefined' : _typeof(target)) {\n      // scroll from current position\n      case 'number':\n        element = undefined; // no element to scroll to\n        a11y = false; // make sure accessibility is off\n        stop = start + target;\n        break;\n\n      // scroll to element (node)\n      // bounding rect is relative to the viewport\n      case 'object':\n        element = target;\n        stop = top(element);\n        break;\n\n      // scroll to element (selector)\n      // bounding rect is relative to the viewport\n      case 'string':\n        element = document.querySelector(target);\n        stop = top(element);\n        break;\n    }\n\n    // resolve scroll distance, accounting for offset\n    distance = stop - start + offset;\n\n    // resolve duration\n    switch (_typeof(options.duration)) {\n      // number in ms\n      case 'number':\n        duration = options.duration;\n        break;\n\n      // function passed the distance of the scroll\n      case 'function':\n        duration = options.duration(distance);\n        break;\n    }\n\n    // start the loop\n    window.requestAnimationFrame(loop);\n  }\n\n  // expose only the jump method\n  return jump;\n};\n\n// export singleton\n\nvar singleton = jumper();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (singleton);\n\n\n//# sourceURL=webpack:///./node_modules/jump.js/dist/jump.module.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/modal-video/lib/core/index.js':
+      /*!****************************************************!*\
+  !*** ./node_modules/modal-video/lib/core/index.js ***!
+  \****************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\n__webpack_require__(/*! custom-event-polyfill */ \"./node_modules/custom-event-polyfill/custom-event-polyfill.js\");\n\nvar _util = __webpack_require__(/*! ../lib/util */ \"./node_modules/modal-video/lib/lib/util.js\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar assign = __webpack_require__(/*! es6-object-assign */ \"./node_modules/es6-object-assign/index.js\").assign;\n\nvar defaults = {\n  channel: 'youtube',\n  facebook: {},\n  youtube: {\n    autoplay: 1,\n    cc_load_policy: 1,\n    color: null,\n    controls: 1,\n    disablekb: 0,\n    enablejsapi: 0,\n    end: null,\n    fs: 1,\n    h1: null,\n    iv_load_policy: 1,\n    list: null,\n    listType: null,\n    loop: 0,\n    modestbranding: null,\n    origin: null,\n    playlist: null,\n    playsinline: null,\n    rel: 0,\n    showinfo: 1,\n    start: 0,\n    wmode: 'transparent',\n    theme: 'dark',\n    nocookie: false\n  },\n  ratio: '16:9',\n  vimeo: {\n    api: false,\n    autopause: true,\n    autoplay: true,\n    byline: true,\n    callback: null,\n    color: null,\n    height: null,\n    loop: false,\n    maxheight: null,\n    maxwidth: null,\n    player_id: null,\n    portrait: true,\n    title: true,\n    width: null,\n    xhtml: false\n  },\n  allowFullScreen: true,\n  animationSpeed: 300,\n  classNames: {\n    modalVideo: 'modal-video',\n    modalVideoClose: 'modal-video-close',\n    modalVideoBody: 'modal-video-body',\n    modalVideoInner: 'modal-video-inner',\n    modalVideoIframeWrap: 'modal-video-movie-wrap',\n    modalVideoCloseBtn: 'modal-video-close-btn'\n  },\n  aria: {\n    openMessage: 'You just openned the modal video',\n    dismissBtnMessage: 'Close the modal by clicking here'\n  }\n};\n\nvar ModalVideo = function () {\n  function ModalVideo(ele, option) {\n    var _this = this;\n\n    _classCallCheck(this, ModalVideo);\n\n    var opt = assign({}, defaults, option);\n    var selectors = typeof ele === 'string' ? document.querySelectorAll(ele) : ele;\n    var body = document.querySelector('body');\n    var classNames = opt.classNames;\n    var speed = opt.animationSpeed;\n    [].forEach.call(selectors, function (selector) {\n      selector.addEventListener('click', function (event) {\n        if (selector.tagName === 'A') {\n          event.preventDefault();\n        }\n        var videoId = selector.dataset.videoId;\n        var channel = selector.dataset.channel || opt.channel;\n        var id = (0, _util.getUniqId)();\n        var videoUrl = selector.dataset.videoUrl || _this.getVideoUrl(opt, channel, videoId);\n        var html = _this.getHtml(opt, videoUrl, id);\n        (0, _util.append)(body, html);\n        var modal = document.getElementById(id);\n        var btn = modal.querySelector('.js-modal-video-dismiss-btn');\n        modal.focus();\n        modal.addEventListener('click', function () {\n          (0, _util.addClass)(modal, classNames.modalVideoClose);\n          setTimeout(function () {\n            (0, _util.remove)(modal);\n            selector.focus();\n          }, speed);\n        });\n        modal.addEventListener('keydown', function (e) {\n          if (e.which === 9) {\n            e.preventDefault();\n            if (document.activeElement === modal) {\n              btn.focus();\n            } else {\n              modal.setAttribute('aria-label', '');\n              modal.focus();\n            }\n          }\n        });\n        btn.addEventListener('click', function () {\n          (0, _util.triggerEvent)(modal, 'click');\n        });\n      });\n    });\n  }\n\n  _createClass(ModalVideo, [{\n    key: 'getPadding',\n    value: function getPadding(ratio) {\n      var arr = ratio.split(':');\n      var width = Number(arr[0]);\n      var height = Number(arr[1]);\n      var padding = height * 100 / width;\n      return padding + '%';\n    }\n  }, {\n    key: 'getQueryString',\n    value: function getQueryString(obj) {\n      var url = '';\n      Object.keys(obj).forEach(function (key) {\n        url += key + '=' + obj[key] + '&';\n      });\n      return url.substr(0, url.length - 1);\n    }\n  }, {\n    key: 'getVideoUrl',\n    value: function getVideoUrl(opt, channel, videoId) {\n      if (channel === 'youtube') {\n        return this.getYoutubeUrl(opt.youtube, videoId);\n      } else if (channel === 'vimeo') {\n        return this.getVimeoUrl(opt.vimeo, videoId);\n      } else if (channel === 'facebook') {\n        return this.getFacebookUrl(opt.facebook, videoId);\n      }\n      return '';\n    }\n  }, {\n    key: 'getVimeoUrl',\n    value: function getVimeoUrl(vimeo, videoId) {\n      var query = this.getQueryString(vimeo);\n      return '//player.vimeo.com/video/' + videoId + '?' + query;\n    }\n  }, {\n    key: 'getYoutubeUrl',\n    value: function getYoutubeUrl(youtube, videoId) {\n      var query = this.getQueryString(youtube);\n      if (youtube.nocookie === true) {\n        return '//www.youtube-nocookie.com/embed/' + videoId + '?' + query;\n      }\n\n      return '//www.youtube.com/embed/' + videoId + '?' + query;\n    }\n  }, {\n    key: 'getFacebookUrl',\n    value: function getFacebookUrl(facebook, videoId) {\n      return '//www.facebook.com/v2.10/plugins/video.php?href=https://www.facebook.com/facebook/videos/' + videoId + '&' + this.getQueryString(facebook);\n    }\n  }, {\n    key: 'getHtml',\n    value: function getHtml(opt, videoUrl, id) {\n      var padding = this.getPadding(opt.ratio);\n      var classNames = opt.classNames;\n      return '\\n      <div class=\"' + classNames.modalVideo + '\" tabindex=\"-1\" role=\"dialog\" aria-label=\"' + opt.aria.openMessage + '\" id=\"' + id + '\">\\n        <div class=\"' + classNames.modalVideoBody + '\">\\n          <div class=\"' + classNames.modalVideoInner + '\">\\n            <div class=\"' + classNames.modalVideoIframeWrap + '\" style=\"padding-bottom:' + padding + '\">\\n              <button class=\"' + classNames.modalVideoCloseBtn + ' js-modal-video-dismiss-btn\" aria-label=\"' + opt.aria.dismissBtnMessage + '\"></button>\\n              <iframe width=\\'460\\' height=\\'230\\' src=\"' + videoUrl + '\" frameborder=\\'0\\' allowfullscreen=' + opt.allowFullScreen + ' tabindex=\"-1\"/>\\n            </div>\\n          </div>\\n        </div>\\n      </div>\\n    ';\n    }\n  }]);\n\n  return ModalVideo;\n}();\n\nexports.default = ModalVideo;\nmodule.exports = exports['default'];\n\n//# sourceURL=webpack:///./node_modules/modal-video/lib/core/index.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/modal-video/lib/index.js':
+      /*!***********************************************!*\
+  !*** ./node_modules/modal-video/lib/index.js ***!
+  \***********************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          '\n\nmodule.exports = __webpack_require__(/*! ./core/ */ "./node_modules/modal-video/lib/core/index.js");\n\n//# sourceURL=webpack:///./node_modules/modal-video/lib/index.js?'
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/modal-video/lib/lib/util.js':
+      /*!**************************************************!*\
+  !*** ./node_modules/modal-video/lib/lib/util.js ***!
+  \**************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar append = exports.append = function append(element, string) {\n  var div = document.createElement('div');\n  div.innerHTML = string;\n  while (div.children.length > 0) {\n    element.appendChild(div.children[0]);\n  }\n};\n\nvar getUniqId = exports.getUniqId = function getUniqId() {\n  return (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase();\n};\n\nvar remove = exports.remove = function remove(element) {\n  if (element && element.parentNode) {\n    element.parentNode.removeChild(element);\n  }\n};\n\nvar addClass = exports.addClass = function addClass(element, className) {\n  if (element.classList) {\n    element.classList.add(className);\n  } else {\n    element.className += ' ' + className;\n  }\n};\n\nvar triggerEvent = exports.triggerEvent = function triggerEvent(el, eventName, options) {\n  var event = void 0;\n  if (window.CustomEvent) {\n    event = new CustomEvent(eventName, { cancelable: true });\n  } else {\n    event = document.createEvent('CustomEvent');\n    event.initCustomEvent(eventName, false, false, options);\n  }\n  el.dispatchEvent(event);\n};\n\n//# sourceURL=webpack:///./node_modules/modal-video/lib/lib/util.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/object-assign/index.js':
+      /*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/*\nobject-assign\n(c) Sindre Sorhus\n@license MIT\n*/\n\n\n/* eslint-disable no-unused-vars */\nvar getOwnPropertySymbols = Object.getOwnPropertySymbols;\nvar hasOwnProperty = Object.prototype.hasOwnProperty;\nvar propIsEnumerable = Object.prototype.propertyIsEnumerable;\n\nfunction toObject(val) {\n\tif (val === null || val === undefined) {\n\t\tthrow new TypeError('Object.assign cannot be called with null or undefined');\n\t}\n\n\treturn Object(val);\n}\n\nfunction shouldUseNative() {\n\ttry {\n\t\tif (!Object.assign) {\n\t\t\treturn false;\n\t\t}\n\n\t\t// Detect buggy property enumeration order in older V8 versions.\n\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=4118\n\t\tvar test1 = new String('abc');  // eslint-disable-line no-new-wrappers\n\t\ttest1[5] = 'de';\n\t\tif (Object.getOwnPropertyNames(test1)[0] === '5') {\n\t\t\treturn false;\n\t\t}\n\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=3056\n\t\tvar test2 = {};\n\t\tfor (var i = 0; i < 10; i++) {\n\t\t\ttest2['_' + String.fromCharCode(i)] = i;\n\t\t}\n\t\tvar order2 = Object.getOwnPropertyNames(test2).map(function (n) {\n\t\t\treturn test2[n];\n\t\t});\n\t\tif (order2.join('') !== '0123456789') {\n\t\t\treturn false;\n\t\t}\n\n\t\t// https://bugs.chromium.org/p/v8/issues/detail?id=3056\n\t\tvar test3 = {};\n\t\t'abcdefghijklmnopqrst'.split('').forEach(function (letter) {\n\t\t\ttest3[letter] = letter;\n\t\t});\n\t\tif (Object.keys(Object.assign({}, test3)).join('') !==\n\t\t\t\t'abcdefghijklmnopqrst') {\n\t\t\treturn false;\n\t\t}\n\n\t\treturn true;\n\t} catch (err) {\n\t\t// We don't expect any of the above to throw, but better to be safe.\n\t\treturn false;\n\t}\n}\n\nmodule.exports = shouldUseNative() ? Object.assign : function (target, source) {\n\tvar from;\n\tvar to = toObject(target);\n\tvar symbols;\n\n\tfor (var s = 1; s < arguments.length; s++) {\n\t\tfrom = Object(arguments[s]);\n\n\t\tfor (var key in from) {\n\t\t\tif (hasOwnProperty.call(from, key)) {\n\t\t\t\tto[key] = from[key];\n\t\t\t}\n\t\t}\n\n\t\tif (getOwnPropertySymbols) {\n\t\t\tsymbols = getOwnPropertySymbols(from);\n\t\t\tfor (var i = 0; i < symbols.length; i++) {\n\t\t\t\tif (propIsEnumerable.call(from, symbols[i])) {\n\t\t\t\t\tto[symbols[i]] = from[symbols[i]];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn to;\n};\n\n\n//# sourceURL=webpack:///./node_modules/object-assign/index.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/prop-types/checkPropTypes.js':
+      /*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n\n\nvar printWarning = function() {};\n\nif (true) {\n  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ \"./node_modules/prop-types/lib/ReactPropTypesSecret.js\");\n  var loggedTypeFailures = {};\n\n  printWarning = function(text) {\n    var message = 'Warning: ' + text;\n    if (typeof console !== 'undefined') {\n      console.error(message);\n    }\n    try {\n      // --- Welcome to debugging React ---\n      // This error was thrown as a convenience so that you can use this stack\n      // to find the callsite that caused this warning to fire.\n      throw new Error(message);\n    } catch (x) {}\n  };\n}\n\n/**\n * Assert that the values match with the type specs.\n * Error messages are memorized and will only be shown once.\n *\n * @param {object} typeSpecs Map of name to a ReactPropType\n * @param {object} values Runtime values that need to be type-checked\n * @param {string} location e.g. \"prop\", \"context\", \"child context\"\n * @param {string} componentName Name of the component for error messages.\n * @param {?Function} getStack Returns the component stack.\n * @private\n */\nfunction checkPropTypes(typeSpecs, values, location, componentName, getStack) {\n  if (true) {\n    for (var typeSpecName in typeSpecs) {\n      if (typeSpecs.hasOwnProperty(typeSpecName)) {\n        var error;\n        // Prop type validation may throw. In case they do, we don't want to\n        // fail the render phase where it didn't fail before. So we log it.\n        // After these have been cleaned up, we'll let them throw.\n        try {\n          // This is intentionally an invariant that gets caught. It's the same\n          // behavior as without this statement except with a better message.\n          if (typeof typeSpecs[typeSpecName] !== 'function') {\n            var err = Error(\n              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +\n              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'\n            );\n            err.name = 'Invariant Violation';\n            throw err;\n          }\n          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);\n        } catch (ex) {\n          error = ex;\n        }\n        if (error && !(error instanceof Error)) {\n          printWarning(\n            (componentName || 'React class') + ': type specification of ' +\n            location + ' `' + typeSpecName + '` is invalid; the type checker ' +\n            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +\n            'You may have forgotten to pass an argument to the type checker ' +\n            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +\n            'shape all require an argument).'\n          )\n\n        }\n        if (error instanceof Error && !(error.message in loggedTypeFailures)) {\n          // Only monitor this failure once because there tends to be a lot of the\n          // same error.\n          loggedTypeFailures[error.message] = true;\n\n          var stack = getStack ? getStack() : '';\n\n          printWarning(\n            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')\n          );\n        }\n      }\n    }\n  }\n}\n\nmodule.exports = checkPropTypes;\n\n\n//# sourceURL=webpack:///./node_modules/prop-types/checkPropTypes.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/prop-types/lib/ReactPropTypesSecret.js':
+      /*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/**\n * Copyright (c) 2013-present, Facebook, Inc.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n\n\nvar ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';\n\nmodule.exports = ReactPropTypesSecret;\n\n\n//# sourceURL=webpack:///./node_modules/prop-types/lib/ReactPropTypesSecret.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/react-hot-loader/dist/react-hot-loader.production.min.js':
+      /*!*******************************************************************************!*\
+  !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
+  \*******************************************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          'function _interopDefault(t){return t&&"object"==typeof t&&"default"in t?t.default:t}Object.defineProperty(exports,"__esModule",{value:!0});var React=_interopDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js")),classCallCheck=function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")},inherits=function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)},possibleConstructorReturn=function(t,e){if(!t)throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e},AppContainer=function(t){function e(){return classCallCheck(this,e),possibleConstructorReturn(this,t.apply(this,arguments))}return inherits(e,t),e.prototype.render=function(){return React.Children.only(this.props.children)},e}(React.Component),hot_prod=function(){return function(t){return t}},areComponentsEqual=function(t,e){return t===e},setConfig=function(){},cold=function(t){return t};exports.AppContainer=AppContainer,exports.hot=hot_prod,exports.areComponentsEqual=areComponentsEqual,exports.setConfig=setConfig,exports.cold=cold;\n\n\n//# sourceURL=webpack:///./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js?'
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/react-hot-loader/index.js':
+      /*!************************************************!*\
+  !*** ./node_modules/react-hot-loader/index.js ***!
+  \************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          '\n\nvar evalAllowed = false;\ntry {\n  eval(\'evalAllowed = true\');\n} catch (e) {\n  // eval not allowed due to CSP\n}\n\n// RHL needs setPrototypeOf to operate Component inheritance, and eval to patch methods\nvar platformSupported = !!Object.setPrototypeOf && evalAllowed;\n\nif (true) {\n  if (false) {}\n  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");\n} else {}\n\n\n//# sourceURL=webpack:///./node_modules/react-hot-loader/index.js?'
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/react/cjs/react.development.js':
+      /*!*****************************************************!*\
+  !*** ./node_modules/react/cjs/react.development.js ***!
+  \*****************************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          "/** @license React v16.5.2\n * react.development.js\n *\n * Copyright (c) Facebook, Inc. and its affiliates.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE file in the root directory of this source tree.\n */\n\n\n\n\n\nif (true) {\n  (function() {\n'use strict';\n\nvar _assign = __webpack_require__(/*! object-assign */ \"./node_modules/object-assign/index.js\");\nvar checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ \"./node_modules/prop-types/checkPropTypes.js\");\n\n// TODO: this is special because it gets imported during build.\n\nvar ReactVersion = '16.5.2';\n\n// The Symbol used to tag the ReactElement-like types. If there is no native Symbol\n// nor polyfill, then a plain number is used for performance.\nvar hasSymbol = typeof Symbol === 'function' && Symbol.for;\n\nvar REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;\nvar REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;\nvar REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;\nvar REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;\nvar REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;\nvar REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;\nvar REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;\nvar REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;\nvar REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;\nvar REACT_PLACEHOLDER_TYPE = hasSymbol ? Symbol.for('react.placeholder') : 0xead1;\n\nvar MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;\nvar FAUX_ITERATOR_SYMBOL = '@@iterator';\n\nfunction getIteratorFn(maybeIterable) {\n  if (maybeIterable === null || typeof maybeIterable !== 'object') {\n    return null;\n  }\n  var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];\n  if (typeof maybeIterator === 'function') {\n    return maybeIterator;\n  }\n  return null;\n}\n\n// Exports ReactDOM.createRoot\n\n\n// Experimental error-boundary API that can recover from errors within a single\n// render phase\n\n// Suspense\nvar enableSuspense = false;\n// Helps identify side effects in begin-phase lifecycle hooks and setState reducers:\n\n\n// In some cases, StrictMode should also double-render lifecycles.\n// This can be confusing for tests though,\n// And it can be bad for performance in production.\n// This feature flag can be used to control the behavior:\n\n\n// To preserve the \"Pause on caught exceptions\" behavior of the debugger, we\n// replay the begin phase of a failed component inside invokeGuardedCallback.\n\n\n// Warn about deprecated, async-unsafe lifecycles; relates to RFC #6:\n\n\n// Warn about legacy context API\n\n\n// Gather advanced timing metrics for Profiler subtrees.\n\n\n// Trace which interactions trigger each commit.\n\n\n// Only used in www builds.\n\n\n// Only used in www builds.\n\n\n// React Fire: prevent the value and checked attributes from syncing\n// with their related DOM properties\n\n/**\n * Use invariant() to assert state which your program assumes to be true.\n *\n * Provide sprintf-style format (only %s is supported) and arguments\n * to provide information about what broke and what you were\n * expecting.\n *\n * The invariant message will be stripped in production, but the invariant\n * will remain to ensure logic does not differ in production.\n */\n\nvar validateFormat = function () {};\n\n{\n  validateFormat = function (format) {\n    if (format === undefined) {\n      throw new Error('invariant requires an error message argument');\n    }\n  };\n}\n\nfunction invariant(condition, format, a, b, c, d, e, f) {\n  validateFormat(format);\n\n  if (!condition) {\n    var error = void 0;\n    if (format === undefined) {\n      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');\n    } else {\n      var args = [a, b, c, d, e, f];\n      var argIndex = 0;\n      error = new Error(format.replace(/%s/g, function () {\n        return args[argIndex++];\n      }));\n      error.name = 'Invariant Violation';\n    }\n\n    error.framesToPop = 1; // we don't care about invariant's own frame\n    throw error;\n  }\n}\n\n// Relying on the `invariant()` implementation lets us\n// preserve the format and params in the www builds.\n\n/**\n * Forked from fbjs/warning:\n * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js\n *\n * Only change is we use console.warn instead of console.error,\n * and do nothing when 'console' is not supported.\n * This really simplifies the code.\n * ---\n * Similar to invariant but only logs a warning if the condition is not met.\n * This can be used to log issues in development environments in critical\n * paths. Removing the logging code for production environments will keep the\n * same logic and follow the same code paths.\n */\n\nvar lowPriorityWarning = function () {};\n\n{\n  var printWarning = function (format) {\n    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n      args[_key - 1] = arguments[_key];\n    }\n\n    var argIndex = 0;\n    var message = 'Warning: ' + format.replace(/%s/g, function () {\n      return args[argIndex++];\n    });\n    if (typeof console !== 'undefined') {\n      console.warn(message);\n    }\n    try {\n      // --- Welcome to debugging React ---\n      // This error was thrown as a convenience so that you can use this stack\n      // to find the callsite that caused this warning to fire.\n      throw new Error(message);\n    } catch (x) {}\n  };\n\n  lowPriorityWarning = function (condition, format) {\n    if (format === undefined) {\n      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');\n    }\n    if (!condition) {\n      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {\n        args[_key2 - 2] = arguments[_key2];\n      }\n\n      printWarning.apply(undefined, [format].concat(args));\n    }\n  };\n}\n\nvar lowPriorityWarning$1 = lowPriorityWarning;\n\n/**\n * Similar to invariant but only logs a warning if the condition is not met.\n * This can be used to log issues in development environments in critical\n * paths. Removing the logging code for production environments will keep the\n * same logic and follow the same code paths.\n */\n\nvar warningWithoutStack = function () {};\n\n{\n  warningWithoutStack = function (condition, format) {\n    for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {\n      args[_key - 2] = arguments[_key];\n    }\n\n    if (format === undefined) {\n      throw new Error('`warningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');\n    }\n    if (args.length > 8) {\n      // Check before the condition to catch violations early.\n      throw new Error('warningWithoutStack() currently supports at most 8 arguments.');\n    }\n    if (condition) {\n      return;\n    }\n    if (typeof console !== 'undefined') {\n      var _args$map = args.map(function (item) {\n        return '' + item;\n      }),\n          a = _args$map[0],\n          b = _args$map[1],\n          c = _args$map[2],\n          d = _args$map[3],\n          e = _args$map[4],\n          f = _args$map[5],\n          g = _args$map[6],\n          h = _args$map[7];\n\n      var message = 'Warning: ' + format;\n\n      // We intentionally don't use spread (or .apply) because it breaks IE9:\n      // https://github.com/facebook/react/issues/13610\n      switch (args.length) {\n        case 0:\n          console.error(message);\n          break;\n        case 1:\n          console.error(message, a);\n          break;\n        case 2:\n          console.error(message, a, b);\n          break;\n        case 3:\n          console.error(message, a, b, c);\n          break;\n        case 4:\n          console.error(message, a, b, c, d);\n          break;\n        case 5:\n          console.error(message, a, b, c, d, e);\n          break;\n        case 6:\n          console.error(message, a, b, c, d, e, f);\n          break;\n        case 7:\n          console.error(message, a, b, c, d, e, f, g);\n          break;\n        case 8:\n          console.error(message, a, b, c, d, e, f, g, h);\n          break;\n        default:\n          throw new Error('warningWithoutStack() currently supports at most 8 arguments.');\n      }\n    }\n    try {\n      // --- Welcome to debugging React ---\n      // This error was thrown as a convenience so that you can use this stack\n      // to find the callsite that caused this warning to fire.\n      var argIndex = 0;\n      var _message = 'Warning: ' + format.replace(/%s/g, function () {\n        return args[argIndex++];\n      });\n      throw new Error(_message);\n    } catch (x) {}\n  };\n}\n\nvar warningWithoutStack$1 = warningWithoutStack;\n\nvar didWarnStateUpdateForUnmountedComponent = {};\n\nfunction warnNoop(publicInstance, callerName) {\n  {\n    var _constructor = publicInstance.constructor;\n    var componentName = _constructor && (_constructor.displayName || _constructor.name) || 'ReactClass';\n    var warningKey = componentName + '.' + callerName;\n    if (didWarnStateUpdateForUnmountedComponent[warningKey]) {\n      return;\n    }\n    warningWithoutStack$1(false, \"Can't call %s on a component that is not yet mounted. \" + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.state` directly or define a `state = {};` ' + 'class property with the desired state in the %s component.', callerName, componentName);\n    didWarnStateUpdateForUnmountedComponent[warningKey] = true;\n  }\n}\n\n/**\n * This is the abstract API for an update queue.\n */\nvar ReactNoopUpdateQueue = {\n  /**\n   * Checks whether or not this composite component is mounted.\n   * @param {ReactClass} publicInstance The instance we want to test.\n   * @return {boolean} True if mounted, false otherwise.\n   * @protected\n   * @final\n   */\n  isMounted: function (publicInstance) {\n    return false;\n  },\n\n  /**\n   * Forces an update. This should only be invoked when it is known with\n   * certainty that we are **not** in a DOM transaction.\n   *\n   * You may want to call this when you know that some deeper aspect of the\n   * component's state has changed but `setState` was not called.\n   *\n   * This will not invoke `shouldComponentUpdate`, but it will invoke\n   * `componentWillUpdate` and `componentDidUpdate`.\n   *\n   * @param {ReactClass} publicInstance The instance that should rerender.\n   * @param {?function} callback Called after component is updated.\n   * @param {?string} callerName name of the calling function in the public API.\n   * @internal\n   */\n  enqueueForceUpdate: function (publicInstance, callback, callerName) {\n    warnNoop(publicInstance, 'forceUpdate');\n  },\n\n  /**\n   * Replaces all of the state. Always use this or `setState` to mutate state.\n   * You should treat `this.state` as immutable.\n   *\n   * There is no guarantee that `this.state` will be immediately updated, so\n   * accessing `this.state` after calling this method may return the old value.\n   *\n   * @param {ReactClass} publicInstance The instance that should rerender.\n   * @param {object} completeState Next state.\n   * @param {?function} callback Called after component is updated.\n   * @param {?string} callerName name of the calling function in the public API.\n   * @internal\n   */\n  enqueueReplaceState: function (publicInstance, completeState, callback, callerName) {\n    warnNoop(publicInstance, 'replaceState');\n  },\n\n  /**\n   * Sets a subset of the state. This only exists because _pendingState is\n   * internal. This provides a merging strategy that is not available to deep\n   * properties which is confusing. TODO: Expose pendingState or don't use it\n   * during the merge.\n   *\n   * @param {ReactClass} publicInstance The instance that should rerender.\n   * @param {object} partialState Next partial state to be merged with state.\n   * @param {?function} callback Called after component is updated.\n   * @param {?string} Name of the calling function in the public API.\n   * @internal\n   */\n  enqueueSetState: function (publicInstance, partialState, callback, callerName) {\n    warnNoop(publicInstance, 'setState');\n  }\n};\n\nvar emptyObject = {};\n{\n  Object.freeze(emptyObject);\n}\n\n/**\n * Base class helpers for the updating state of a component.\n */\nfunction Component(props, context, updater) {\n  this.props = props;\n  this.context = context;\n  // If a component has string refs, we will assign a different object later.\n  this.refs = emptyObject;\n  // We initialize the default updater but the real one gets injected by the\n  // renderer.\n  this.updater = updater || ReactNoopUpdateQueue;\n}\n\nComponent.prototype.isReactComponent = {};\n\n/**\n * Sets a subset of the state. Always use this to mutate\n * state. You should treat `this.state` as immutable.\n *\n * There is no guarantee that `this.state` will be immediately updated, so\n * accessing `this.state` after calling this method may return the old value.\n *\n * There is no guarantee that calls to `setState` will run synchronously,\n * as they may eventually be batched together.  You can provide an optional\n * callback that will be executed when the call to setState is actually\n * completed.\n *\n * When a function is provided to setState, it will be called at some point in\n * the future (not synchronously). It will be called with the up to date\n * component arguments (state, props, context). These values can be different\n * from this.* because your function may be called after receiveProps but before\n * shouldComponentUpdate, and this new state, props, and context will not yet be\n * assigned to this.\n *\n * @param {object|function} partialState Next partial state or function to\n *        produce next partial state to be merged with current state.\n * @param {?function} callback Called after state is updated.\n * @final\n * @protected\n */\nComponent.prototype.setState = function (partialState, callback) {\n  !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? invariant(false, 'setState(...): takes an object of state variables to update or a function which returns an object of state variables.') : void 0;\n  this.updater.enqueueSetState(this, partialState, callback, 'setState');\n};\n\n/**\n * Forces an update. This should only be invoked when it is known with\n * certainty that we are **not** in a DOM transaction.\n *\n * You may want to call this when you know that some deeper aspect of the\n * component's state has changed but `setState` was not called.\n *\n * This will not invoke `shouldComponentUpdate`, but it will invoke\n * `componentWillUpdate` and `componentDidUpdate`.\n *\n * @param {?function} callback Called after update is complete.\n * @final\n * @protected\n */\nComponent.prototype.forceUpdate = function (callback) {\n  this.updater.enqueueForceUpdate(this, callback, 'forceUpdate');\n};\n\n/**\n * Deprecated APIs. These APIs used to exist on classic React classes but since\n * we would like to deprecate them, we're not going to move them over to this\n * modern base class. Instead, we define a getter that warns if it's accessed.\n */\n{\n  var deprecatedAPIs = {\n    isMounted: ['isMounted', 'Instead, make sure to clean up subscriptions and pending requests in ' + 'componentWillUnmount to prevent memory leaks.'],\n    replaceState: ['replaceState', 'Refactor your code to use setState instead (see ' + 'https://github.com/facebook/react/issues/3236).']\n  };\n  var defineDeprecationWarning = function (methodName, info) {\n    Object.defineProperty(Component.prototype, methodName, {\n      get: function () {\n        lowPriorityWarning$1(false, '%s(...) is deprecated in plain JavaScript React classes. %s', info[0], info[1]);\n        return undefined;\n      }\n    });\n  };\n  for (var fnName in deprecatedAPIs) {\n    if (deprecatedAPIs.hasOwnProperty(fnName)) {\n      defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);\n    }\n  }\n}\n\nfunction ComponentDummy() {}\nComponentDummy.prototype = Component.prototype;\n\n/**\n * Convenience component with default shallow equality check for sCU.\n */\nfunction PureComponent(props, context, updater) {\n  this.props = props;\n  this.context = context;\n  // If a component has string refs, we will assign a different object later.\n  this.refs = emptyObject;\n  this.updater = updater || ReactNoopUpdateQueue;\n}\n\nvar pureComponentPrototype = PureComponent.prototype = new ComponentDummy();\npureComponentPrototype.constructor = PureComponent;\n// Avoid an extra prototype jump for these methods.\n_assign(pureComponentPrototype, Component.prototype);\npureComponentPrototype.isPureReactComponent = true;\n\n// an immutable object with a single mutable value\nfunction createRef() {\n  var refObject = {\n    current: null\n  };\n  {\n    Object.seal(refObject);\n  }\n  return refObject;\n}\n\n/**\n * Keeps track of the current owner.\n *\n * The current owner is the component who should own any components that are\n * currently being constructed.\n */\nvar ReactCurrentOwner = {\n  /**\n   * @internal\n   * @type {ReactComponent}\n   */\n  current: null,\n  currentDispatcher: null\n};\n\nvar BEFORE_SLASH_RE = /^(.*)[\\\\\\/]/;\n\nvar describeComponentFrame = function (name, source, ownerName) {\n  var sourceInfo = '';\n  if (source) {\n    var path = source.fileName;\n    var fileName = path.replace(BEFORE_SLASH_RE, '');\n    {\n      // In DEV, include code for a common special case:\n      // prefer \"folder/index.js\" instead of just \"index.js\".\n      if (/^index\\./.test(fileName)) {\n        var match = path.match(BEFORE_SLASH_RE);\n        if (match) {\n          var pathBeforeSlash = match[1];\n          if (pathBeforeSlash) {\n            var folderName = pathBeforeSlash.replace(BEFORE_SLASH_RE, '');\n            fileName = folderName + '/' + fileName;\n          }\n        }\n      }\n    }\n    sourceInfo = ' (at ' + fileName + ':' + source.lineNumber + ')';\n  } else if (ownerName) {\n    sourceInfo = ' (created by ' + ownerName + ')';\n  }\n  return '\\n    in ' + (name || 'Unknown') + sourceInfo;\n};\n\nvar Resolved = 1;\n\n\n\n\nfunction refineResolvedThenable(thenable) {\n  return thenable._reactStatus === Resolved ? thenable._reactResult : null;\n}\n\nfunction getComponentName(type) {\n  if (type == null) {\n    // Host root, text node or just invalid type.\n    return null;\n  }\n  {\n    if (typeof type.tag === 'number') {\n      warningWithoutStack$1(false, 'Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');\n    }\n  }\n  if (typeof type === 'function') {\n    return type.displayName || type.name || null;\n  }\n  if (typeof type === 'string') {\n    return type;\n  }\n  switch (type) {\n    case REACT_ASYNC_MODE_TYPE:\n      return 'AsyncMode';\n    case REACT_FRAGMENT_TYPE:\n      return 'Fragment';\n    case REACT_PORTAL_TYPE:\n      return 'Portal';\n    case REACT_PROFILER_TYPE:\n      return 'Profiler';\n    case REACT_STRICT_MODE_TYPE:\n      return 'StrictMode';\n    case REACT_PLACEHOLDER_TYPE:\n      return 'Placeholder';\n  }\n  if (typeof type === 'object') {\n    switch (type.$$typeof) {\n      case REACT_CONTEXT_TYPE:\n        return 'Context.Consumer';\n      case REACT_PROVIDER_TYPE:\n        return 'Context.Provider';\n      case REACT_FORWARD_REF_TYPE:\n        var renderFn = type.render;\n        var functionName = renderFn.displayName || renderFn.name || '';\n        return type.displayName || (functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef');\n    }\n    if (typeof type.then === 'function') {\n      var thenable = type;\n      var resolvedThenable = refineResolvedThenable(thenable);\n      if (resolvedThenable) {\n        return getComponentName(resolvedThenable);\n      }\n    }\n  }\n  return null;\n}\n\nvar ReactDebugCurrentFrame = {};\n\nvar currentlyValidatingElement = null;\n\nfunction setCurrentlyValidatingElement(element) {\n  {\n    currentlyValidatingElement = element;\n  }\n}\n\n{\n  // Stack implementation injected by the current renderer.\n  ReactDebugCurrentFrame.getCurrentStack = null;\n\n  ReactDebugCurrentFrame.getStackAddendum = function () {\n    var stack = '';\n\n    // Add an extra top frame while an element is being validated\n    if (currentlyValidatingElement) {\n      var name = getComponentName(currentlyValidatingElement.type);\n      var owner = currentlyValidatingElement._owner;\n      stack += describeComponentFrame(name, currentlyValidatingElement._source, owner && getComponentName(owner.type));\n    }\n\n    // Delegate to the injected renderer-specific implementation\n    var impl = ReactDebugCurrentFrame.getCurrentStack;\n    if (impl) {\n      stack += impl() || '';\n    }\n\n    return stack;\n  };\n}\n\nvar ReactSharedInternals = {\n  ReactCurrentOwner: ReactCurrentOwner,\n  // Used by renderers to avoid bundling object-assign twice in UMD bundles:\n  assign: _assign\n};\n\n{\n  _assign(ReactSharedInternals, {\n    // These should not be included in production.\n    ReactDebugCurrentFrame: ReactDebugCurrentFrame,\n    // Shim for React DOM 16.0.0 which still destructured (but not used) this.\n    // TODO: remove in React 17.0.\n    ReactComponentTreeHook: {}\n  });\n}\n\n/**\n * Similar to invariant but only logs a warning if the condition is not met.\n * This can be used to log issues in development environments in critical\n * paths. Removing the logging code for production environments will keep the\n * same logic and follow the same code paths.\n */\n\nvar warning = warningWithoutStack$1;\n\n{\n  warning = function (condition, format) {\n    if (condition) {\n      return;\n    }\n    var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;\n    var stack = ReactDebugCurrentFrame.getStackAddendum();\n    // eslint-disable-next-line react-internal/warning-and-invariant-args\n\n    for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {\n      args[_key - 2] = arguments[_key];\n    }\n\n    warningWithoutStack$1.apply(undefined, [false, format + '%s'].concat(args, [stack]));\n  };\n}\n\nvar warning$1 = warning;\n\nvar hasOwnProperty = Object.prototype.hasOwnProperty;\n\nvar RESERVED_PROPS = {\n  key: true,\n  ref: true,\n  __self: true,\n  __source: true\n};\n\nvar specialPropKeyWarningShown = void 0;\nvar specialPropRefWarningShown = void 0;\n\nfunction hasValidRef(config) {\n  {\n    if (hasOwnProperty.call(config, 'ref')) {\n      var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;\n      if (getter && getter.isReactWarning) {\n        return false;\n      }\n    }\n  }\n  return config.ref !== undefined;\n}\n\nfunction hasValidKey(config) {\n  {\n    if (hasOwnProperty.call(config, 'key')) {\n      var getter = Object.getOwnPropertyDescriptor(config, 'key').get;\n      if (getter && getter.isReactWarning) {\n        return false;\n      }\n    }\n  }\n  return config.key !== undefined;\n}\n\nfunction defineKeyPropWarningGetter(props, displayName) {\n  var warnAboutAccessingKey = function () {\n    if (!specialPropKeyWarningShown) {\n      specialPropKeyWarningShown = true;\n      warningWithoutStack$1(false, '%s: `key` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);\n    }\n  };\n  warnAboutAccessingKey.isReactWarning = true;\n  Object.defineProperty(props, 'key', {\n    get: warnAboutAccessingKey,\n    configurable: true\n  });\n}\n\nfunction defineRefPropWarningGetter(props, displayName) {\n  var warnAboutAccessingRef = function () {\n    if (!specialPropRefWarningShown) {\n      specialPropRefWarningShown = true;\n      warningWithoutStack$1(false, '%s: `ref` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);\n    }\n  };\n  warnAboutAccessingRef.isReactWarning = true;\n  Object.defineProperty(props, 'ref', {\n    get: warnAboutAccessingRef,\n    configurable: true\n  });\n}\n\n/**\n * Factory method to create a new React element. This no longer adheres to\n * the class pattern, so do not use new to call it. Also, no instanceof check\n * will work. Instead test $$typeof field against Symbol.for('react.element') to check\n * if something is a React Element.\n *\n * @param {*} type\n * @param {*} key\n * @param {string|object} ref\n * @param {*} self A *temporary* helper to detect places where `this` is\n * different from the `owner` when React.createElement is called, so that we\n * can warn. We want to get rid of owner and replace string `ref`s with arrow\n * functions, and as long as `this` and owner are the same, there will be no\n * change in behavior.\n * @param {*} source An annotation object (added by a transpiler or otherwise)\n * indicating filename, line number, and/or other information.\n * @param {*} owner\n * @param {*} props\n * @internal\n */\nvar ReactElement = function (type, key, ref, self, source, owner, props) {\n  var element = {\n    // This tag allows us to uniquely identify this as a React Element\n    $$typeof: REACT_ELEMENT_TYPE,\n\n    // Built-in properties that belong on the element\n    type: type,\n    key: key,\n    ref: ref,\n    props: props,\n\n    // Record the component responsible for creating this element.\n    _owner: owner\n  };\n\n  {\n    // The validation flag is currently mutative. We put it on\n    // an external backing store so that we can freeze the whole object.\n    // This can be replaced with a WeakMap once they are implemented in\n    // commonly used development environments.\n    element._store = {};\n\n    // To make comparing ReactElements easier for testing purposes, we make\n    // the validation flag non-enumerable (where possible, which should\n    // include every environment we run tests in), so the test framework\n    // ignores it.\n    Object.defineProperty(element._store, 'validated', {\n      configurable: false,\n      enumerable: false,\n      writable: true,\n      value: false\n    });\n    // self and source are DEV only properties.\n    Object.defineProperty(element, '_self', {\n      configurable: false,\n      enumerable: false,\n      writable: false,\n      value: self\n    });\n    // Two elements created in two different places should be considered\n    // equal for testing purposes and therefore we hide it from enumeration.\n    Object.defineProperty(element, '_source', {\n      configurable: false,\n      enumerable: false,\n      writable: false,\n      value: source\n    });\n    if (Object.freeze) {\n      Object.freeze(element.props);\n      Object.freeze(element);\n    }\n  }\n\n  return element;\n};\n\n/**\n * Create and return a new ReactElement of the given type.\n * See https://reactjs.org/docs/react-api.html#createelement\n */\nfunction createElement(type, config, children) {\n  var propName = void 0;\n\n  // Reserved names are extracted\n  var props = {};\n\n  var key = null;\n  var ref = null;\n  var self = null;\n  var source = null;\n\n  if (config != null) {\n    if (hasValidRef(config)) {\n      ref = config.ref;\n    }\n    if (hasValidKey(config)) {\n      key = '' + config.key;\n    }\n\n    self = config.__self === undefined ? null : config.__self;\n    source = config.__source === undefined ? null : config.__source;\n    // Remaining properties are added to a new props object\n    for (propName in config) {\n      if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {\n        props[propName] = config[propName];\n      }\n    }\n  }\n\n  // Children can be more than one argument, and those are transferred onto\n  // the newly allocated props object.\n  var childrenLength = arguments.length - 2;\n  if (childrenLength === 1) {\n    props.children = children;\n  } else if (childrenLength > 1) {\n    var childArray = Array(childrenLength);\n    for (var i = 0; i < childrenLength; i++) {\n      childArray[i] = arguments[i + 2];\n    }\n    {\n      if (Object.freeze) {\n        Object.freeze(childArray);\n      }\n    }\n    props.children = childArray;\n  }\n\n  // Resolve default props\n  if (type && type.defaultProps) {\n    var defaultProps = type.defaultProps;\n    for (propName in defaultProps) {\n      if (props[propName] === undefined) {\n        props[propName] = defaultProps[propName];\n      }\n    }\n  }\n  {\n    if (key || ref) {\n      var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;\n      if (key) {\n        defineKeyPropWarningGetter(props, displayName);\n      }\n      if (ref) {\n        defineRefPropWarningGetter(props, displayName);\n      }\n    }\n  }\n  return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);\n}\n\n/**\n * Return a function that produces ReactElements of a given type.\n * See https://reactjs.org/docs/react-api.html#createfactory\n */\n\n\nfunction cloneAndReplaceKey(oldElement, newKey) {\n  var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);\n\n  return newElement;\n}\n\n/**\n * Clone and return a new ReactElement using element as the starting point.\n * See https://reactjs.org/docs/react-api.html#cloneelement\n */\nfunction cloneElement(element, config, children) {\n  !!(element === null || element === undefined) ? invariant(false, 'React.cloneElement(...): The argument must be a React element, but you passed %s.', element) : void 0;\n\n  var propName = void 0;\n\n  // Original props are copied\n  var props = _assign({}, element.props);\n\n  // Reserved names are extracted\n  var key = element.key;\n  var ref = element.ref;\n  // Self is preserved since the owner is preserved.\n  var self = element._self;\n  // Source is preserved since cloneElement is unlikely to be targeted by a\n  // transpiler, and the original source is probably a better indicator of the\n  // true owner.\n  var source = element._source;\n\n  // Owner will be preserved, unless ref is overridden\n  var owner = element._owner;\n\n  if (config != null) {\n    if (hasValidRef(config)) {\n      // Silently steal the ref from the parent.\n      ref = config.ref;\n      owner = ReactCurrentOwner.current;\n    }\n    if (hasValidKey(config)) {\n      key = '' + config.key;\n    }\n\n    // Remaining properties override existing props\n    var defaultProps = void 0;\n    if (element.type && element.type.defaultProps) {\n      defaultProps = element.type.defaultProps;\n    }\n    for (propName in config) {\n      if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {\n        if (config[propName] === undefined && defaultProps !== undefined) {\n          // Resolve default props\n          props[propName] = defaultProps[propName];\n        } else {\n          props[propName] = config[propName];\n        }\n      }\n    }\n  }\n\n  // Children can be more than one argument, and those are transferred onto\n  // the newly allocated props object.\n  var childrenLength = arguments.length - 2;\n  if (childrenLength === 1) {\n    props.children = children;\n  } else if (childrenLength > 1) {\n    var childArray = Array(childrenLength);\n    for (var i = 0; i < childrenLength; i++) {\n      childArray[i] = arguments[i + 2];\n    }\n    props.children = childArray;\n  }\n\n  return ReactElement(element.type, key, ref, self, source, owner, props);\n}\n\n/**\n * Verifies the object is a ReactElement.\n * See https://reactjs.org/docs/react-api.html#isvalidelement\n * @param {?object} object\n * @return {boolean} True if `object` is a ReactElement.\n * @final\n */\nfunction isValidElement(object) {\n  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;\n}\n\nvar SEPARATOR = '.';\nvar SUBSEPARATOR = ':';\n\n/**\n * Escape and wrap key so it is safe to use as a reactid\n *\n * @param {string} key to be escaped.\n * @return {string} the escaped key.\n */\nfunction escape(key) {\n  var escapeRegex = /[=:]/g;\n  var escaperLookup = {\n    '=': '=0',\n    ':': '=2'\n  };\n  var escapedString = ('' + key).replace(escapeRegex, function (match) {\n    return escaperLookup[match];\n  });\n\n  return '$' + escapedString;\n}\n\n/**\n * TODO: Test that a single child and an array with one item have the same key\n * pattern.\n */\n\nvar didWarnAboutMaps = false;\n\nvar userProvidedKeyEscapeRegex = /\\/+/g;\nfunction escapeUserProvidedKey(text) {\n  return ('' + text).replace(userProvidedKeyEscapeRegex, '$&/');\n}\n\nvar POOL_SIZE = 10;\nvar traverseContextPool = [];\nfunction getPooledTraverseContext(mapResult, keyPrefix, mapFunction, mapContext) {\n  if (traverseContextPool.length) {\n    var traverseContext = traverseContextPool.pop();\n    traverseContext.result = mapResult;\n    traverseContext.keyPrefix = keyPrefix;\n    traverseContext.func = mapFunction;\n    traverseContext.context = mapContext;\n    traverseContext.count = 0;\n    return traverseContext;\n  } else {\n    return {\n      result: mapResult,\n      keyPrefix: keyPrefix,\n      func: mapFunction,\n      context: mapContext,\n      count: 0\n    };\n  }\n}\n\nfunction releaseTraverseContext(traverseContext) {\n  traverseContext.result = null;\n  traverseContext.keyPrefix = null;\n  traverseContext.func = null;\n  traverseContext.context = null;\n  traverseContext.count = 0;\n  if (traverseContextPool.length < POOL_SIZE) {\n    traverseContextPool.push(traverseContext);\n  }\n}\n\n/**\n * @param {?*} children Children tree container.\n * @param {!string} nameSoFar Name of the key path so far.\n * @param {!function} callback Callback to invoke with each child found.\n * @param {?*} traverseContext Used to pass information throughout the traversal\n * process.\n * @return {!number} The number of children in this subtree.\n */\nfunction traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext) {\n  var type = typeof children;\n\n  if (type === 'undefined' || type === 'boolean') {\n    // All of the above are perceived as null.\n    children = null;\n  }\n\n  var invokeCallback = false;\n\n  if (children === null) {\n    invokeCallback = true;\n  } else {\n    switch (type) {\n      case 'string':\n      case 'number':\n        invokeCallback = true;\n        break;\n      case 'object':\n        switch (children.$$typeof) {\n          case REACT_ELEMENT_TYPE:\n          case REACT_PORTAL_TYPE:\n            invokeCallback = true;\n        }\n    }\n  }\n\n  if (invokeCallback) {\n    callback(traverseContext, children,\n    // If it's the only child, treat the name as if it was wrapped in an array\n    // so that it's consistent if the number of children grows.\n    nameSoFar === '' ? SEPARATOR + getComponentKey(children, 0) : nameSoFar);\n    return 1;\n  }\n\n  var child = void 0;\n  var nextName = void 0;\n  var subtreeCount = 0; // Count of children found in the current subtree.\n  var nextNamePrefix = nameSoFar === '' ? SEPARATOR : nameSoFar + SUBSEPARATOR;\n\n  if (Array.isArray(children)) {\n    for (var i = 0; i < children.length; i++) {\n      child = children[i];\n      nextName = nextNamePrefix + getComponentKey(child, i);\n      subtreeCount += traverseAllChildrenImpl(child, nextName, callback, traverseContext);\n    }\n  } else {\n    var iteratorFn = getIteratorFn(children);\n    if (typeof iteratorFn === 'function') {\n      {\n        // Warn about using Maps as children\n        if (iteratorFn === children.entries) {\n          !didWarnAboutMaps ? warning$1(false, 'Using Maps as children is unsupported and will likely yield ' + 'unexpected results. Convert it to a sequence/iterable of keyed ' + 'ReactElements instead.') : void 0;\n          didWarnAboutMaps = true;\n        }\n      }\n\n      var iterator = iteratorFn.call(children);\n      var step = void 0;\n      var ii = 0;\n      while (!(step = iterator.next()).done) {\n        child = step.value;\n        nextName = nextNamePrefix + getComponentKey(child, ii++);\n        subtreeCount += traverseAllChildrenImpl(child, nextName, callback, traverseContext);\n      }\n    } else if (type === 'object') {\n      var addendum = '';\n      {\n        addendum = ' If you meant to render a collection of children, use an array ' + 'instead.' + ReactDebugCurrentFrame.getStackAddendum();\n      }\n      var childrenString = '' + children;\n      invariant(false, 'Objects are not valid as a React child (found: %s).%s', childrenString === '[object Object]' ? 'object with keys {' + Object.keys(children).join(', ') + '}' : childrenString, addendum);\n    }\n  }\n\n  return subtreeCount;\n}\n\n/**\n * Traverses children that are typically specified as `props.children`, but\n * might also be specified through attributes:\n *\n * - `traverseAllChildren(this.props.children, ...)`\n * - `traverseAllChildren(this.props.leftPanelChildren, ...)`\n *\n * The `traverseContext` is an optional argument that is passed through the\n * entire traversal. It can be used to store accumulations or anything else that\n * the callback might find relevant.\n *\n * @param {?*} children Children tree object.\n * @param {!function} callback To invoke upon traversing each child.\n * @param {?*} traverseContext Context for traversal.\n * @return {!number} The number of children in this subtree.\n */\nfunction traverseAllChildren(children, callback, traverseContext) {\n  if (children == null) {\n    return 0;\n  }\n\n  return traverseAllChildrenImpl(children, '', callback, traverseContext);\n}\n\n/**\n * Generate a key string that identifies a component within a set.\n *\n * @param {*} component A component that could contain a manual key.\n * @param {number} index Index that is used if a manual key is not provided.\n * @return {string}\n */\nfunction getComponentKey(component, index) {\n  // Do some typechecking here since we call this blindly. We want to ensure\n  // that we don't block potential future ES APIs.\n  if (typeof component === 'object' && component !== null && component.key != null) {\n    // Explicit key\n    return escape(component.key);\n  }\n  // Implicit key determined by the index in the set\n  return index.toString(36);\n}\n\nfunction forEachSingleChild(bookKeeping, child, name) {\n  var func = bookKeeping.func,\n      context = bookKeeping.context;\n\n  func.call(context, child, bookKeeping.count++);\n}\n\n/**\n * Iterates through children that are typically specified as `props.children`.\n *\n * See https://reactjs.org/docs/react-api.html#reactchildrenforeach\n *\n * The provided forEachFunc(child, index) will be called for each\n * leaf child.\n *\n * @param {?*} children Children tree container.\n * @param {function(*, int)} forEachFunc\n * @param {*} forEachContext Context for forEachContext.\n */\nfunction forEachChildren(children, forEachFunc, forEachContext) {\n  if (children == null) {\n    return children;\n  }\n  var traverseContext = getPooledTraverseContext(null, null, forEachFunc, forEachContext);\n  traverseAllChildren(children, forEachSingleChild, traverseContext);\n  releaseTraverseContext(traverseContext);\n}\n\nfunction mapSingleChildIntoContext(bookKeeping, child, childKey) {\n  var result = bookKeeping.result,\n      keyPrefix = bookKeeping.keyPrefix,\n      func = bookKeeping.func,\n      context = bookKeeping.context;\n\n\n  var mappedChild = func.call(context, child, bookKeeping.count++);\n  if (Array.isArray(mappedChild)) {\n    mapIntoWithKeyPrefixInternal(mappedChild, result, childKey, function (c) {\n      return c;\n    });\n  } else if (mappedChild != null) {\n    if (isValidElement(mappedChild)) {\n      mappedChild = cloneAndReplaceKey(mappedChild,\n      // Keep both the (mapped) and old keys if they differ, just as\n      // traverseAllChildren used to do for objects as children\n      keyPrefix + (mappedChild.key && (!child || child.key !== mappedChild.key) ? escapeUserProvidedKey(mappedChild.key) + '/' : '') + childKey);\n    }\n    result.push(mappedChild);\n  }\n}\n\nfunction mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {\n  var escapedPrefix = '';\n  if (prefix != null) {\n    escapedPrefix = escapeUserProvidedKey(prefix) + '/';\n  }\n  var traverseContext = getPooledTraverseContext(array, escapedPrefix, func, context);\n  traverseAllChildren(children, mapSingleChildIntoContext, traverseContext);\n  releaseTraverseContext(traverseContext);\n}\n\n/**\n * Maps children that are typically specified as `props.children`.\n *\n * See https://reactjs.org/docs/react-api.html#reactchildrenmap\n *\n * The provided mapFunction(child, key, index) will be called for each\n * leaf child.\n *\n * @param {?*} children Children tree container.\n * @param {function(*, int)} func The map function.\n * @param {*} context Context for mapFunction.\n * @return {object} Object containing the ordered map of results.\n */\nfunction mapChildren(children, func, context) {\n  if (children == null) {\n    return children;\n  }\n  var result = [];\n  mapIntoWithKeyPrefixInternal(children, result, null, func, context);\n  return result;\n}\n\n/**\n * Count the number of children that are typically specified as\n * `props.children`.\n *\n * See https://reactjs.org/docs/react-api.html#reactchildrencount\n *\n * @param {?*} children Children tree container.\n * @return {number} The number of children.\n */\nfunction countChildren(children) {\n  return traverseAllChildren(children, function () {\n    return null;\n  }, null);\n}\n\n/**\n * Flatten a children object (typically specified as `props.children`) and\n * return an array with appropriately re-keyed children.\n *\n * See https://reactjs.org/docs/react-api.html#reactchildrentoarray\n */\nfunction toArray(children) {\n  var result = [];\n  mapIntoWithKeyPrefixInternal(children, result, null, function (child) {\n    return child;\n  });\n  return result;\n}\n\n/**\n * Returns the first child in a collection of children and verifies that there\n * is only one child in the collection.\n *\n * See https://reactjs.org/docs/react-api.html#reactchildrenonly\n *\n * The current implementation of this function assumes that a single child gets\n * passed without a wrapper, but the purpose of this helper function is to\n * abstract away the particular structure of children.\n *\n * @param {?object} children Child collection structure.\n * @return {ReactElement} The first and only `ReactElement` contained in the\n * structure.\n */\nfunction onlyChild(children) {\n  !isValidElement(children) ? invariant(false, 'React.Children.only expected to receive a single React element child.') : void 0;\n  return children;\n}\n\nfunction readContext(context, observedBits) {\n  var dispatcher = ReactCurrentOwner.currentDispatcher;\n  !(dispatcher !== null) ? invariant(false, 'Context.unstable_read(): Context can only be read while React is rendering, e.g. inside the render method or getDerivedStateFromProps.') : void 0;\n  return dispatcher.readContext(context, observedBits);\n}\n\nfunction createContext(defaultValue, calculateChangedBits) {\n  if (calculateChangedBits === undefined) {\n    calculateChangedBits = null;\n  } else {\n    {\n      !(calculateChangedBits === null || typeof calculateChangedBits === 'function') ? warningWithoutStack$1(false, 'createContext: Expected the optional second argument to be a ' + 'function. Instead received: %s', calculateChangedBits) : void 0;\n    }\n  }\n\n  var context = {\n    $$typeof: REACT_CONTEXT_TYPE,\n    _calculateChangedBits: calculateChangedBits,\n    // As a workaround to support multiple concurrent renderers, we categorize\n    // some renderers as primary and others as secondary. We only expect\n    // there to be two concurrent renderers at most: React Native (primary) and\n    // Fabric (secondary); React DOM (primary) and React ART (secondary).\n    // Secondary renderers store their context values on separate fields.\n    _currentValue: defaultValue,\n    _currentValue2: defaultValue,\n    // These are circular\n    Provider: null,\n    Consumer: null,\n    unstable_read: null\n  };\n\n  context.Provider = {\n    $$typeof: REACT_PROVIDER_TYPE,\n    _context: context\n  };\n  context.Consumer = context;\n  context.unstable_read = readContext.bind(null, context);\n\n  {\n    context._currentRenderer = null;\n    context._currentRenderer2 = null;\n  }\n\n  return context;\n}\n\nfunction lazy(ctor) {\n  var thenable = null;\n  return {\n    then: function (resolve, reject) {\n      if (thenable === null) {\n        // Lazily create thenable by wrapping in an extra thenable.\n        thenable = ctor();\n        ctor = null;\n      }\n      return thenable.then(resolve, reject);\n    },\n\n    // React uses these fields to store the result.\n    _reactStatus: -1,\n    _reactResult: null\n  };\n}\n\nfunction forwardRef(render) {\n  {\n    if (typeof render !== 'function') {\n      warningWithoutStack$1(false, 'forwardRef requires a render function but was given %s.', render === null ? 'null' : typeof render);\n    } else {\n      !(\n      // Do not warn for 0 arguments because it could be due to usage of the 'arguments' object\n      render.length === 0 || render.length === 2) ? warningWithoutStack$1(false, 'forwardRef render functions accept exactly two parameters: props and ref. %s', render.length === 1 ? 'Did you forget to use the ref parameter?' : 'Any additional parameter will be undefined.') : void 0;\n    }\n\n    if (render != null) {\n      !(render.defaultProps == null && render.propTypes == null) ? warningWithoutStack$1(false, 'forwardRef render functions do not support propTypes or defaultProps. ' + 'Did you accidentally pass a React component?') : void 0;\n    }\n  }\n\n  return {\n    $$typeof: REACT_FORWARD_REF_TYPE,\n    render: render\n  };\n}\n\nfunction isValidElementType(type) {\n  return typeof type === 'string' || typeof type === 'function' ||\n  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.\n  type === REACT_FRAGMENT_TYPE || type === REACT_ASYNC_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_PLACEHOLDER_TYPE || typeof type === 'object' && type !== null && (typeof type.then === 'function' || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);\n}\n\n/**\n * ReactElementValidator provides a wrapper around a element factory\n * which validates the props passed to the element. This is intended to be\n * used only in DEV and could be replaced by a static type checker for languages\n * that support it.\n */\n\nvar propTypesMisspellWarningShown = void 0;\n\n{\n  propTypesMisspellWarningShown = false;\n}\n\nfunction getDeclarationErrorAddendum() {\n  if (ReactCurrentOwner.current) {\n    var name = getComponentName(ReactCurrentOwner.current.type);\n    if (name) {\n      return '\\n\\nCheck the render method of `' + name + '`.';\n    }\n  }\n  return '';\n}\n\nfunction getSourceInfoErrorAddendum(elementProps) {\n  if (elementProps !== null && elementProps !== undefined && elementProps.__source !== undefined) {\n    var source = elementProps.__source;\n    var fileName = source.fileName.replace(/^.*[\\\\\\/]/, '');\n    var lineNumber = source.lineNumber;\n    return '\\n\\nCheck your code at ' + fileName + ':' + lineNumber + '.';\n  }\n  return '';\n}\n\n/**\n * Warn if there's no key explicitly set on dynamic arrays of children or\n * object keys are not valid. This allows us to keep track of children between\n * updates.\n */\nvar ownerHasKeyUseWarning = {};\n\nfunction getCurrentComponentErrorInfo(parentType) {\n  var info = getDeclarationErrorAddendum();\n\n  if (!info) {\n    var parentName = typeof parentType === 'string' ? parentType : parentType.displayName || parentType.name;\n    if (parentName) {\n      info = '\\n\\nCheck the top-level render call using <' + parentName + '>.';\n    }\n  }\n  return info;\n}\n\n/**\n * Warn if the element doesn't have an explicit key assigned to it.\n * This element is in an array. The array could grow and shrink or be\n * reordered. All children that haven't already been validated are required to\n * have a \"key\" property assigned to it. Error statuses are cached so a warning\n * will only be shown once.\n *\n * @internal\n * @param {ReactElement} element Element that requires a key.\n * @param {*} parentType element's parent's type.\n */\nfunction validateExplicitKey(element, parentType) {\n  if (!element._store || element._store.validated || element.key != null) {\n    return;\n  }\n  element._store.validated = true;\n\n  var currentComponentErrorInfo = getCurrentComponentErrorInfo(parentType);\n  if (ownerHasKeyUseWarning[currentComponentErrorInfo]) {\n    return;\n  }\n  ownerHasKeyUseWarning[currentComponentErrorInfo] = true;\n\n  // Usually the current owner is the offender, but if it accepts children as a\n  // property, it may be the creator of the child that's responsible for\n  // assigning it a key.\n  var childOwner = '';\n  if (element && element._owner && element._owner !== ReactCurrentOwner.current) {\n    // Give the component that originally created this child.\n    childOwner = ' It was passed a child from ' + getComponentName(element._owner.type) + '.';\n  }\n\n  setCurrentlyValidatingElement(element);\n  {\n    warning$1(false, 'Each child in an array or iterator should have a unique \"key\" prop.' + '%s%s See https://fb.me/react-warning-keys for more information.', currentComponentErrorInfo, childOwner);\n  }\n  setCurrentlyValidatingElement(null);\n}\n\n/**\n * Ensure that every element either is passed in a static location, in an\n * array with an explicit keys property defined, or in an object literal\n * with valid key property.\n *\n * @internal\n * @param {ReactNode} node Statically passed child of any type.\n * @param {*} parentType node's parent's type.\n */\nfunction validateChildKeys(node, parentType) {\n  if (typeof node !== 'object') {\n    return;\n  }\n  if (Array.isArray(node)) {\n    for (var i = 0; i < node.length; i++) {\n      var child = node[i];\n      if (isValidElement(child)) {\n        validateExplicitKey(child, parentType);\n      }\n    }\n  } else if (isValidElement(node)) {\n    // This element was passed in a valid location.\n    if (node._store) {\n      node._store.validated = true;\n    }\n  } else if (node) {\n    var iteratorFn = getIteratorFn(node);\n    if (typeof iteratorFn === 'function') {\n      // Entry iterators used to provide implicit keys,\n      // but now we print a separate warning for them later.\n      if (iteratorFn !== node.entries) {\n        var iterator = iteratorFn.call(node);\n        var step = void 0;\n        while (!(step = iterator.next()).done) {\n          if (isValidElement(step.value)) {\n            validateExplicitKey(step.value, parentType);\n          }\n        }\n      }\n    }\n  }\n}\n\n/**\n * Given an element, validate that its props follow the propTypes definition,\n * provided by the type.\n *\n * @param {ReactElement} element\n */\nfunction validatePropTypes(element) {\n  var type = element.type;\n  var name = void 0,\n      propTypes = void 0;\n  if (typeof type === 'function') {\n    // Class or functional component\n    name = type.displayName || type.name;\n    propTypes = type.propTypes;\n  } else if (typeof type === 'object' && type !== null && type.$$typeof === REACT_FORWARD_REF_TYPE) {\n    // ForwardRef\n    var functionName = type.render.displayName || type.render.name || '';\n    name = type.displayName || (functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef');\n    propTypes = type.propTypes;\n  } else {\n    return;\n  }\n  if (propTypes) {\n    setCurrentlyValidatingElement(element);\n    checkPropTypes(propTypes, element.props, 'prop', name, ReactDebugCurrentFrame.getStackAddendum);\n    setCurrentlyValidatingElement(null);\n  } else if (type.PropTypes !== undefined && !propTypesMisspellWarningShown) {\n    propTypesMisspellWarningShown = true;\n    warningWithoutStack$1(false, 'Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', name || 'Unknown');\n  }\n  if (typeof type.getDefaultProps === 'function') {\n    !type.getDefaultProps.isReactClassApproved ? warningWithoutStack$1(false, 'getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.') : void 0;\n  }\n}\n\n/**\n * Given a fragment, validate that it can only be provided with fragment props\n * @param {ReactElement} fragment\n */\nfunction validateFragmentProps(fragment) {\n  setCurrentlyValidatingElement(fragment);\n\n  var keys = Object.keys(fragment.props);\n  for (var i = 0; i < keys.length; i++) {\n    var key = keys[i];\n    if (key !== 'children' && key !== 'key') {\n      warning$1(false, 'Invalid prop `%s` supplied to `React.Fragment`. ' + 'React.Fragment can only have `key` and `children` props.', key);\n      break;\n    }\n  }\n\n  if (fragment.ref !== null) {\n    warning$1(false, 'Invalid attribute `ref` supplied to `React.Fragment`.');\n  }\n\n  setCurrentlyValidatingElement(null);\n}\n\nfunction createElementWithValidation(type, props, children) {\n  var validType = isValidElementType(type);\n\n  // We warn in this case but don't throw. We expect the element creation to\n  // succeed and there will likely be errors in render.\n  if (!validType) {\n    var info = '';\n    if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {\n      info += ' You likely forgot to export your component from the file ' + \"it's defined in, or you might have mixed up default and named imports.\";\n    }\n\n    var sourceInfo = getSourceInfoErrorAddendum(props);\n    if (sourceInfo) {\n      info += sourceInfo;\n    } else {\n      info += getDeclarationErrorAddendum();\n    }\n\n    var typeString = void 0;\n    if (type === null) {\n      typeString = 'null';\n    } else if (Array.isArray(type)) {\n      typeString = 'array';\n    } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {\n      typeString = '<' + (getComponentName(type.type) || 'Unknown') + ' />';\n      info = ' Did you accidentally export a JSX literal instead of a component?';\n    } else {\n      typeString = typeof type;\n    }\n\n    warning$1(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', typeString, info);\n  }\n\n  var element = createElement.apply(this, arguments);\n\n  // The result can be nullish if a mock or a custom function is used.\n  // TODO: Drop this when these are no longer allowed as the type argument.\n  if (element == null) {\n    return element;\n  }\n\n  // Skip key warning if the type isn't valid since our key validation logic\n  // doesn't expect a non-string/function type and can throw confusing errors.\n  // We don't want exception behavior to differ between dev and prod.\n  // (Rendering will throw with a helpful message and as soon as the type is\n  // fixed, the key warnings will appear.)\n  if (validType) {\n    for (var i = 2; i < arguments.length; i++) {\n      validateChildKeys(arguments[i], type);\n    }\n  }\n\n  if (type === REACT_FRAGMENT_TYPE) {\n    validateFragmentProps(element);\n  } else {\n    validatePropTypes(element);\n  }\n\n  return element;\n}\n\nfunction createFactoryWithValidation(type) {\n  var validatedFactory = createElementWithValidation.bind(null, type);\n  validatedFactory.type = type;\n  // Legacy hook: remove it\n  {\n    Object.defineProperty(validatedFactory, 'type', {\n      enumerable: false,\n      get: function () {\n        lowPriorityWarning$1(false, 'Factory.type is deprecated. Access the class directly ' + 'before passing it to createFactory.');\n        Object.defineProperty(this, 'type', {\n          value: type\n        });\n        return type;\n      }\n    });\n  }\n\n  return validatedFactory;\n}\n\nfunction cloneElementWithValidation(element, props, children) {\n  var newElement = cloneElement.apply(this, arguments);\n  for (var i = 2; i < arguments.length; i++) {\n    validateChildKeys(arguments[i], newElement.type);\n  }\n  validatePropTypes(newElement);\n  return newElement;\n}\n\nvar React = {\n  Children: {\n    map: mapChildren,\n    forEach: forEachChildren,\n    count: countChildren,\n    toArray: toArray,\n    only: onlyChild\n  },\n\n  createRef: createRef,\n  Component: Component,\n  PureComponent: PureComponent,\n\n  createContext: createContext,\n  forwardRef: forwardRef,\n\n  Fragment: REACT_FRAGMENT_TYPE,\n  StrictMode: REACT_STRICT_MODE_TYPE,\n  unstable_AsyncMode: REACT_ASYNC_MODE_TYPE,\n  unstable_Profiler: REACT_PROFILER_TYPE,\n\n  createElement: createElementWithValidation,\n  cloneElement: cloneElementWithValidation,\n  createFactory: createFactoryWithValidation,\n  isValidElement: isValidElement,\n\n  version: ReactVersion,\n\n  __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: ReactSharedInternals\n};\n\nif (enableSuspense) {\n  React.Placeholder = REACT_PLACEHOLDER_TYPE;\n  React.lazy = lazy;\n}\n\n\n\nvar React$2 = Object.freeze({\n\tdefault: React\n});\n\nvar React$3 = ( React$2 && React ) || React$2;\n\n// TODO: decide on the top-level export form.\n// This is hacky but makes it work with both Rollup and Jest.\nvar react = React$3.default || React$3;\n\nmodule.exports = react;\n  })();\n}\n\n\n//# sourceURL=webpack:///./node_modules/react/cjs/react.development.js?"
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/react/index.js':
+      /*!*************************************!*\
+  !*** ./node_modules/react/index.js ***!
+  \*************************************/
+      /*! no static exports found */
+      /***/ function(module, exports, __webpack_require__) {
+        'use strict'
+        eval(
+          '\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "./node_modules/react/cjs/react.development.js");\n}\n\n\n//# sourceURL=webpack:///./node_modules/react/index.js?'
+        )
+
+        /***/
+      },
+
+    /***/ './node_modules/webpack/buildin/module.js':
+      /*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+      /*! no static exports found */
+      /***/ function(module, exports) {
+        eval(
+          'module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\n\t\tmodule.deprecate = function() {};\r\n\t\tmodule.paths = [];\r\n\t\t// module.parent = undefined by default\r\n\t\tif (!module.children) module.children = [];\r\n\t\tObject.defineProperty(module, "loaded", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.l;\r\n\t\t\t}\r\n\t\t});\r\n\t\tObject.defineProperty(module, "id", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.i;\r\n\t\t\t}\r\n\t\t});\r\n\t\tmodule.webpackPolyfill = 1;\r\n\t}\r\n\treturn module;\r\n};\r\n\n\n//# sourceURL=webpack:///(webpack)/buildin/module.js?'
+        )
+
+        /***/
       }
 
-      return '//www.youtube.com/embed/' + videoId + '?' + query;
-    }
-  }, {
-    key: 'getHtml',
-    value: function getHtml(opt, videoUrl, id) {
-      var padding = this.getPadding(opt.ratio);
-      var classNames = opt.classNames;
-      return '\n      <div class="' + classNames.modalVideo + '" tabindex="-1" role="dialog" aria-label="' + opt.aria.openMessage + '" id="' + id + '">\n        <div class="' + classNames.modalVideoBody + '">\n          <div class="' + classNames.modalVideoInner + '">\n            <div class="' + classNames.modalVideoIframeWrap + '" style="padding-bottom:' + padding + '">\n              <button class="' + classNames.modalVideoCloseBtn + ' js-modal-video-dismiss-btn" aria-label="' + opt.aria.dismissBtnMessage + '"></button>\n              <iframe width=\'460\' height=\'230\' src="' + videoUrl + '" frameborder=\'0\' allowfullscreen=' + opt.allowFullScreen + ' tabindex="-1"/>\n            </div>\n          </div>\n        </div>\n      </div>\n    ';
-    }
-  }]);
-
-  return ModalVideo;
-}();
-
-exports.default = ModalVideo;
-module.exports = exports['default'];
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var append = exports.append = function append(element, string) {
-  var parser = new DOMParser();
-  var doc = parser.parseFromString(string, 'text/html');
-  element.appendChild(doc.querySelector('body').childNodes[0]);
-};
-
-var prepend = exports.prepend = function prepend(element, string) {
-  var parser = new DOMParser();
-  var doc = parser.parseFromString(string, 'text/html');
-  element.insertBefore(doc.querySelector('body').childNodes[0], element.firstChild);
-};
-
-var getUniqId = exports.getUniqId = function getUniqId() {
-  return (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase();
-};
-
-var remove = exports.remove = function remove(element) {
-  if (element && element.parentNode) {
-    element.parentNode.removeChild(element);
+    /******/
   }
-};
-
-var addClass = exports.addClass = function addClass(element, className) {
-  if (element.classList) {
-    element.classList.add(className);
-  } else {
-    element.className += ' ' + className;
-  }
-};
-
-var triggerEvent = exports.triggerEvent = function triggerEvent(el, eventName, options) {
-  var event = void 0;
-  if (window.CustomEvent) {
-    event = new CustomEvent(eventName, { cancelable: true });
-  } else {
-    event = document.createEvent('CustomEvent');
-    event.initCustomEvent(eventName, false, false, options);
-  }
-  el.dispatchEvent(event);
-};
-
-/***/ })
-/******/ ]);
+)

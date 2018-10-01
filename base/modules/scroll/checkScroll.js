@@ -1,5 +1,3 @@
-'use strict'
-
 // Around Scroll Functions.
 const checkScroll = () => {
   const coreFunc = () => {
@@ -16,7 +14,7 @@ const checkScroll = () => {
     const t06Offset = target06.getBoundingClientRect()
     const t07Offset = target07.getBoundingClientRect()
     const WH = window.innerHeight
-    if(t07Offset.top < WH) {
+    if (t07Offset.top < WH) {
       target01.classList.add('is-page-top')
       target02.classList.add('is-scroll-top')
       target02.classList.add('is-page-top')
@@ -31,12 +29,12 @@ const checkScroll = () => {
       target04.classList.remove('fa-angle-double-up')
       target04.classList.add('fa-angle-double-down')
     }
-    if(t05Offset.top <= 0 && t06Offset.top > 0) {
+    if (t05Offset.top <= 0 && t06Offset.top > 0) {
       target08.classList.add('is-current')
     } else {
       target08.classList.remove('is-current')
     }
-    if(t06Offset.top <= 0) {
+    if (t06Offset.top <= 0) {
       target09.classList.add('is-current')
     } else {
       target09.classList.remove('is-current')
