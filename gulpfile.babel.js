@@ -40,7 +40,12 @@ const autoprefixerSet = [
   'iOS >= 8',
   'Android >= 4.4'
 ]
-const postCSSPlugIn = [autoprefixer({ browsers: autoprefixerSet }), flexbug] // PostCSS plugin.
+const postCSSPlugIn = [
+  autoprefixer({
+    browsers: autoprefixerSet
+  }),
+  flexbug
+] // PostCSS plugin.
 const addIMGDir = 'addImages/*' // added image fold,
 const distIMGDir = 'images/*' // compression image fold,
 const upLoadFile = [
@@ -49,7 +54,7 @@ const upLoadFile = [
   'en/index.html',
   'cn/index.html',
   'css/app.min.css',
-  'js/core.min.ts',
+  'js/core.min.js',
   'images/**/*',
   'mail/*',
   'wp/*'
