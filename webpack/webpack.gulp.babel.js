@@ -28,12 +28,19 @@ module.exports = {
   // Setting Rules According to JS Library and Framework.
   module: {
     rules: [
-      // ES6 & TypeScript.
-      // If Don't Use TypeScript, Delete 'awesome-typescript-loader'.
+      // ES2015.
       {
-        test: /\.(js|ts)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        loader: ['babel-loader', 'awesome-typescript-loader']
+        loader: ['babel-loader']
+      },
+      // ES2015 End.
+      // TypeScript.
+      // Use Loader -> 'ts-loader' or 'awesome-typescript-loader'.
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: ['ts-loader']
       },
       // ES6 &  TypeScript End.
       // Import Json File.
