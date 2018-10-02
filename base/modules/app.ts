@@ -4,5 +4,9 @@
 
 */
 export default class App {
-  constructor() {}
+  pending: string
+
+  constructor() {
+    this.pending = `pending`
+  }
 }
