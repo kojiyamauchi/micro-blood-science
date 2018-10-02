@@ -13,7 +13,9 @@ import ModalVideo from 'modal-video'
 //import message from './modules/mail/message'
 
 // emergence.js Init.
-emergence.init({ reset: false })
+emergence.init({
+  reset: false
+})
 
 // Created Modal Video Instance.
 new ModalVideo('.js-modal-video')
