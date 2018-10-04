@@ -187,7 +187,6 @@
   },
   "lint-staged": {
     "*.{js,ts}": [
-      "tslint --fix",
       "prettier --write --no-semi --single-quote",
       "git add"
     ]
