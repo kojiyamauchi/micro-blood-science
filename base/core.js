@@ -3,29 +3,18 @@ import emergence from 'emergence.js'
 import ModalVideo from 'modal-video'
 
 // Import Modules.
-//import addFlag from './modules/settings/addFlag'
-//import eventDefault from './modules/settings/eventDefault'
-//import introductions from './modules/introductions/introductions'
-//import checkScroll from './modules/scroll/checkScroll'
-//import anchorLink from './modules/scroll/anchorLink'
-//import floatings from './modules/floatings/floatings'
-//import mailValidation from './modules/mail/mailValidation'
-//import message from './modules/mail/message'
+import Introductions from '@/base/modules/introductions/Introductions'
+// import AddFlag from '@/base/modules/settings/AddFlag'
+// import EventDefault from '@/base/modules/settings/EventDefault'
+// import CheckScroll from '@/base/modules/scroll/CheckScroll'
+// import AnchorLink from '@/base/modules/scroll/AnchorLink'
+// import Floatings from '@/base/modules/floatings/Floatings'
+// import MailValidation from '.@/base/modules/mail/MailValidation'
+// import Message from '.@/base/modules/mail/Message'
 
 // emergence.js Init.
-emergence.init({
-  reset: false
-})
+emergence.init({ reset: false })
 
-// Created Modal Video Instance.
+// Created Instance.
 new ModalVideo('.js-modal-video')
-
-// Require All Functions.
-//addFlag()
-//eventDefault()
-//introductions()
-//checkScroll()
-//anchorLink()
-//floatings()
-//mailValidation()
-//message()
+new Introductions()
