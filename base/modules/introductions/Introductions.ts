@@ -4,175 +4,149 @@
 
 */
 export default class Introductions {
+  // Types.
   flagTarget: HTMLElement
   flagEN: boolean
   flagCN: boolean
+  flagDevice: boolean
+  heading02: NodeListOf<HTMLElement>
+  lettersBG: NodeListOf<HTMLElement>
+  lettersPC: NodeListOf<HTMLElement>
+  lettersSP: NodeListOf<HTMLElement>
+  floating: NodeListOf<HTMLElement>
 
   constructor() {
     this.flagTarget = document.body
     this.flagEN = this.flagTarget.classList.contains('en')
     this.flagCN = this.flagTarget.classList.contains('cn')
+    this.flagDevice = this.flagTarget.classList.contains('sp')
+    this.heading02 = document.querySelectorAll('.fn-txt-heading02-1')
+    this.lettersBG = document.querySelectorAll('.fn-letters-inner')
+    this.lettersPC = document.querySelectorAll('.fn-txt-letters-pc')
+    this.lettersSP = document.querySelectorAll('.fn-txt-letters-sp')
+    this.floating = document.querySelectorAll('.fn-button-floating')
+    this.callIntro()
   }
 
-  // Displayed Heading Functions.
-  coreFunc() {
-    const intro01 = () => {
-      const target = document.querySelectorAll('.fn-txt-heading02-1')
-      const tLen = target.length
-      if (this.flagEN) {
-        for (let i = 0; i < tLen; i++) {
+  // Intro1, Displayed Heading Functions.
+  intro01() {
+    // Core Function.
+    const coreFunction = (delay: number) => {
+      Array.from(this.heading02).map((info, index) => {
+        setTimeout(() => {
+          return info.classList.add('is-active')
+        }, index * delay)
+      })
+    }
+    // Branches.
+    if (this.flagEN) {
+      return coreFunction(15)
+    } else if (this.flagCN) {
+      return coreFunction(30)
+    } else {
+      return coreFunction(30)
+    }
+  }
+
+  // Intro2, Displayed Letters Background Functions.
+  intro02() {
+    // Core Function.
+    const coreFunction = (delay: number) => {
+      Array.from(this.lettersBG).map(info => {
+        setTimeout(() => {
+          return info.classList.add('is-active')
+        }, delay)
+      })
+    }
+    // Branches.
+    if (this.flagEN) {
+      return coreFunction(525)
+    } else if (this.flagCN) {
+      return coreFunction(700)
+    } else {
+      return coreFunction(800)
+    }
+  }
+
+  // Intro3, Displayed Letters Functions.
+  intro03() {
+    // Core Function.
+    const coreFunction = (
+      delayPC: number,
+      delaySP: number,
+      delayWrapper: number
+    ) => {
+      setTimeout(() => {
+        Array.from(this.lettersPC).map((info, index) => {
           setTimeout(() => {
-            target[i].classList.add('is-active')
-          }, i * 15)
-        }
-      } else if (this.flagCN) {
-        for (let i = 0; i < tLen; i++) {
+            return info.classList.add('is-active')
+          }, index * delayPC)
+        })
+        Array.from(this.lettersSP).map((info, index) => {
           setTimeout(() => {
-            target[i].classList.add('is-active')
-          }, i * 30)
-        }
+            return info.classList.add('is-active')
+          }, index * delaySP)
+        })
+      }, delayWrapper)
+    }
+    // Branches.
+    if (this.flagEN) {
+      return coreFunction(30, 30, 1000)
+    } else if (this.flagCN) {
+      return coreFunction(40, 40, 1250)
+    } else {
+      return coreFunction(40, 40, 1250)
+    }
+  }
+
+  // Intro4, Displayed Floating Button Functions.
+  intro04() {
+    // Core Function.
+    const coreFunction = (delay: number) => {
+      Array.from(this.floating).map(info => {
+        setTimeout(() => {
+          return info.classList.add('is-active')
+        }, delay)
+      })
+    }
+    // Branches.
+    if (this.flagEN) {
+      if (this.flagDevice) {
+        return coreFunction(9500)
       } else {
-        for (let i = 0; i < tLen; i++) {
-          setTimeout(() => {
-            target[i].classList.add('is-active')
-          }, i * 30)
-        }
+        return coreFunction(14500)
+      }
+    } else if (this.flagCN) {
+      if (this.flagDevice) {
+        return coreFunction(7375)
+      } else {
+        return coreFunction(7500)
+      }
+    } else {
+      if (this.flagDevice) {
+        return coreFunction(6500)
+      } else {
+        return coreFunction(9500)
       }
     }
+  }
 
-    // Displayed Letters Background Functions.
-    const intro02 = () => {
-      const target = document.querySelectorAll('.fn-letters-inner')
-      const tLen = target.length
-      if (this.flagEN) {
-        setTimeout(() => {
-          for (let i = 0; i < tLen; i++) {
-            target[i].classList.add('is-active')
-          }
-        }, 525)
-      } else if (this.flagCN) {
-        setTimeout(() => {
-          for (let i = 0; i < tLen; i++) {
-            target[i].classList.add('is-active')
-          }
-        }, 700)
-      } else {
-        setTimeout(() => {
-          for (let i = 0; i < tLen; i++) {
-            target[i].classList.add('is-active')
-          }
-        }, 800)
-      }
+  // Conatenate Intro & Await Intro.
+  conatenateIntro() {
+    const awaitIntro = async () => {
+      const awaitIntro01 = await this.intro01()
+      const awaitIntro02 = await this.intro02()
+      const awaitIntro03 = await this.intro03()
+      const awaitIntro04 = await this.intro04()
+      return [awaitIntro01, awaitIntro02, awaitIntro03, awaitIntro04]
     }
+    return awaitIntro()
+  }
 
-    // Displayed Letters Functions.
-    const intro03 = () => {
-      const target01 = document.querySelectorAll('.fn-txt-letters-pc')
-      const tLen01 = target01.length
-      const target02 = document.querySelectorAll('.fn-txt-letters-sp')
-      const tLen02 = target02.length
-      if (this.flagEN) {
-        setTimeout(() => {
-          for (let i = 0; i < tLen01; i++) {
-            setTimeout(() => {
-              target01[i].classList.add('is-active')
-            }, i * 30)
-          }
-          for (let i = 0; i < tLen02; i++) {
-            setTimeout(() => {
-              target02[i].classList.add('is-active')
-            }, i * 30)
-          }
-        }, 850)
-      } else if (this.flagCN) {
-        setTimeout(() => {
-          for (let i = 0; i < tLen01; i++) {
-            setTimeout(() => {
-              target01[i].classList.add('is-active')
-            }, i * 40)
-          }
-          for (let i = 0; i < tLen02; i++) {
-            setTimeout(() => {
-              target02[i].classList.add('is-active')
-            }, i * 40)
-          }
-        }, 850)
-      } else {
-        setTimeout(() => {
-          for (let i = 0; i < tLen01; i++) {
-            setTimeout(() => {
-              target01[i].classList.add('is-active')
-            }, i * 40)
-          }
-          for (let i = 0; i < tLen02; i++) {
-            setTimeout(() => {
-              target02[i].classList.add('is-active')
-            }, i * 40)
-          }
-        }, 850)
-      }
-    }
-
-    // Displayed Floating Button Functions.
-    const intro04 = () => {
-      const target = document.querySelectorAll('.fn-button-floating')
-      const targetLen = target.length
-      const flagDevice = this.flagTarget.classList.contains('sp')
-      if (this.flagEN) {
-        if (flagDevice) {
-          setTimeout(() => {
-            for (let i = 0; i < targetLen; i++) {
-              target[i].classList.add('is-active')
-            }
-          }, 8500)
-        } else {
-          setTimeout(() => {
-            for (let i = 0; i < targetLen; i++) {
-              target[i].classList.add('is-active')
-            }
-          }, 13500)
-        }
-      } else if (this.flagCN) {
-        if (flagDevice) {
-          setTimeout(() => {
-            for (let i = 0; i < targetLen; i++) {
-              target[i].classList.add('is-active')
-            }
-          }, 6125)
-        } else {
-          setTimeout(() => {
-            for (let i = 0; i < targetLen; i++) {
-              target[i].classList.add('is-active')
-            }
-          }, 6125)
-        }
-      } else {
-        if (flagDevice) {
-          setTimeout(() => {
-            for (let i = 0; i < targetLen; i++) {
-              target[i].classList.add('is-active')
-            }
-          }, 5250)
-        } else {
-          setTimeout(() => {
-            for (let i = 0; i < targetLen; i++) {
-              target[i].classList.add('is-active')
-            }
-          }, 8100)
-        }
-      }
-    }
-
-    // Concatenate All Functions.
-    const introConatenate = async () => {
-      await intro01()
-      await intro02()
-      await intro03()
-      await intro04()
-    }
-
+  // Call Intro.
+  callIntro() {
     setTimeout(() => {
-      introConatenate()
+      return this.conatenateIntro()
     }, 1250)
   }
 }
