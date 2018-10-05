@@ -16,5 +16,9 @@ import Introductions from '@/base/modules/introductions/Introductions'
 emergence.init({ reset: false })
 
 // Created Instance.
-new ModalVideo('.js-modal-video')
-new Introductions()
+const modalVideo = new ModalVideo('.js-modal-video')
+const introductions = new Introductions()
+
+// Requrie Instance.
+modalVideo()
+introductions()
