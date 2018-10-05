@@ -28,6 +28,14 @@ module.exports = {
   // Setting Rules According to JS Library and Framework.
   module: {
     rules: [
+      // ES Lint.
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
+      // ES Lint End.
       // ES2015.
       {
         test: /\.js$/,
@@ -51,7 +59,6 @@ module.exports = {
         loader: 'json-loader'
       },
       // Import Json File End.
-
       // JS Sorce Map.
       {
         test: /\.js$/,
