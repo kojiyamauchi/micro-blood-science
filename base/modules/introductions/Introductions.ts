@@ -44,7 +44,7 @@ export default class Introductions {
     } else if (this.flagCN) {
       return coreFunction(30)
     } else {
-      return coreFunction(30)
+      coreFunction(30)
     }
   }
 
@@ -64,7 +64,7 @@ export default class Introductions {
     } else if (this.flagCN) {
       return coreFunction(700)
     } else {
-      return coreFunction(800)
+      coreFunction(800)
     }
   }
 
@@ -95,7 +95,7 @@ export default class Introductions {
     } else if (this.flagCN) {
       return coreFunction(40, 40, 1250)
     } else {
-      return coreFunction(40, 40, 1250)
+      coreFunction(40, 40, 1250)
     }
   }
 
@@ -114,25 +114,25 @@ export default class Introductions {
       if (this.flagDevice) {
         return coreFunction(9500)
       } else {
-        return coreFunction(14500)
+        coreFunction(14500)
       }
     } else if (this.flagCN) {
       if (this.flagDevice) {
         return coreFunction(7375)
       } else {
-        return coreFunction(7500)
+        coreFunction(7500)
       }
     } else {
       if (this.flagDevice) {
         return coreFunction(6500)
       } else {
-        return coreFunction(9500)
+        coreFunction(9500)
       }
     }
   }
 
-  // Conatenate Intro & Await Intro.
-  conatenateIntro() {
+  // Concatenate Intro & Await Intro.
+  concatenateIntro() {
     const awaitIntro = async () => {
       const awaitIntro01 = await this.intro01()
       const awaitIntro02 = await this.intro02()
@@ -146,7 +146,7 @@ export default class Introductions {
   // Call Intro.
   callIntro() {
     setTimeout(() => {
-      return this.conatenateIntro()
+      return this.concatenateIntro()
     }, 1250)
   }
 }
