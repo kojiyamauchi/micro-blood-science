@@ -36,7 +36,7 @@ message.callFunc()
 
 window.addEventListener('load', () => {
   addFlag.branches()
-  checkScroll.setNode = document.querySelector('.fn-angle-down')
+  checkScroll.setNode = document.querySelector('.fn-angle-down') // TODO.
 })
 
 window.addEventListener('resize', () => {
