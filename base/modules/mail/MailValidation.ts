@@ -4,10 +4,12 @@
 
 */
 export default class MailValidation {
+  // Types.
   button: HTMLElement | null
   holder: HTMLElement | null
   txtfield: HTMLElement | null
   target: HTMLInputElement | null
+  targetValue: string
   validation: RegExp
   inTxt01: string
   inTxt02: string
@@ -24,6 +26,7 @@ export default class MailValidation {
     this.holder = document.querySelector('.fn-form-label')
     this.txtfield = document.querySelector('.fn-txtfield')
     this.target = document.querySelector('.fn-mail-val')
+    this.targetValue = ''
     this.validation = /^[A-Za-z0-9]+[\w\.-]+@[\w\.-]+\.\w{2,}$/
     this.inTxt01 = `メールアドレスを確認してください。`
     this.inTxt02 = `メールアドレスを入力してください。`
@@ -36,10 +39,9 @@ export default class MailValidation {
     this.flagCN = this.flagTarget.classList.contains('cn')
   }
 
-  coreFunc(event: any) {
-    const val = this.target!.value
-    if (!val.match(this.validation)) {
-      this.holder!.innerText = this.flagEN
+  branches(event: any) {
+    if (!this.targetValue.match(this.validation)) {
+      this.holder!.textContent = this.flagEN
         ? this.inTxtEN01
         : this.flagCN
           ? this.inTxtCN01
@@ -47,8 +49,8 @@ export default class MailValidation {
       this.txtfield!.classList.add('is-disabled02')
       event.preventDefault()
     }
-    if (val === '') {
-      this.holder!.innerText = this.flagEN
+    if (this.targetValue === '') {
+      this.holder!.textContent = this.flagEN
         ? this.inTxtEN02
         : this.flagCN
           ? this.inTxtCN02
@@ -56,6 +58,12 @@ export default class MailValidation {
       this.txtfield!.classList.add('is-disabled02')
       event.preventDefault()
     }
-    this.button!.addEventListener('click', this.coreFunc, false)
+  }
+
+  callFunc() {
+    this.button!.addEventListener('click', () => {
+      this.targetValue = this.target!.value
+      this.branches(event)
+    })
   }
 }
