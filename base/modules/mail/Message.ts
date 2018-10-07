@@ -12,9 +12,10 @@ export default class Message {
     this.getURL = window.location.hash
     this.target = document.querySelector('.fn-thanks-message')
     this.searchWord = `#completed_mail`
+    this.callFunc()
   }
 
-  coreFunc() {
+  callFunc() {
     if (this.getURL.indexOf(this.searchWord) > -1) {
       this.target!.classList.add('is-active')
       window.history.replaceState(null, null!, ' ')
