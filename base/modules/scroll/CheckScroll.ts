@@ -51,7 +51,7 @@ export default class CheckScroll {
   }
 
   branches() {
-    this.target04 = document.querySelector('.fn-angle-down')
+    this.target04 = document.querySelector('.fn-angle-down') // TODO.
     console.log(this.target04)
     if (this.t07Offset < this.WH) {
       this.target01!.classList.add('is-page-top')
