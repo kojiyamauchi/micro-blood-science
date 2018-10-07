@@ -19,7 +19,7 @@ export default class Floatings {
     )
   }
 
-  coreFunc() {
+  callFunc() {
     this.floatingTranslate!.addEventListener('click', (event: MouseEvent) => {
       event.stopPropagation()
       this.targetTranslate!.classList.toggle('is-active')
@@ -28,21 +28,21 @@ export default class Floatings {
     this.floatingTranslate!.addEventListener('mouseover', () => {
       const flagDevice = this.flagTarget.classList.contains('sp')
       if (!flagDevice) {
-        this.targetTranslate!.classList.add('is-active')
+        return this.targetTranslate!.classList.add('is-active')
       }
     })
 
     this.floatingTranslate!.addEventListener('mouseout', () => {
       const flagDevice = this.flagTarget.classList.contains('sp')
       if (!flagDevice) {
-        this.targetTranslate!.classList.remove('is-active')
+        return this.targetTranslate!.classList.remove('is-active')
       }
     })
 
     this.floatingPageTop!.addEventListener('click', () => {
       const clsCheck = this.floatingPageTop!.classList.contains('is-scroll-top')
       if (clsCheck) {
-        jump('.fn-scroll-top')
+        return jump('.fn-scroll-top')
       }
     })
   }
