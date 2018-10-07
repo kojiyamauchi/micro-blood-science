@@ -25,7 +25,6 @@ export default class Introductions {
     this.lettersPC = document.querySelectorAll('.fn-txt-letters-pc')
     this.lettersSP = document.querySelectorAll('.fn-txt-letters-sp')
     this.floating = document.querySelectorAll('.fn-button-floating')
-    this.callIntro()
   }
 
   // Intro1, Displayed Heading Functions.
