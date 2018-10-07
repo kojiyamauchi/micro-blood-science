@@ -4,6 +4,7 @@
 
 */
 export default class AddFlag {
+  // Types.
   target: HTMLElement
   BP: number
   WW: number
@@ -14,7 +15,11 @@ export default class AddFlag {
     this.WW = window.innerWidth
   }
 
-  coreFunc() {
+  set resizeValue(setWW: number) {
+    this.WW = setWW
+  }
+
+  branches() {
     if (this.WW >= this.BP) {
       this.target.classList.add('pc')
       this.target.classList.remove('sp')
@@ -22,7 +27,5 @@ export default class AddFlag {
       this.target.classList.add('sp')
       this.target.classList.remove('pc')
     }
-    window.addEventListener('load', this.coreFunc, false)
-    window.addEventListener('resize', this.coreFunc, false)
   }
 }
