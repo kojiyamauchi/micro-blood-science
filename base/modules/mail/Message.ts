@@ -12,7 +12,6 @@ export default class Message {
     this.getURL = window.location.hash
     this.target = document.querySelector('.fn-thanks-message')
     this.searchWord = `#completed_mail`
-    this.callFunc()
   }
 
   callFunc() {
