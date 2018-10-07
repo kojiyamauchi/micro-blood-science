@@ -12,9 +12,12 @@ export default class EventDefault {
     this.target02 = document.querySelector('.fn-movie02')
   }
 
-  coreFunc(event: any) {
+  initFunc(event: any) {
     event.preventDefault()
-    this.target01!.addEventListener('click', this.coreFunc, false)
-    this.target02!.addEventListener('click', this.coreFunc, false)
+  }
+
+  callFunc() {
+    this.target01!.addEventListener('click', this.initFunc, false)
+    this.target02!.addEventListener('click', this.initFunc, false)
   }
 }
