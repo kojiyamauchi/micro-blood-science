@@ -23,7 +23,7 @@ export default class CheckScroll {
     this.target01 = document.querySelector('.fn-button-floating-translate')
     this.target02 = document.querySelector('.fn-button-floating-page-top')
     this.target03 = document.querySelector('.fn-txt-scoll')
-    this.target04 = null
+    this.target04 = document.querySelector('.fn-angle-down')
     this.target05 = document.querySelector('.fn-area-about')
     this.target06 = document.querySelector('.fn-area-member')
     this.target07 = document.querySelector('.fn-footer')
@@ -50,10 +50,12 @@ export default class CheckScroll {
   set setWH(WH: number) {
     this.WH = WH
   }
+  get getNode() {
+    return this.target04
+  }
 
   branches() {
-    this.target04 = document.querySelector('.fn-angle-down') // TODO.
-    console.log(this.target04)
+    this.target04 = this.getNode
     if (this.t07Offset < this.WH) {
       this.target01!.classList.add('is-page-top')
       this.target02!.classList.add('is-scroll-top')
@@ -70,12 +72,12 @@ export default class CheckScroll {
       this.target04!.classList.add('fa-angle-double-down')
     }
     if (this.t05Offset <= 0 && this.t06Offset > 0) {
-      return this.target08!.classList.add('is-current')
+      this.target08!.classList.add('is-current')
     } else {
       this.target08!.classList.remove('is-current')
     }
     if (this.t06Offset <= 0) {
-      return this.target09!.classList.add('is-current')
+      this.target09!.classList.add('is-current')
     } else {
       this.target09!.classList.remove('is-current')
     }
