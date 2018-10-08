@@ -33,15 +33,15 @@ export default class Introductions {
     const coreFunction = (delay: number) => {
       Array.from(this.heading02).map((info, index) => {
         setTimeout(() => {
-          return info.classList.add('is-active')
+          info.classList.add('is-active')
         }, index * delay)
       })
     }
     // Branches.
     if (this.flagEN) {
-      return coreFunction(15)
+      coreFunction(15)
     } else if (this.flagCN) {
-      return coreFunction(30)
+      coreFunction(30)
     } else {
       coreFunction(30)
     }
@@ -53,15 +53,15 @@ export default class Introductions {
     const coreFunction = (delay: number) => {
       Array.from(this.lettersBG).map(info => {
         setTimeout(() => {
-          return info.classList.add('is-active')
+          info.classList.add('is-active')
         }, delay)
       })
     }
     // Branches.
     if (this.flagEN) {
-      return coreFunction(525)
+      coreFunction(525)
     } else if (this.flagCN) {
-      return coreFunction(700)
+      coreFunction(700)
     } else {
       coreFunction(800)
     }
@@ -78,21 +78,21 @@ export default class Introductions {
       setTimeout(() => {
         Array.from(this.lettersPC).map((info, index) => {
           setTimeout(() => {
-            return info.classList.add('is-active')
+            info.classList.add('is-active')
           }, index * delayPC)
         })
         Array.from(this.lettersSP).map((info, index) => {
           setTimeout(() => {
-            return info.classList.add('is-active')
+            info.classList.add('is-active')
           }, index * delaySP)
         })
       }, delayWrapper)
     }
     // Branches.
     if (this.flagEN) {
-      return coreFunction(30, 30, 1000)
+      coreFunction(30, 30, 1000)
     } else if (this.flagCN) {
-      return coreFunction(40, 40, 1250)
+      coreFunction(40, 40, 1250)
     } else {
       coreFunction(40, 40, 1250)
     }
@@ -104,26 +104,26 @@ export default class Introductions {
     const coreFunction = (delay: number) => {
       Array.from(this.floating).map(info => {
         setTimeout(() => {
-          return info.classList.add('is-active')
+          info.classList.add('is-active')
         }, delay)
       })
     }
     // Branches.
     if (this.flagEN) {
       if (this.flagDevice) {
-        return coreFunction(9500)
+        coreFunction(9500)
       } else {
         coreFunction(14500)
       }
     } else if (this.flagCN) {
       if (this.flagDevice) {
-        return coreFunction(7375)
+        coreFunction(7375)
       } else {
         coreFunction(7500)
       }
     } else {
       if (this.flagDevice) {
-        return coreFunction(6500)
+        coreFunction(6500)
       } else {
         coreFunction(9500)
       }
@@ -145,7 +145,7 @@ export default class Introductions {
   // Call Intro.
   callIntro() {
     setTimeout(() => {
-      return this.concatenateIntro()
+      this.concatenateIntro()
     }, 1250)
   }
 }
