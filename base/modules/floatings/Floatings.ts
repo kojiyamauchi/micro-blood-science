@@ -29,21 +29,21 @@ export default class Floatings {
     this.floatingTranslate!.addEventListener('mouseover', () => {
       const flagDevice = this.flagTarget.classList.contains('sp')
       if (!flagDevice) {
-        return this.targetTranslate!.classList.add('is-active')
+        this.targetTranslate!.classList.add('is-active')
       }
     })
 
     this.floatingTranslate!.addEventListener('mouseout', () => {
       const flagDevice = this.flagTarget.classList.contains('sp')
       if (!flagDevice) {
-        return this.targetTranslate!.classList.remove('is-active')
+        this.targetTranslate!.classList.remove('is-active')
       }
     })
 
     this.floatingPageTop!.addEventListener('click', () => {
       const clsCheck = this.floatingPageTop!.classList.contains('is-scroll-top')
       if (clsCheck) {
-        return jump('.fn-scroll-top')
+        jump('.fn-scroll-top')
       }
     })
   }
