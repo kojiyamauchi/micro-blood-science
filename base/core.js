@@ -34,9 +34,11 @@ floatings.callCore()
 mailValidation.callCore()
 message.callCore()
 
+// DOM Content Loaded.
+window.addEventListener('DOMContentLoaded', () => {})
+
 // Load.
 window.addEventListener('load', () => {
-  checkScroll.setNode = document.querySelector('.fn-angle-down') // TODO.
   addFlag.branches()
 })
 
@@ -48,6 +50,7 @@ window.addEventListener('resize', () => {
 
 // Scroll.
 window.addEventListener('scroll', () => {
+  checkScroll.setNode = document.querySelector('.fn-angle-down')
   checkScroll.setT5 = document
     .querySelector('.fn-area-about')
     .getBoundingClientRect().top
