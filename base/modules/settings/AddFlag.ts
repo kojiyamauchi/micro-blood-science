@@ -15,7 +15,7 @@ export default class AddFlag {
     this.WW = window.innerWidth
   }
 
-  set resizeValue(setWW: number) {
+  set resizeEvent(setWW: number) {
     this.WW = setWW
   }
 

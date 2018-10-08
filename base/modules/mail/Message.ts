@@ -4,6 +4,7 @@
 
 */
 export default class Message {
+  // Types.
   getURL: string
   target: HTMLElement | null
   searchWord: string
@@ -14,7 +15,7 @@ export default class Message {
     this.searchWord = `#completed_mail`
   }
 
-  callFunc() {
+  callCore() {
     if (this.getURL.indexOf(this.searchWord) > -1) {
       this.target!.classList.add('is-active')
       window.history.replaceState(null, null!, ' ')

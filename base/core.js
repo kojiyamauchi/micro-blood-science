@@ -26,24 +26,27 @@ const floatings = new Floatings()
 const mailValidation = new MailValidation()
 const message = new Message()
 
-// Requrie Instance.
+// Requrie Instance. (Default)
 introductions.callIntro()
-eventDefault.callFunc()
-anchorLink.callFunc()
-floatings.callFunc()
-mailValidation.callFunc()
-message.callFunc()
+eventDefault.callCore()
+anchorLink.callCore()
+floatings.callCore()
+mailValidation.callCore()
+message.callCore()
 
+// Load.
 window.addEventListener('load', () => {
-  addFlag.branches()
   checkScroll.setNode = document.querySelector('.fn-angle-down') // TODO.
-})
-
-window.addEventListener('resize', () => {
-  addFlag.resizeValue = window.innerWidth
   addFlag.branches()
 })
 
+// Resize.
+window.addEventListener('resize', () => {
+  addFlag.resizeEvent = window.innerWidth
+  addFlag.branches()
+})
+
+// Scroll.
 window.addEventListener('scroll', () => {
   checkScroll.setT5 = document
     .querySelector('.fn-area-about')

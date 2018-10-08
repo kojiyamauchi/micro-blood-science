@@ -60,7 +60,7 @@ export default class MailValidation {
     }
   }
 
-  callFunc() {
+  callCore() {
     this.button!.addEventListener('click', () => {
       this.targetValue = this.target!.value
       this.branches(event)

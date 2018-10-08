@@ -4,6 +4,7 @@
 
 */
 export default class CheckScroll {
+  // Types.
   target01: HTMLElement | null
   target02: HTMLElement | null
   target03: HTMLElement | null

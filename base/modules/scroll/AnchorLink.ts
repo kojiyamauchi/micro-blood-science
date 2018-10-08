@@ -14,7 +14,7 @@ export default class AnchorLink {
     this.target = document.querySelectorAll('.fn-anchor')
   }
 
-  callFunc() {
+  callCore() {
     Array.from(this.target).map(info => {
       info.onclick = (event: MouseEvent) => {
         const getAnchor = info.dataset.anchor

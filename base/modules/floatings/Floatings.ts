@@ -3,6 +3,7 @@ import jump from 'jump.js'
 
 // Clicked Floating Button Functions.
 export default class Floatings {
+  // Types.
   flagTarget: HTMLElement
   floatingTranslate: HTMLElement | null
   targetTranslate: HTMLElement | null
@@ -19,7 +20,7 @@ export default class Floatings {
     )
   }
 
-  callFunc() {
+  callCore() {
     this.floatingTranslate!.addEventListener('click', (event: MouseEvent) => {
       event.stopPropagation()
       this.targetTranslate!.classList.toggle('is-active')
