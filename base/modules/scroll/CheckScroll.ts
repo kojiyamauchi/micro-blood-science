@@ -3,13 +3,9 @@
  CheckScroll.ts
 
 */
-interface GetPropsTypes {
-  0: number
-  1: HTMLElement | null
-  2: number
-  3: number
-  4: number
-}
+
+// Import Interface.
+import { ScrollPropsTypes } from '@/types/interface/'
 
 export default class CheckScroll {
   // Types.
@@ -27,7 +23,7 @@ export default class CheckScroll {
     this.target05 = document.querySelector('.fn-anchor-link02')
   }
 
-  branches(getProps: GetPropsTypes) {
+  branches(getProps: ScrollPropsTypes) {
     if (getProps[4] < getProps[0]) {
       this.target01!.classList.add('is-page-top')
       this.target02!.classList.add('is-scroll-top')

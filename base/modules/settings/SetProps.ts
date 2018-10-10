@@ -3,6 +3,10 @@
  SetProps.ts
 
 */
+
+// Import Interface.
+import { ScrollPropsTypes } from '@/types/interface/'
+
 export default class SetProps {
   // Types.
   WW: number
@@ -30,20 +34,12 @@ export default class SetProps {
   set setWidth(setWW: number) {
     this.WW = setWW
   }
-  set setHeight(setWH: number) {
-    this.WH = setWH
-  }
-  set setScrollProps01(t1: HTMLElement | null) {
-    this.scrollProps01 = t1
-  }
-  set setScrollProps02(t2: number) {
-    this.scrollProps02 = t2
-  }
-  set setScrollProps03(t3: number) {
-    this.scrollProps03 = t3
-  }
-  set setScrollProps04(t4: number) {
-    this.scrollProps04 = t4
+  set setScrollProps(propsValue: ScrollPropsTypes) {
+    this.WH = propsValue[0]
+    this.scrollProps01 = propsValue[1]
+    this.scrollProps02 = propsValue[2]
+    this.scrollProps03 = propsValue[3]
+    this.scrollProps04 = propsValue[4]
   }
 
   get getWidth() {
