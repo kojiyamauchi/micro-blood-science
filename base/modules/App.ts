@@ -13,7 +13,6 @@ import MailValidation from '@/base/modules/mail/MailValidation'
 import Message from '@/base/modules/mail/Message'
 import AddFlag from '@/base/modules/settings/AddFlag'
 import CheckScroll from '@/base/modules/scroll/CheckScroll'
-import SetProps from '@/base/modules/settings/SetProps'
 
 // Import Interface.
 import { ScrollPropsTypes } from '@/types/interface/'
@@ -28,7 +27,6 @@ export default class App {
   message: Message
   addFlag: AddFlag
   checkScroll: CheckScroll
-  setProps: SetProps
 
   constructor() {
     this.introductions = new Introductions()
@@ -39,7 +37,6 @@ export default class App {
     this.message = new Message()
     this.addFlag = new AddFlag()
     this.checkScroll = new CheckScroll()
-    this.setProps = new SetProps()
   }
 
   init() {
