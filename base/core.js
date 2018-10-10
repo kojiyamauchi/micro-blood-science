@@ -3,63 +3,52 @@ import emergence from 'emergence.js'
 import ModalVideo from 'modal-video'
 
 // Import Modules.
-import Introductions from '@/base/modules/introductions/Introductions'
-import EventDefault from '@/base/modules/settings/EventDefault'
-import AddFlag from '@/base/modules/settings/AddFlag'
-import CheckScroll from '@/base/modules/scroll/CheckScroll'
-import AnchorLink from '@/base/modules/scroll/AnchorLink'
-import Floatings from '@/base/modules/floatings/Floatings'
-import MailValidation from '@/base/modules/mail/MailValidation'
-import Message from '@/base/modules/mail/Message'
+import App from '@/base/modules/App'
+import SetProps from '@/base/modules/settings/SetProps'
+
+// Created Instance.
+const modalVideo = new ModalVideo('.js-modal-video') // eslint-disable-line no-unused-vars
+const app = new App()
+const setProps = new SetProps()
 
 // emergence.js Init.
 emergence.init({ reset: false })
 
-// Created Instance.
-const modalVideo = new ModalVideo('.js-modal-video') // eslint-disable-line no-unused-vars
-const introductions = new Introductions()
-const eventDefault = new EventDefault()
-const addFlag = new AddFlag()
-const checkScroll = new CheckScroll()
-const anchorLink = new AnchorLink()
-const floatings = new Floatings()
-const mailValidation = new MailValidation()
-const message = new Message()
-
-// Requrie Instance. (Default)
-introductions.callIntro()
-eventDefault.callCore()
-anchorLink.callCore()
-floatings.callCore()
-mailValidation.callCore()
-message.callCore()
+// Init.
+app.init()
 
 // DOM Content Loaded.
-window.addEventListener('DOMContentLoaded', () => {})
+window.addEventListener('DOMContentLoaded', () => {
+  // No Method.
+})
 
 // Load.
 window.addEventListener('load', () => {
-  addFlag.branches()
+  app.load(setProps.getWidth)
 })
 
 // Resize.
 window.addEventListener('resize', () => {
-  addFlag.resizeEvent = window.innerWidth
-  addFlag.branches()
+  // Set.
+  setProps.setWidth = window.innerWidth
+  // Call Method.
+  app.resize(setProps.getWidth)
 })
 
 // Scroll.
 window.addEventListener('scroll', () => {
-  checkScroll.setNode = document.querySelector('.fn-angle-down')
-  checkScroll.setT5 = document
+  // Set.
+  setProps.setHeight = window.innerHeight
+  setProps.setScrollProps01 = document.querySelector('.fn-angle-down')
+  setProps.setScrollProps02 = document
     .querySelector('.fn-area-about')
     .getBoundingClientRect().top
-  checkScroll.setT6 = document
+  setProps.setScrollProps03 = document
     .querySelector('.fn-area-member')
     .getBoundingClientRect().top
-  checkScroll.setT7 = document
+  setProps.setScrollProps04 = document
     .querySelector('.fn-footer')
     .getBoundingClientRect().top
-  checkScroll.setWH = window.innerHeight
-  checkScroll.branches()
+  // Call Method.
+  app.scroll(setProps.getScrollProps)
 })
