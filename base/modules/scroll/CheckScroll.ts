@@ -3,6 +3,14 @@
  CheckScroll.ts
 
 */
+interface GetPropsTypes {
+  0: number
+  1: HTMLElement | null
+  2: number
+  3: number
+  4: number
+}
+
 export default class CheckScroll {
   // Types.
   target01: HTMLElement | null
@@ -19,21 +27,21 @@ export default class CheckScroll {
     this.target05 = document.querySelector('.fn-anchor-link02')
   }
 
-  branches(getProps: any) {
+  branches(getProps: GetPropsTypes) {
     if (getProps[4] < getProps[0]) {
       this.target01!.classList.add('is-page-top')
       this.target02!.classList.add('is-scroll-top')
       this.target02!.classList.add('is-page-top')
       this.target03!.innerText = `Page Top`
-      getProps[1].classList.remove('fa-angle-double-down')
-      getProps[1].classList.add('fa-angle-double-up')
+      getProps[1]!.classList.remove('fa-angle-double-down')
+      getProps[1]!.classList.add('fa-angle-double-up')
     } else {
       this.target01!.classList.remove('is-page-top')
       this.target02!.classList.remove('is-scroll-top')
       this.target02!.classList.remove('is-page-top')
       this.target03!.innerText = `Scroll`
-      getProps[1].classList.remove('fa-angle-double-up')
-      getProps[1].classList.add('fa-angle-double-down')
+      getProps[1]!.classList.remove('fa-angle-double-up')
+      getProps[1]!.classList.add('fa-angle-double-down')
     }
     if (getProps[2] <= 0 && getProps[3] > 0) {
       this.target04!.classList.add('is-current')
