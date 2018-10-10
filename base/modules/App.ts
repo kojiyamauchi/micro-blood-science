@@ -15,6 +15,9 @@ import AddFlag from '@/base/modules/settings/AddFlag'
 import CheckScroll from '@/base/modules/scroll/CheckScroll'
 import SetProps from '@/base/modules/settings/SetProps'
 
+// Import Interface.
+import { ScrollPropsTypes } from '@/types/interface/'
+
 export default class App {
   // Types.
   introductions: Introductions
@@ -60,7 +63,7 @@ export default class App {
     this.addFlag.branches(getWW)
   }
 
-  scroll(getProps: any) {
+  scroll(getProps: ScrollPropsTypes) {
     this.checkScroll.branches(getProps)
   }
 }

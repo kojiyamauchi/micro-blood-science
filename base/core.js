@@ -38,17 +38,13 @@ window.addEventListener('resize', () => {
 // Scroll.
 window.addEventListener('scroll', () => {
   // Set.
-  setProps.setHeight = window.innerHeight
-  setProps.setScrollProps01 = document.querySelector('.fn-angle-down')
-  setProps.setScrollProps02 = document
-    .querySelector('.fn-area-about')
-    .getBoundingClientRect().top
-  setProps.setScrollProps03 = document
-    .querySelector('.fn-area-member')
-    .getBoundingClientRect().top
-  setProps.setScrollProps04 = document
-    .querySelector('.fn-footer')
-    .getBoundingClientRect().top
+  setProps.setScrollProps = [
+    window.innerHeight,
+    document.querySelector('.fn-angle-down'),
+    document.querySelector('.fn-area-about').getBoundingClientRect().top,
+    document.querySelector('.fn-area-member').getBoundingClientRect().top,
+    document.querySelector('.fn-footer').getBoundingClientRect().top
+  ]
   // Call Method.
   app.scroll(setProps.getScrollProps)
 })
