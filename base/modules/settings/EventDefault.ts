@@ -13,7 +13,7 @@ export default class EventDefault {
     this.target02 = document.querySelector('.fn-movie02')
   }
 
-  clickEvent(event: any) {
+  clickEvent(event: MouseEvent) {
     event.preventDefault()
   }
 

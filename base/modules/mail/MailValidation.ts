@@ -39,7 +39,7 @@ export default class MailValidation {
     this.flagCN = this.flagTarget.classList.contains('cn')
   }
 
-  branches(event: any) {
+  branches(event: Event | undefined) {
     if (!this.targetValue.match(this.validation)) {
       this.holder!.textContent = this.flagEN
         ? this.inTxtEN01
@@ -47,7 +47,7 @@ export default class MailValidation {
           ? this.inTxtCN01
           : this.inTxt01
       this.txtfield!.classList.add('is-disabled02')
-      event.preventDefault()
+      event!.preventDefault()
     }
     if (this.targetValue === '') {
       this.holder!.textContent = this.flagEN
@@ -56,7 +56,7 @@ export default class MailValidation {
           ? this.inTxtCN02
           : this.inTxt02
       this.txtfield!.classList.add('is-disabled02')
-      event.preventDefault()
+      event!.preventDefault()
     }
   }
 
