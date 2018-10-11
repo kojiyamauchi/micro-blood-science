@@ -15,7 +15,7 @@ import AddFlag from '@/base/modules/settings/AddFlag'
 import CheckScroll from '@/base/modules/scroll/CheckScroll'
 
 // Import Interface.
-import { ScrollPropsTypes } from '@/types/interface/'
+import { ScrollStateTypes } from '@/types/interface/'
 
 export default class App {
   // Types.
@@ -52,15 +52,15 @@ export default class App {
     // No Method.
   }
 
-  load(getWW: number) {
-    this.addFlag.branches(getWW)
+  load(getWidthState: number) {
+    this.addFlag.branches(getWidthState)
   }
 
-  resize(getWW: number) {
-    this.addFlag.branches(getWW)
+  resize(getWidthState: number) {
+    this.addFlag.branches(getWidthState)
   }
 
-  scroll(getProps: ScrollPropsTypes) {
-    this.checkScroll.branches(getProps)
+  scroll(getScrollState: ScrollStateTypes) {
+    this.checkScroll.branches(getScrollState)
   }
 }
