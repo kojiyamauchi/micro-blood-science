@@ -3,6 +3,7 @@
  Message.ts
 
 */
+
 export default class Message {
   // Types.
   getURL: string

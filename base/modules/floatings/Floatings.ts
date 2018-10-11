@@ -1,7 +1,12 @@
-// Import Jump.js.
+/*
+
+ Floatings.ts
+
+*/
+
+// Import Package Modules.
 import jump from 'jump.js'
 
-// Clicked Floating Button Functions.
 export default class Floatings {
   // Types.
   flagTarget: HTMLElement

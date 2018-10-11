@@ -3,6 +3,7 @@
  Introductions.ts
 
 */
+
 export default class Introductions {
   // Types.
   flagTarget: HTMLElement
