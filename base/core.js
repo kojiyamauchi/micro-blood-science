@@ -10,17 +10,17 @@ import ModalVideo from 'modal-video'
 
 // Import Modules.
 import App from '@/base/modules/App'
-import SetProps from '@/base/modules/settings/SetProps'
+import SetStates from '@/base/modules/state/SetStates'
 
 // Created Instance.
 const modalVideo = new ModalVideo('.js-modal-video') // eslint-disable-line no-unused-vars
 const app = new App()
-const setProps = new SetProps()
+const setStates = new SetStates()
 
 // emergence.js Init.
 emergence.init({ reset: false })
 
-// Init.
+// Initial.
 app.init()
 
 // DOM Content Loaded.
@@ -30,28 +30,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Load.
 window.addEventListener('load', () => {
-  // Call Method.
-  app.load(setProps.getWidth)
+  // Call Load Method. When Window Reload, Fetch State of View.
+  app.load(setStates.getWidth)
 })
 
 // Resize.
 window.addEventListener('resize', () => {
-  // Set.
-  setProps.setWidth = window.innerWidth
-  // Call Method.
-  app.resize(setProps.getWidth)
+  // Set View State.
+  setStates.setWidth = window.innerWidth
+  // Call Resize Method. When Window Resize, Fetch State of View.
+  app.resize(setStates.getWidth)
 })
 
 // Scroll.
 window.addEventListener('scroll', () => {
-  // Set.
-  setProps.setScrollProps = [
+  // Set View State.
+  setStates.setScroll = [
     window.innerHeight,
     document.querySelector('.fn-angle-down'),
     document.querySelector('.fn-area-about').getBoundingClientRect().top,
     document.querySelector('.fn-area-member').getBoundingClientRect().top,
     document.querySelector('.fn-footer').getBoundingClientRect().top
   ]
-  // Call Method.
-  app.scroll(setProps.getScrollProps)
+  // Call Scroll Method. When Window Scroll, Fetch State of View.
+  app.scroll(setStates.getScroll)
 })

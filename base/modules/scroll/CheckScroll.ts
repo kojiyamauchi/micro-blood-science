@@ -5,7 +5,7 @@
 */
 
 // Import Interface.
-import { ScrollPropsTypes } from '@/types/interface/'
+import { ScrollStateTypes } from '@/types/interface/'
 
 export default class CheckScroll {
   // Types.
@@ -23,28 +23,28 @@ export default class CheckScroll {
     this.target05 = document.querySelector('.fn-anchor-link02')
   }
 
-  branches(getProps: ScrollPropsTypes) {
-    if (getProps[4] < getProps[0]) {
+  branches(getScrollState: ScrollStateTypes) {
+    if (getScrollState[4] < getScrollState[0]) {
       this.target01!.classList.add('is-page-top')
       this.target02!.classList.add('is-scroll-top')
       this.target02!.classList.add('is-page-top')
       this.target03!.innerText = `Page Top`
-      getProps[1]!.classList.remove('fa-angle-double-down')
-      getProps[1]!.classList.add('fa-angle-double-up')
+      getScrollState[1]!.classList.remove('fa-angle-double-down')
+      getScrollState[1]!.classList.add('fa-angle-double-up')
     } else {
       this.target01!.classList.remove('is-page-top')
       this.target02!.classList.remove('is-scroll-top')
       this.target02!.classList.remove('is-page-top')
       this.target03!.innerText = `Scroll`
-      getProps[1]!.classList.remove('fa-angle-double-up')
-      getProps[1]!.classList.add('fa-angle-double-down')
+      getScrollState[1]!.classList.remove('fa-angle-double-up')
+      getScrollState[1]!.classList.add('fa-angle-double-down')
     }
-    if (getProps[2] <= 0 && getProps[3] > 0) {
+    if (getScrollState[2] <= 0 && getScrollState[3] > 0) {
       this.target04!.classList.add('is-current')
     } else {
       this.target04!.classList.remove('is-current')
     }
-    if (getProps[3] <= 0) {
+    if (getScrollState[3] <= 0) {
       this.target05!.classList.add('is-current')
     } else {
       this.target05!.classList.remove('is-current')
