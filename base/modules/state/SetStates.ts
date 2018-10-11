@@ -7,7 +7,7 @@
 // Import Interface.
 import { ScrollStateTypes } from '@/types/interface/'
 
-export default class SetState {
+export default class SetStates {
   // Types.
   BW: number
   WH: number
