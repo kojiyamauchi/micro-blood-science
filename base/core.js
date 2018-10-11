@@ -17,10 +17,8 @@ const modalVideo = new ModalVideo('.js-modal-video') // eslint-disable-line no-u
 const app = new App()
 const setStates = new SetStates()
 
-// emergence.js Init.
-emergence.init({ reset: false })
-
 // Initial.
+emergence.init({ reset: false })
 app.init()
 
 // DOM Content Loaded.
@@ -37,7 +35,7 @@ window.addEventListener('load', () => {
 // Resize.
 window.addEventListener('resize', () => {
   // Set View State.
-  setStates.setWidth = window.innerWidth
+  setStates.setWidth = document.body.clientWidth
   // Call Resize Method. When Window Resize, Fetch State of View.
   app.resize(setStates.getWidth)
 })

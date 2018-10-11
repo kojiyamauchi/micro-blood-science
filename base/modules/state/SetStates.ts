@@ -9,7 +9,7 @@ import { ScrollStateTypes } from '@/types/interface/'
 
 export default class SetState {
   // Types.
-  WW: number
+  BW: number
   WH: number
   scrollState01!: HTMLElement | null
   scrollState02: number
@@ -17,7 +17,7 @@ export default class SetState {
   scrollState04: number
 
   constructor() {
-    this.WW = window.innerWidth
+    this.BW = document.body.clientWidth
     this.WH = window.innerHeight
     this.scrollState01 = document.querySelector('.fn-angle-down')
     this.scrollState02 = document
@@ -32,7 +32,7 @@ export default class SetState {
   }
 
   set setWidth(setWidthState: number) {
-    this.WW = setWidthState
+    this.BW = setWidthState
   }
   set setScroll(setScrollState: ScrollStateTypes) {
     this.WH = setScrollState[0]
@@ -43,7 +43,7 @@ export default class SetState {
   }
 
   get getWidth() {
-    return this.WW
+    return this.BW
   }
   get getScroll() {
     return [

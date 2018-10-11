@@ -9,7 +9,6 @@ export default class Introductions {
   flagTarget: HTMLElement
   flagEN: boolean
   flagCN: boolean
-  flagDevice: boolean
   heading02: NodeListOf<HTMLElement>
   lettersBG: NodeListOf<HTMLElement>
   lettersPC: NodeListOf<HTMLElement>
@@ -20,7 +19,6 @@ export default class Introductions {
     this.flagTarget = document.body
     this.flagEN = this.flagTarget.classList.contains('en')
     this.flagCN = this.flagTarget.classList.contains('cn')
-    this.flagDevice = this.flagTarget.classList.contains('sp')
     this.heading02 = document.querySelectorAll('.fn-txt-heading02-1')
     this.lettersBG = document.querySelectorAll('.fn-letters-inner')
     this.lettersPC = document.querySelectorAll('.fn-txt-letters-pc')
@@ -101,6 +99,8 @@ export default class Introductions {
 
   // Intro4, Displayed Floating Button Functions.
   intro04() {
+    // When Before Start Introduction04, Check Device.
+    const flagDevice = this.flagTarget.classList.contains('sp')
     // Core Function.
     const coreFunction = (delay: number) => {
       Array.from(this.floating).map(info => {
@@ -111,19 +111,19 @@ export default class Introductions {
     }
     // Branches.
     if (this.flagEN) {
-      if (this.flagDevice) {
+      if (flagDevice) {
         coreFunction(9500)
       } else {
         coreFunction(14500)
       }
     } else if (this.flagCN) {
-      if (this.flagDevice) {
+      if (flagDevice) {
         coreFunction(7375)
       } else {
         coreFunction(7500)
       }
     } else {
-      if (this.flagDevice) {
+      if (flagDevice) {
         coreFunction(6500)
       } else {
         coreFunction(9500)
