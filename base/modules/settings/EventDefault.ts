@@ -3,6 +3,7 @@
  EventDefault.ts
 
 */
+
 export default class EventDefault {
   // Types.
   target01: HTMLElement | null

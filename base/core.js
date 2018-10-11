@@ -1,3 +1,9 @@
+/*
+
+ core.js
+
+*/
+
 // Import Package Modules.
 import emergence from 'emergence.js'
 import ModalVideo from 'modal-video'
@@ -24,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Load.
 window.addEventListener('load', () => {
+  // Call Method.
   app.load(setProps.getWidth)
 })
 

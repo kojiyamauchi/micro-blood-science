@@ -3,6 +3,7 @@
  MailValidation.ts
 
 */
+
 export default class MailValidation {
   // Types.
   button: HTMLElement | null

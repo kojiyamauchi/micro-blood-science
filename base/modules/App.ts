@@ -49,7 +49,7 @@ export default class App {
   }
 
   domContentLoaded() {
-    // No Instance.
+    // No Method.
   }
 
   load(getWW: number) {

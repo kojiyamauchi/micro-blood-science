@@ -3,9 +3,10 @@
  AnchorLink.ts
 
 */
+
+// Import Package Modules.
 import jump from 'jump.js'
 
-// Anchor Link Scroll Functions.
 export default class AnchorLink {
   // Types.
   target: NodeListOf<HTMLElement>
