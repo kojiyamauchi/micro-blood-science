@@ -131,22 +131,13 @@ export default class Introductions {
     }
   }
 
-  // Concatenate Intro & Await Intro.
-  concatenateIntro() {
-    const awaitIntro = async () => {
-      const awaitIntro01 = await this.intro01()
-      const awaitIntro02 = await this.intro02()
-      const awaitIntro03 = await this.intro03()
-      const awaitIntro04 = await this.intro04()
-      return [awaitIntro01, awaitIntro02, awaitIntro03, awaitIntro04]
-    }
-    return awaitIntro()
-  }
-
   // Call Intro.
   callIntro() {
     setTimeout(() => {
-      this.concatenateIntro()
+      this.intro01()
+      this.intro02()
+      this.intro03()
+      this.intro04()
     }, 1250)
   }
 }
