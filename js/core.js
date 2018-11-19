@@ -17,12 +17,7 @@
       /******/
     }) // Execute the module function
     /******/
-    /******/ /******/ modules[moduleId].call(
-      module.exports,
-      module,
-      module.exports,
-      __webpack_require__
-    ) // Flag the module as loaded
+    /******/ /******/ modules[moduleId].call(module.exports, module, module.exports, __webpack_require__) // Flag the module as loaded
     /******/
     /******/ /******/ module.l = true // Return the exports of the module
     /******/
@@ -37,10 +32,7 @@
   /******/
   /******/ /******/ __webpack_require__.d = function(exports, name, getter) {
     /******/ if (!__webpack_require__.o(exports, name)) {
-      /******/ Object.defineProperty(exports, name, {
-        enumerable: true,
-        get: getter
-      })
+      /******/ Object.defineProperty(exports, name, { enumerable: true, get: getter })
       /******/
     }
     /******/
@@ -48,34 +40,20 @@
   /******/
   /******/ /******/ __webpack_require__.r = function(exports) {
     /******/ if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-      /******/ Object.defineProperty(exports, Symbol.toStringTag, {
-        value: 'Module'
-      })
+      /******/ Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' })
       /******/
     }
     /******/ Object.defineProperty(exports, '__esModule', { value: true })
     /******/
   } // create a fake namespace object // mode & 1: value is a module id, require it // mode & 2: merge all properties of value into the ns // mode & 4: return value when already ns object // mode & 8|1: behave like require
   /******/
-  /******/ /******/ /******/ /******/ /******/ /******/ __webpack_require__.t = function(
-    value,
-    mode
-  ) {
+  /******/ /******/ /******/ /******/ /******/ /******/ __webpack_require__.t = function(value, mode) {
     /******/ if (mode & 1) value = __webpack_require__(value)
     /******/ if (mode & 8) return value
-    /******/ if (
-      mode & 4 &&
-      typeof value === 'object' &&
-      value &&
-      value.__esModule
-    )
-      return value
+    /******/ if (mode & 4 && typeof value === 'object' && value && value.__esModule) return value
     /******/ var ns = Object.create(null)
     /******/ __webpack_require__.r(ns)
-    /******/ Object.defineProperty(ns, 'default', {
-      enumerable: true,
-      value: value
-    })
+    /******/ Object.defineProperty(ns, 'default', { enumerable: true, value: value })
     /******/ if (mode & 2 && typeof value != 'string')
       for (var key in value)
         __webpack_require__.d(
@@ -110,9 +88,7 @@
   /******/ /******/ __webpack_require__.p = '' // Load entry module and return exports
   /******/
   /******/
-  /******/ /******/ return __webpack_require__(
-    (__webpack_require__.s = './base/core.js')
-  )
+  /******/ /******/ return __webpack_require__((__webpack_require__.s = './base/core.js'))
   /******/
 })(
   /************************************************************************/
@@ -125,7 +101,7 @@
       /***/ function(module, exports, __webpack_require__) {
         'use strict'
         eval(
-          "\n\nvar _emergence = __webpack_require__(/*! emergence.js */ \"./node_modules/emergence.js/src/emergence.js\");\n\nvar _emergence2 = _interopRequireDefault(_emergence);\n\nvar _modalVideo = __webpack_require__(/*! modal-video */ \"./node_modules/modal-video/lib/index.js\");\n\nvar _modalVideo2 = _interopRequireDefault(_modalVideo);\n\nvar _App = __webpack_require__(/*! @/base/modules/App */ \"./base/modules/App.ts\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _SetStates = __webpack_require__(/*! @/base/modules/state/SetStates */ \"./base/modules/state/SetStates.ts\");\n\nvar _SetStates2 = _interopRequireDefault(_SetStates);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// Created Instance.\n\n\n// Import Modules.\n/*\n\n core.js\n\n*/\n\n// Import Package Modules.\nvar modalVideo = new _modalVideo2.default('.js-modal-video'); // eslint-disable-line no-unused-vars\nvar app = new _App2.default();\nvar setStates = new _SetStates2.default();\n\n// Initial.\n_emergence2.default.init({ reset: false });\napp.init();\n\n// DOM Content Loaded.\nwindow.addEventListener('DOMContentLoaded', function () {\n  // No Method.\n});\n\n// Load.\nwindow.addEventListener('load', function () {\n  // Call Load Method. When Window Reload, Fetch State of View.\n  app.load(setStates.getWidth);\n});\n\n// Resize.\nwindow.addEventListener('resize', function () {\n  // Set View State.\n  setStates.setWidth = document.body.clientWidth;\n  // Call Resize Method. When Window Resize, Fetch State of View.\n  app.resize(setStates.getWidth);\n});\n\n// Scroll.\nwindow.addEventListener('scroll', function () {\n  // Set View State.\n  setStates.setScroll = [window.innerHeight, document.querySelector('.fn-angle-down'), document.querySelector('.fn-area-about').getBoundingClientRect().top, document.querySelector('.fn-area-member').getBoundingClientRect().top, document.querySelector('.fn-footer').getBoundingClientRect().top];\n  // Call Scroll Method. When Window Scroll, Fetch State of View.\n  app.scroll(setStates.getScroll);\n});\n\n//# sourceURL=webpack:///./base/core.js?"
+          "\n\nvar _emergence = _interopRequireDefault(__webpack_require__(/*! emergence.js */ \"./node_modules/emergence.js/src/emergence.js\"));\n\nvar _modalVideo = _interopRequireDefault(__webpack_require__(/*! modal-video */ \"./node_modules/modal-video/lib/index.js\"));\n\nvar _App = _interopRequireDefault(__webpack_require__(/*! @/base/modules/App */ \"./base/modules/App.ts\"));\n\nvar _SetStates = _interopRequireDefault(__webpack_require__(/*! @/base/modules/state/SetStates */ \"./base/modules/state/SetStates.ts\"));\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/*\n\n core.js\n\n*/\n// Import Package Modules.\n// Import Modules.\n// Created Instance.\nvar modalVideo = new _modalVideo.default('.js-modal-video'); // eslint-disable-line no-unused-vars\n\nvar app = new _App.default();\nvar setStates = new _SetStates.default(); // Initial.\n\n_emergence.default.init({\n  reset: false\n});\n\napp.init(); // DOM Content Loaded.\n\nwindow.addEventListener('DOMContentLoaded', function () {// No Method.\n}); // Load.\n\nwindow.addEventListener('load', function () {\n  // Call Load Method. When Window Reload, Fetch State of View.\n  app.load(setStates.getWidth);\n}); // Resize.\n\nwindow.addEventListener('resize', function () {\n  // Set View State.\n  setStates.setWidth = document.body.clientWidth; // Call Resize Method. When Window Resize, Fetch State of View.\n\n  app.resize(setStates.getWidth);\n}); // Scroll.\n\nwindow.addEventListener('scroll', function () {\n  // Set View State.\n  setStates.setScroll = [window.innerHeight, document.querySelector('.fn-angle-down'), document.querySelector('.fn-area-about').getBoundingClientRect().top, document.querySelector('.fn-area-member').getBoundingClientRect().top, document.querySelector('.fn-footer').getBoundingClientRect().top]; // Call Scroll Method. When Window Scroll, Fetch State of View.\n\n  app.scroll(setStates.getScroll);\n});\n\n//# sourceURL=webpack:///./base/core.js?"
         )
 
         /***/
