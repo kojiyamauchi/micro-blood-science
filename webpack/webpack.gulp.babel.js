@@ -40,7 +40,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: ['babel-loader']
+        loader: 'babel-loader'
       },
       // ES2015 End.
       // TypeScript.
@@ -48,9 +48,9 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: ['ts-loader']
+        loader: 'ts-loader'
       },
-      // ES6 &  TypeScript End.
+      // TypeScript End.
       // Import Json File.
       {
         type: 'javascript/auto',
@@ -59,6 +59,7 @@ module.exports = {
         loader: 'json-loader'
       },
       // Import Json File End.
+
       // JS Sorce Map.
       {
         test: /\.js$/,
